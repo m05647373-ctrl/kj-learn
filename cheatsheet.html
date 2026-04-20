@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>速查表 · 初级会计</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" style="margin-left:0;"><span class="dot"></span>初级会计 · 速查表</div>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">闯关</a>
+        <a class="nav-link" href="exams.html">真题</a>
+        <a class="nav-link" href="grandslam.html">大满贯</a>
+        <a class="nav-link active" href="cheatsheet.html">速查表</a>
+        <button class="nav-link" onclick="window.print()">打印</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="cheatsheet">
+    <h1>速查表</h1>
+    <p class="lead">高频分录 × 税率 × 法条要点。使用浏览器 <code>Ctrl/⌘ + F</code> 快速检索。</p>
+
+    <!-- 实务 · 高频分录 -->
+    <h2>一、《实务》高频分录</h2>
+    <table>
+      <thead>
+        <tr><th style="width:24%;">业务场景</th><th>借方</th><th>贷方</th><th style="width:24%;">要点</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>从银行提现</td>
+          <td>库存现金</td>
+          <td>银行存款</td>
+          <td>资产内部一增一减</td>
+        </tr>
+        <tr>
+          <td>一般纳税人采购原材料（含税 13%）</td>
+          <td>原材料<br>应交税费——应交增值税（进项税额）</td>
+          <td>银行存款 / 应付账款</td>
+          <td>进项税单独列示，不计入成本</td>
+        </tr>
+        <tr>
+          <td>小规模纳税人采购原材料</td>
+          <td>原材料（价税合计）</td>
+          <td>银行存款 / 应付账款</td>
+          <td>不得抵扣进项，全部计入成本</td>
+        </tr>
+        <tr>
+          <td>销售商品（一般纳税人）</td>
+          <td>银行存款 / 应收账款</td>
+          <td>主营业务收入<br>应交税费——应交增值税（销项税额）</td>
+          <td>同时结转：借 主营业务成本 / 贷 库存商品</td>
+        </tr>
+        <tr>
+          <td>发放工资</td>
+          <td>应付职工薪酬</td>
+          <td>银行存款<br>其他应付款（社保个人部分）<br>应交税费——应交个人所得税</td>
+          <td>先计提后发放；计提时按受益对象进生产成本/管理费用等</td>
+        </tr>
+        <tr>
+          <td>计提折旧</td>
+          <td>管理费用 / 制造费用 / 销售费用</td>
+          <td>累计折旧</td>
+          <td>按使用部门计入；当月增加下月提</td>
+        </tr>
+        <tr>
+          <td>计提坏账</td>
+          <td>信用减值损失</td>
+          <td>坏账准备</td>
+          <td>备抵科目，余额在贷方</td>
+        </tr>
+        <tr>
+          <td>收到投资款</td>
+          <td>银行存款</td>
+          <td>实收资本<br>资本公积——资本溢价（超面值部分）</td>
+          <td>资本溢价计入资本公积</td>
+        </tr>
+        <tr>
+          <td>期末结转收入</td>
+          <td>主营业务收入 / 其他业务收入 / 营业外收入</td>
+          <td>本年利润</td>
+          <td>贷方余额 → 转借方归零</td>
+        </tr>
+        <tr>
+          <td>期末结转费用</td>
+          <td>本年利润</td>
+          <td>主营业务成本 / 税金及附加 / 管理费用 / 销售费用 / 财务费用 / 所得税费用</td>
+          <td>借方余额 → 转贷方归零</td>
+        </tr>
+        <tr>
+          <td>年末本年利润结转</td>
+          <td>本年利润（盈利） / 利润分配——未分配利润（亏损）</td>
+          <td>利润分配——未分配利润（盈利） / 本年利润（亏损）</td>
+          <td>结转后本年利润无余额</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 经济法 · 税率 -->
+    <h2>二、《经济法基础》税率速查</h2>
+    <table>
+      <thead>
+        <tr><th style="width:18%;">税种</th><th>档位 / 计算方式</th><th>适用范围</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="5">增值税</td>
+          <td><strong>13%</strong></td>
+          <td>销售货物、加工修理修配劳务、进口货物、有形动产租赁</td>
+        </tr>
+        <tr>
+          <td><strong>9%</strong></td>
+          <td>交通运输、邮政、建筑、基础电信、不动产租赁、销售/进口农产品等</td>
+        </tr>
+        <tr>
+          <td><strong>6%</strong></td>
+          <td>现代服务、金融服务、生活服务、无形资产（土地使用权除外）、增值电信</td>
+        </tr>
+        <tr>
+          <td><strong>0%</strong></td>
+          <td>出口货物、跨境应税行为（规定范围）</td>
+        </tr>
+        <tr>
+          <td>征收率 <strong>3%</strong>（阶段性减按 <strong>1%</strong>）</td>
+          <td>小规模纳税人、适用简易计税的一般纳税人</td>
+        </tr>
+        <tr>
+          <td rowspan="2">个人所得税</td>
+          <td>综合所得 <strong>3%–45%</strong>（7 级超额累进）</td>
+          <td>工资薪金、劳务报酬、稿酬、特许权使用费</td>
+        </tr>
+        <tr>
+          <td>经营所得 <strong>5%–35%</strong>（5 级超额累进）</td>
+          <td>个体工商户、个独合伙</td>
+        </tr>
+        <tr>
+          <td>企业所得税</td>
+          <td>基本 <strong>25%</strong>；小微 <strong>20%</strong>（应纳税所得额 ≤ 300 万，减按 25% 计入，税率 20%）；高新 <strong>15%</strong></td>
+          <td>法人企业及其他取得收入的组织</td>
+        </tr>
+        <tr>
+          <td>房产税</td>
+          <td>从价计征 <strong>1.2%</strong>（按余值）；从租计征 <strong>12%</strong>（个人出租住房 <strong>4%</strong>）</td>
+          <td>城市、县城、建制镇、工矿区的房产</td>
+        </tr>
+        <tr>
+          <td>印花税</td>
+          <td>购销合同 <strong>0.3‰</strong>；加工承揽 <strong>0.3‰</strong>；财产租赁 <strong>1‰</strong>；借款合同 <strong>0.05‰</strong>；营业账簿 <strong>0.25‰</strong>（按实收资本与资本公积合计）</td>
+          <td>在中国境内书立、领受应税凭证的单位和个人</td>
+        </tr>
+        <tr>
+          <td>城市维护建设税</td>
+          <td>市区 <strong>7%</strong>；县城、镇 <strong>5%</strong>；其他 <strong>1%</strong></td>
+          <td>随增值税、消费税征收</td>
+        </tr>
+        <tr>
+          <td>契税</td>
+          <td><strong>3%–5%</strong>（地方确定）</td>
+          <td>土地、房屋权属转移</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 经济法 · 法条 -->
+    <h2>三、法条 · 期限要点</h2>
+    <table>
+      <thead>
+        <tr><th style="width:26%;">项目</th><th>期限 / 规定</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>劳动合同试用期（1 年以上不满 3 年）</td><td>不得超过 <strong>2 个月</strong></td></tr>
+        <tr><td>劳动合同试用期（3 个月以上不满 1 年）</td><td>不得超过 <strong>1 个月</strong></td></tr>
+        <tr><td>劳动合同试用期（3 年以上 / 无固定期限）</td><td>不得超过 <strong>6 个月</strong></td></tr>
+        <tr><td>劳动争议仲裁时效</td><td>自知道权利被侵害之日起 <strong>1 年</strong>；劳动关系存续期间因拖欠工资引起的不受 1 年限制</td></tr>
+        <tr><td>增值税一般纳税人登记标准</td><td>年应征增值税销售额 超过 <strong>500 万元</strong></td></tr>
+        <tr><td>增值税纳税义务发生时间（赊销）</td><td>书面合同约定收款日当天；无合同则为发出货物当天</td></tr>
+        <tr><td>小规模纳税人申报周期</td><td>默认 <strong>1 个季度</strong>；一经选定一个会计年度内不得变更</td></tr>
+        <tr><td>支票提示付款期限</td><td>自出票日起 <strong>10 日</strong></td></tr>
+        <tr><td>银行汇票提示付款期限</td><td>自出票日起 <strong>1 个月</strong></td></tr>
+        <tr><td>商业汇票最长付款期限</td><td>自出票日起 <strong>6 个月</strong>（2023 年起，原为 1 年）</td></tr>
+        <tr><td>会计档案保管期限（年度财报）</td><td><strong>永久</strong></td></tr>
+        <tr><td>会计档案保管期限（原始凭证、记账凭证、账簿）</td><td><strong>30 年</strong></td></tr>
+        <tr><td>税务登记变更</td><td>工商变更之日起 <strong>30 日</strong> 内办理</td></tr>
+        <tr><td>偷税、抗税、骗税追征期</td><td><strong>无限期</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h2>四、考试结构与通关要点</h2>
+    <table>
+      <thead><tr><th style="width:28%;">项目</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>考试科目</td><td>《初级会计实务》+《经济法基础》两科</td></tr>
+        <tr><td>题型</td><td>单选、多选、判断、不定项选择（4 类）</td></tr>
+        <tr><td>合格标准</td><td>每科 <strong>60 分</strong>（百分制），当年一次通过两科方可获证</td></tr>
+        <tr><td>得分策略</td><td>不定项选择题：宁少勿错，稳拿保底分；多选漏选得部分分，错选得 0 分</td></tr>
+        <tr><td>高频失分点</td><td>增值税进项 / 销项区分；折旧起止月；本年利润结转方向；期限与时效混淆</td></tr>
+      </tbody>
+    </table>
+
+    <p style="color:var(--text-sub); font-size:13px; margin-top:40px;">
+      本速查表摘自财政部《初级会计实务》《经济法基础》最新考纲与教材内容，仅作学习辅助。具体政策以当年官方文件为准。
+    </p>
+  </main>
+</body>
+</html>

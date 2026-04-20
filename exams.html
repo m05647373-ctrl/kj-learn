@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>初级会计 · 真题库</title>
+  <meta name="description" content="历年初级会计考试真题（不定项选择）练习模式 + 机考模拟。" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" style="margin-left:8px;"><span class="dot"></span>初级会计 · 真题库</div>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">闯关</a>
+        <a class="nav-link active" href="exams.html">真题</a>
+        <a class="nav-link" href="grandslam.html">大满贯</a>
+        <a class="nav-link" href="cheatsheet.html">速查表</a>
+        <!-- 机考模式 Toggle -->
+        <label class="mock-toggle" title="开启后 105 分钟倒计时，关闭所有即时反馈">
+          <input type="checkbox" id="mock-toggle" />
+          <span>冲刺机考</span>
+        </label>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 机考专用状态栏 -->
+  <div class="mock-bar" id="mock-bar" hidden>
+    <div class="mock-bar-inner">
+      <span class="mock-tag">机考模式</span>
+      <span class="mock-timer" id="mock-timer">105:00</span>
+      <button class="btn btn-ghost" id="calc-toggle" type="button">🖩 计算器</button>
+      <button class="btn btn-primary" id="mock-submit" type="button">交卷</button>
+      <button class="btn btn-ghost" id="mock-exit" type="button">退出机考</button>
+    </div>
+  </div>
+
+  <main class="page">
+    <section class="card" style="max-width: 900px; margin: 0 auto;">
+      <div class="card-head">
+        <h2 style="margin:0;">真题练习 · 不定项选择</h2>
+        <p class="muted" style="margin:6px 0 0;">
+          共 <span id="total-count">0</span> 题 · 不定项每题 0–多个正确项，
+          <b>必须全对才得分</b>。每题独立「确认」提交；机考模式下隐藏所有即时反馈。
+        </p>
+      </div>
+      <div id="exam-list"></div>
+      <div class="feedback" id="exam-summary" style="margin-top:24px;"></div>
+      <div style="margin-top:16px; text-align:right;" id="exam-actions">
+        <button class="btn btn-primary" id="exam-submit">一键全卷判分</button>
+        <button class="btn btn-ghost" id="exam-reset" style="margin-left:8px;">重置答卷</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 极简机考计算器 -->
+  <div class="calc-panel" id="calc-panel" hidden>
+    <div class="calc-head"><span>机考计算器</span><button id="calc-close">×</button></div>
+    <input id="calc-display" readonly value="0" />
+    <div class="calc-keys">
+      <button data-k="C">C</button><button data-k="←">←</button>
+      <button data-k="(">(</button><button data-k=")">)</button>
+      <button data-k="7">7</button><button data-k="8">8</button>
+      <button data-k="9">9</button><button data-k="/">÷</button>
+      <button data-k="4">4</button><button data-k="5">5</button>
+      <button data-k="6">6</button><button data-k="*">×</button>
+      <button data-k="1">1</button><button data-k="2">2</button>
+      <button data-k="3">3</button><button data-k="-">−</button>
+      <button data-k="0">0</button><button data-k=".">.</button>
+      <button data-k="=" class="eq">=</button><button data-k="+">+</button>
+    </div>
+  </div>
+
+  <script src="data/exams.js"></script>
+  <script>
+  (function(){
+    /* ---------- 数据规范化 ---------- */
+    const QS = (window.EXAMS || []).map(q => ({
+      id: q.id, subject: q.subject, year: q.year, topic: q.topic || '',
+      stem: q.stem,
+      options: q.options.map(o => ({ label: o.label, text: o.text, is_correct: !!o.is_correct })),
+      answerIdx: q.options.map((o,i) => o.is_correct ? i : -1).filter(i => i >= 0),
+      explain: q.analysis || ''
+    }));
+    const MOCK_KEY = 'kj_exam_mock_v1';
+    const EXAM_KEY = 'kj_exam_answer_v1';
+    const list = document.getElementById('exam-list');
+    const summary = document.getElementById('exam-summary');
+    document.getElementById('total-count').textContent = QS.length;
+
+    let mockMode = localStorage.getItem(MOCK_KEY) === 'on';
+    const answers = JSON.parse(localStorage.getItem(EXAM_KEY) || '{}'); // { qid: {picked:[i...], confirmed:bool} }
+
+    function persist() { localStorage.setItem(EXAM_KEY, JSON.stringify(answers)); }
+    function getAns(qid) {
+      if (!answers[qid]) answers[qid] = { picked: [], confirmed: false };
+      return answers[qid];
+    }
+
+    /* ---------- 渲染 ---------- */
+    function render() {
+      list.innerHTML = QS.map((q, qi) => {
+        const a = getAns(q.id);
+        const opts = q.options.map((o, oi) => {
+          const picked = a.picked.includes(oi);
+          return `
+            <label class="exam-opt${picked?' picked':''}" data-q="${q.id}" data-o="${oi}">
+              <input type="checkbox" ${picked?'checked':''} ${a.confirmed?'disabled':''} />
+              <span class="opt-mark">${o.label || String.fromCharCode(65+oi)}</span>
+              <span>${escapeHtml(o.text)}</span>
+            </label>`;
+        }).join('');
+        return `
+          <div class="exam-item" id="exam-${q.id}" data-confirmed="${a.confirmed?1:0}">
+            <div class="exam-meta muted">#${qi+1} · ${q.year} 真题 · 《${q.subject}》${q.topic?' · '+escapeHtml(q.topic):''}</div>
+            <div class="exam-stem">${escapeHtml(q.stem)}</div>
+            <div class="exam-opts">${opts}</div>
+            <div class="exam-peritem-actions">
+              <button class="btn btn-primary btn-small confirm-btn" data-q="${q.id}" ${a.confirmed?'disabled':''}>确认此题</button>
+              <button class="btn btn-ghost btn-small reopen-btn" data-q="${q.id}" ${a.confirmed?'':'hidden'}>重做此题</button>
+            </div>
+            <div class="exam-result" id="exam-result-${q.id}"></div>
+          </div>`;
+      }).join('');
+
+      // 绑定点选
+      list.querySelectorAll('.exam-opt').forEach(el => {
+        const cb = el.querySelector('input');
+        const toggle = (checked) => {
+          const qid = el.dataset.q;
+          const oi = +el.dataset.o;
+          const a = getAns(qid);
+          if (a.confirmed) return;
+          if (checked) {
+            if (!a.picked.includes(oi)) a.picked.push(oi);
+            el.classList.add('picked');
+          } else {
+            a.picked = a.picked.filter(i => i !== oi);
+            el.classList.remove('picked');
+          }
+          persist();
+        };
+        el.addEventListener('click', (e) => {
+          if (e.target.tagName === 'INPUT') return;
+          if (cb.disabled) return;
+          cb.checked = !cb.checked;
+          toggle(cb.checked);
+        });
+        cb.addEventListener('change', (e) => toggle(e.target.checked));
+      });
+
+      // 绑定单题确认
+      list.querySelectorAll('.confirm-btn').forEach(btn => {
+        btn.addEventListener('click', () => confirmOne(btn.dataset.q));
+      });
+      list.querySelectorAll('.reopen-btn').forEach(btn => {
+        btn.addEventListener('click', () => reopenOne(btn.dataset.q));
+      });
+      // 已确认的题立即显示结果
+      QS.forEach(q => { if (getAns(q.id).confirmed) renderResult(q, false); });
+    }
+
+    function confirmOne(qid) {
+      const a = getAns(qid);
+      a.confirmed = true;
+      persist();
+      render();
+    }
+    function reopenOne(qid) {
+      const a = getAns(qid);
+      a.confirmed = false;
+      persist();
+      render();
+    }
+
+    function renderResult(q, showInMock) {
+      const a = getAns(q.id);
+      const resEl = document.getElementById('exam-result-'+q.id);
+      if (!resEl) return;
+      // 机考模式：单题确认后不给任何反馈，等交卷
+      if (mockMode && !showInMock) { resEl.innerHTML = '<div class="result-mock muted">已记录 · 机考模式，交卷后统一出分</div>'; return; }
+      const picked = [...a.picked].sort((x,y)=>x-y);
+      const expect = [...q.answerIdx].sort((x,y)=>x-y);
+      const isOk = picked.length === expect.length && picked.every((v,i)=>v===expect[i]);
+      const expectLabels = expect.map(i => q.options[i].label || String.fromCharCode(65+i)).join('、') || '（无）';
+      const pickedLabels = picked.map(i => q.options[i].label || String.fromCharCode(65+i)).join('、') || '（未选）';
+      resEl.innerHTML = `
+        <div class="${isOk?'result-ok':'result-bad'}">
+          ${isOk?'✓ 正确':'✗ 错误'} · 你的答案：<b>${pickedLabels}</b> · 正确答案：<b>${expectLabels}</b>
+        </div>
+        <div class="exam-explain">${escapeHtml(q.explain || '')}</div>`;
+    }
+
+    function gradeAll(showSummary) {
+      let correct = 0;
+      QS.forEach(q => {
+        const a = getAns(q.id);
+        // 未确认视为已作答但不锁
+        const picked = [...a.picked].sort((x,y)=>x-y);
+        const expect = [...q.answerIdx].sort((x,y)=>x-y);
+        const isOk = picked.length === expect.length && picked.every((v,i)=>v===expect[i]);
+        if (isOk) correct++;
+        renderResult(q, true);
+      });
+      if (showSummary) {
+        summary.innerHTML = `
+          <div class="summary-box">
+            <div class="summary-big">${correct} / ${QS.length}</div>
+            <div class="muted">全部判分完成。不定项全对才得分。</div>
+          </div>`;
+        summary.scrollIntoView({behavior:'smooth', block:'center'});
+      }
+    }
+
+    /* ---------- 按钮 ---------- */
+    document.getElementById('exam-submit').addEventListener('click', () => gradeAll(true));
+    document.getElementById('exam-reset').addEventListener('click', () => {
+      if (!confirm('确定重置全部答卷？')) return;
+      localStorage.removeItem(EXAM_KEY);
+      Object.keys(answers).forEach(k => delete answers[k]);
+      summary.innerHTML = '';
+      render();
+    });
+
+    /* ---------- 机考模式 ---------- */
+    const mockBar = document.getElementById('mock-bar');
+    const mockToggle = document.getElementById('mock-toggle');
+    const mockTimer = document.getElementById('mock-timer');
+    let countdown = 105 * 60; // 秒
+    let timerId = null;
+    const TIMER_KEY = 'kj_exam_mock_deadline_v1';
+
+    function fmt(s){ const m=Math.floor(s/60); const x=s%60; return String(m).padStart(2,'0')+':'+String(x).padStart(2,'0'); }
+    function tick() {
+      const deadline = +localStorage.getItem(TIMER_KEY);
+      const rem = Math.max(0, Math.round((deadline - Date.now())/1000));
+      mockTimer.textContent = fmt(rem);
+      if (rem <= 0) {
+        clearInterval(timerId); timerId = null;
+        alert('时间到！系统自动交卷。');
+        forceSubmit();
+      }
+    }
+    function startMock() {
+      mockMode = true;
+      localStorage.setItem(MOCK_KEY, 'on');
+      if (!localStorage.getItem(TIMER_KEY)) {
+        localStorage.setItem(TIMER_KEY, String(Date.now() + countdown*1000));
+      }
+      mockBar.hidden = false;
+      document.body.classList.add('mock-mode');
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(()=>{});
+      }
+      tick();
+      timerId = setInterval(tick, 1000);
+      render();
+    }
+    function exitMock() {
+      mockMode = false;
+      localStorage.removeItem(MOCK_KEY);
+      localStorage.removeItem(TIMER_KEY);
+      mockBar.hidden = true;
+      document.body.classList.remove('mock-mode');
+      if (timerId) { clearInterval(timerId); timerId = null; }
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(()=>{});
+      render();
+    }
+    function forceSubmit() {
+      // 交卷：锁定所有题，统一出分
+      QS.forEach(q => { getAns(q.id).confirmed = true; });
+      persist();
+      // 临时关闭 mockMode 以便展示详情
+      mockMode = false; document.body.classList.remove('mock-mode');
+      render();
+      gradeAll(true);
+      // 机考状态清理但不退出 fullscreen
+      localStorage.removeItem(TIMER_KEY);
+      if (timerId) { clearInterval(timerId); timerId = null; }
+      mockBar.hidden = true;
+      mockToggle.checked = false;
+      localStorage.removeItem(MOCK_KEY);
+    }
+
+    mockToggle.checked = mockMode;
+    mockToggle.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        if (!confirm('进入机考模式？105 分钟倒计时，全屏，关闭即时反馈。')) {
+          e.target.checked = false; return;
+        }
+        startMock();
+      } else {
+        if (confirm('退出机考模式？当前倒计时与答题将清空重置。')) exitMock();
+        else e.target.checked = true;
+      }
+    });
+    document.getElementById('mock-submit').addEventListener('click', () => {
+      if (confirm('确认提前交卷？')) forceSubmit();
+    });
+    document.getElementById('mock-exit').addEventListener('click', () => {
+      if (confirm('退出机考模式？')) exitMock();
+    });
+
+    /* ---------- 机考计算器 ---------- */
+    const calcPanel = document.getElementById('calc-panel');
+    const calcDisplay = document.getElementById('calc-display');
+    document.getElementById('calc-toggle').addEventListener('click', () => {
+      calcPanel.hidden = !calcPanel.hidden;
+    });
+    document.getElementById('calc-close').addEventListener('click', () => { calcPanel.hidden = true; });
+    calcPanel.querySelectorAll('.calc-keys button').forEach(b => {
+      b.addEventListener('click', () => {
+        const k = b.dataset.k;
+        let v = calcDisplay.value;
+        if (k === 'C') v = '0';
+        else if (k === '←') v = v.length<=1?'0':v.slice(0,-1);
+        else if (k === '=') {
+          try {
+            // 极简安全：只允许 0-9 . + - * / ( )
+            if (!/^[0-9+\-*/().\s]+$/.test(v)) { v = 'ERR'; }
+            else v = String(Function('"use strict";return ('+v+')')());
+          } catch(_) { v = 'ERR'; }
+        } else {
+          v = (v === '0' || v === 'ERR') ? k : v + k;
+        }
+        calcDisplay.value = v;
+      });
+    });
+
+    function escapeHtml(s){
+      return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    render();
+    if (mockMode) startMock();
+  })();
+  </script>
+</body>
+</html>

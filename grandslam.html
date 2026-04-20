@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>初级会计 · 大满贯账套推演</title>
+  <meta name="description" content="从原始凭证到资产负债表的全流程账务推演（单月简化版）。" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" style="margin-left:8px;"><span class="dot"></span>大满贯 · 账套推演</div>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">闯关</a>
+        <a class="nav-link" href="exams.html">真题</a>
+        <a class="nav-link active" href="grandslam.html">大满贯</a>
+        <a class="nav-link" href="cheatsheet.html">速查表</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="card" style="max-width: 980px; margin: 0 auto;">
+      <div class="card-head">
+        <h2 style="margin:0;" id="gs-company-title">大满贯账套推演</h2>
+        <p class="muted" style="margin:6px 0 0;">
+          从原始凭证 → 记账凭证 → 月末结转 → 资产负债表 + 利润表，走一遍完整账务流程。
+        </p>
+      </div>
+
+      <!-- 阶段进度条 -->
+      <div class="gs-stepper" id="gs-stepper">
+        <button class="gs-step-btn active" data-phase="vouchers">① 记账凭证</button>
+        <button class="gs-step-btn" data-phase="closing">② 月末结转</button>
+        <button class="gs-step-btn" data-phase="reports">③ 期末报表</button>
+      </div>
+
+      <!-- 阶段 1：记账凭证 -->
+      <div class="gs-phase active" id="phase-vouchers">
+        <div class="gs-hint">
+          <b>阶段一 · 记账凭证</b><br>
+          下方是甲公司 3 月的 <span id="v-count">5</span> 笔原始凭证（发票/回单/工资表/折旧表）。
+          请为每一笔编制记账凭证：选择正确的科目、方向（借/贷）与金额。全部做对后，进入下一阶段。
+        </div>
+        <div id="vouchers-list"></div>
+        <div style="text-align:right; margin-top:16px;">
+          <button class="btn btn-primary" id="v-check-all">全部核对</button>
+          <button class="btn btn-ghost" id="v-reset">重置本阶段</button>
+          <button class="btn btn-primary" id="v-next" disabled style="margin-left:8px;">进入月末结转 →</button>
+        </div>
+      </div>
+
+      <!-- 阶段 2：月末结转 -->
+      <div class="gs-phase" id="phase-closing">
+        <div class="gs-hint">
+          <b>阶段二 · 月末结转</b><br>
+          三步结转损益：<b>收入 → 成本费用 → 净利润</b>。每步先答一道选择题确认方向，再系统自动落账。
+        </div>
+        <div id="closing-steps"></div>
+        <div style="text-align:right; margin-top:16px;">
+          <button class="btn btn-ghost" id="c-back">← 回到凭证</button>
+          <button class="btn btn-primary" id="c-next" disabled style="margin-left:8px;">查看期末报表 →</button>
+        </div>
+      </div>
+
+      <!-- 阶段 3：期末报表 -->
+      <div class="gs-phase" id="phase-reports">
+        <div class="gs-hint">
+          <b>阶段三 · 期末报表</b><br>
+          根据前两阶段的记账结果，生成简易资产负债表（时点数）与利润表（期间数）。
+          注意：「资产 = 负债 + 所有者权益」与「本期净利润→未分配利润」两条主线。
+        </div>
+        <div id="reports-area"></div>
+        <div style="text-align:right; margin-top:16px;">
+          <button class="btn btn-ghost" id="r-back">← 回到结转</button>
+          <button class="btn btn-primary" id="r-restart">🎉 完成 · 再来一遍</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="data/grandslam.js"></script>
+  <script>
+  (function(){
+    const GS = window.GRANDSLAM;
+    const STATE_KEY = 'kj_grandslam_state_v1';
+    document.getElementById('gs-company-title').textContent =
+      GS.company + ' · ' + GS.period + ' · 账套推演';
+    document.getElementById('v-count').textContent = GS.vouchers.length;
+
+    let state = JSON.parse(localStorage.getItem(STATE_KEY) || '{}');
+    if (!state.vouchers) state.vouchers = {}; // { V1:{rows:[{side,acc,amt}], ok:false} }
+    if (!state.closing)  state.closing  = {}; // { revenue:{picked,ok}, expense:{...}, profit:{...} }
+    if (!state.phase)    state.phase    = 'vouchers';
+
+    function save() { localStorage.setItem(STATE_KEY, JSON.stringify(state)); }
+    function escapeHtml(s){
+      return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    /* ---------- 阶段切换 ---------- */
+    function switchPhase(phase) {
+      state.phase = phase; save();
+      document.querySelectorAll('.gs-phase').forEach(el => el.classList.toggle('active', el.id === 'phase-'+phase));
+      document.querySelectorAll('.gs-step-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.phase === phase));
+      if (phase === 'reports') renderReports();
+    }
+    document.querySelectorAll('.gs-step-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const p = btn.dataset.phase;
+        // 阶段只能顺序解锁
+        if (p === 'closing' && !allVouchersOk()) { alert('请先把所有记账凭证做对。'); return; }
+        if (p === 'reports' && !allClosingOk())  { alert('请先完成月末三步结转。'); return; }
+        switchPhase(p);
+      });
+    });
+
+    /* ---------- 阶段 1：记账凭证 ---------- */
+    const vHost = document.getElementById('vouchers-list');
+
+    function accOptions(sel) {
+      return ['<option value="">— 选择科目 —</option>']
+        .concat(GS.accounts.map(a => `<option value="${a}"${a===sel?' selected':''}>${a}</option>`))
+        .join('');
+    }
+
+    function renderVouchers() {
+      vHost.innerHTML = GS.vouchers.map(v => {
+        const rowCount = Math.max(3, v.entries.length); // 至少给 3 行，引导分录
+        const saved = state.vouchers[v.id] || { rows: Array.from({length: rowCount}, ()=>({side:'借',acc:'',amt:''})), ok:false };
+        if (!state.vouchers[v.id]) state.vouchers[v.id] = saved;
+        const rowsHtml = saved.rows.map((r,i) => `
+          <tr data-v="${v.id}" data-i="${i}">
+            <td>
+              <select class="gs-side">
+                <option value="借" ${r.side==='借'?'selected':''}>借</option>
+                <option value="贷" ${r.side==='贷'?'selected':''}>贷</option>
+              </select>
+            </td>
+            <td><select class="gs-acc">${accOptions(r.acc)}</select></td>
+            <td><input class="gs-amt" type="number" step="0.01" placeholder="金额" value="${r.amt!==''?r.amt:''}" /></td>
+          </tr>
+        `).join('');
+        return `
+          <div class="gs-doc" data-v="${v.id}">
+            <div class="gs-doc-title">
+              <span class="gs-tag">${v.id}</span>
+              <span>${v.date} · ${escapeHtml(v.title)}</span>
+              ${saved.ok?'<span style="color:var(--success);margin-left:8px;">✓ 已做对</span>':''}
+            </div>
+            <div class="gs-doc-body">📎 <b>原始凭证</b>：${escapeHtml(v.source)}<br>💡 ${escapeHtml(v.hint)}</div>
+            <table class="gs-entry-table">
+              <thead><tr><th style="width:80px;">方向</th><th>会计科目</th><th style="width:160px;">金额（元）</th></tr></thead>
+              <tbody>${rowsHtml}</tbody>
+            </table>
+            <div style="margin-top:10px;">
+              <button class="btn btn-ghost btn-small gs-add-row" data-v="${v.id}">+ 增加一行</button>
+              <button class="btn btn-primary btn-small gs-check" data-v="${v.id}" style="margin-left:6px;">核对此单</button>
+              <span class="gs-check-msg" id="gs-msg-${v.id}" style="margin-left:10px;font-size:13px;"></span>
+            </div>
+          </div>`;
+      }).join('');
+
+      // 绑定输入持久化
+      vHost.querySelectorAll('tr[data-v]').forEach(tr => {
+        const v = tr.dataset.v, i = +tr.dataset.i;
+        const s = state.vouchers[v];
+        tr.querySelector('.gs-side').addEventListener('change', e => { s.rows[i].side = e.target.value; save(); });
+        tr.querySelector('.gs-acc').addEventListener('change',  e => { s.rows[i].acc  = e.target.value; save(); });
+        tr.querySelector('.gs-amt').addEventListener('input',   e => { s.rows[i].amt  = e.target.value; save(); });
+      });
+      vHost.querySelectorAll('.gs-add-row').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const v = btn.dataset.v;
+          state.vouchers[v].rows.push({side:'借',acc:'',amt:''});
+          save(); renderVouchers();
+        });
+      });
+      vHost.querySelectorAll('.gs-check').forEach(btn => {
+        btn.addEventListener('click', () => checkVoucher(btn.dataset.v));
+      });
+    }
+
+    function checkVoucher(vid) {
+      const v = GS.vouchers.find(x => x.id === vid);
+      const s = state.vouchers[vid];
+      const msg = document.getElementById('gs-msg-'+vid);
+      // 过滤出有效填写行
+      const filled = s.rows
+        .map(r => ({ side: r.side, acc: (r.acc||'').trim(), amt: parseFloat(r.amt) }))
+        .filter(r => r.acc && !isNaN(r.amt) && r.amt > 0);
+      // 借贷平衡
+      const debit  = filled.filter(r => r.side==='借').reduce((a,b)=>a+b.amt,0);
+      const credit = filled.filter(r => r.side==='贷').reduce((a,b)=>a+b.amt,0);
+      if (Math.abs(debit - credit) > 0.001) {
+        msg.innerHTML = '<span style="color:var(--error);">✗ 借贷不平：借 ' + debit.toFixed(2) + '，贷 ' + credit.toFixed(2) + '</span>';
+        s.ok = false; save(); return;
+      }
+      // 集合比对：行数、方向、科目、金额须完全一致（不要求顺序）
+      const expect = v.entries.map(e => ({ side:e.side, acc:e.account, amt:e.amount }));
+      if (filled.length !== expect.length) {
+        msg.innerHTML = `<span style="color:var(--error);">✗ 分录行数不对（应 ${expect.length} 行，你有 ${filled.length} 行）</span>`;
+        s.ok = false; save(); return;
+      }
+      const norm = arr => arr.map(r => `${r.side}|${r.acc}|${r.amt.toFixed(2)}`).sort().join('\n');
+      if (norm(filled) !== norm(expect)) {
+        msg.innerHTML = '<span style="color:var(--error);">✗ 科目/方向/金额与标准答案不一致，请对照原始凭证再想想。</span>';
+        s.ok = false; save(); return;
+      }
+      s.ok = true; save();
+      msg.innerHTML = '<span style="color:var(--success);">✓ 正确！借贷平衡且科目完全正确。</span>';
+      // 整行标绿
+      vHost.querySelectorAll(`tr[data-v="${vid}"]`).forEach(tr => tr.classList.add('row-correct'));
+      checkAllVouchersDone();
+    }
+
+    function allVouchersOk() { return GS.vouchers.every(v => state.vouchers[v.id] && state.vouchers[v.id].ok); }
+
+    function checkAllVouchersDone() {
+      const ok = allVouchersOk();
+      document.getElementById('v-next').disabled = !ok;
+      if (ok) {
+        document.querySelector('.gs-step-btn[data-phase="vouchers"]').classList.add('done');
+      }
+    }
+
+    document.getElementById('v-check-all').addEventListener('click', () => {
+      GS.vouchers.forEach(v => checkVoucher(v.id));
+    });
+    document.getElementById('v-reset').addEventListener('click', () => {
+      if (!confirm('清空本阶段所有凭证输入？')) return;
+      state.vouchers = {}; save(); renderVouchers(); checkAllVouchersDone();
+    });
+    document.getElementById('v-next').addEventListener('click', () => switchPhase('closing'));
+
+    /* ---------- 阶段 2：月末结转 ---------- */
+    const cHost = document.getElementById('closing-steps');
+    const STEPS = [
+      { key: 'revenue', data: GS.closing.revenue },
+      { key: 'expense', data: GS.closing.expense },
+      { key: 'profit',  data: GS.closing.profit  }
+    ];
+
+    function renderClosing() {
+      cHost.innerHTML = STEPS.map((st, idx) => {
+        const saved = state.closing[st.key] || { picked: -1, ok: false };
+        if (!state.closing[st.key]) state.closing[st.key] = saved;
+        const locked = idx > 0 && !state.closing[STEPS[idx-1].key].ok;
+        const opts = st.data.options.map((o, oi) => `
+          <label class="exam-opt${saved.picked===oi?' picked':''}${saved.ok && o.is_correct?' picked':''}"
+                 data-step="${st.key}" data-o="${oi}" ${locked?'style="opacity:.5;pointer-events:none;"':''}>
+            <input type="radio" name="close-${st.key}" ${saved.picked===oi?'checked':''} ${saved.ok?'disabled':''} ${locked?'disabled':''} />
+            <span class="opt-mark">${o.label}</span>
+            <span>${escapeHtml(o.text)}</span>
+          </label>`).join('');
+        const entriesHtml = saved.ok ? `
+          <table class="gs-entry-table" style="margin-top:10px;">
+            <thead><tr><th style="width:80px;">方向</th><th>科目</th><th style="width:160px;">金额</th></tr></thead>
+            <tbody>${st.data.entries.map(e => `<tr class="row-correct"><td>${e.side}</td><td>${e.account}</td><td>${e.amount.toFixed(2)}</td></tr>`).join('')}</tbody>
+          </table>
+        ` : '';
+        return `
+          <div class="gs-doc">
+            <div class="gs-doc-title">
+              <span class="gs-tag">第 ${idx+1} 步</span>
+              <span>${escapeHtml(st.data.title)}</span>
+              ${saved.ok?'<span style="color:var(--success);margin-left:8px;">✓ 完成</span>':''}
+            </div>
+            <div class="gs-doc-body">${escapeHtml(st.data.question)}</div>
+            <div class="exam-opts">${opts}</div>
+            ${entriesHtml}
+            <div style="margin-top:12px;">
+              <button class="btn btn-primary btn-small gs-close-confirm" data-step="${st.key}" ${saved.ok||locked?'disabled':''}>确认此步</button>
+              <span id="close-msg-${st.key}" style="margin-left:10px; font-size:13px;"></span>
+            </div>
+          </div>`;
+      }).join('');
+
+      cHost.querySelectorAll('.exam-opt').forEach(el => {
+        el.addEventListener('click', e => {
+          if (e.target.tagName === 'INPUT') return;
+          const radio = el.querySelector('input');
+          if (radio.disabled) return;
+          radio.checked = true;
+          const step = el.dataset.step; const oi = +el.dataset.o;
+          state.closing[step].picked = oi; save();
+          // 视觉反馈
+          cHost.querySelectorAll(`.exam-opt[data-step="${step}"]`).forEach(x => x.classList.remove('picked'));
+          el.classList.add('picked');
+        });
+      });
+      cHost.querySelectorAll('.gs-close-confirm').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.step;
+          const st = STEPS.find(x => x.key === key);
+          const s = state.closing[key];
+          const msg = document.getElementById('close-msg-'+key);
+          if (s.picked < 0) { msg.innerHTML = '<span style="color:var(--error);">请先选一个选项。</span>'; return; }
+          if (st.data.options[s.picked].is_correct) {
+            s.ok = true; save();
+            msg.innerHTML = '<span style="color:var(--success);">✓ 正确，已自动落账。</span>';
+            renderClosing();
+            checkAllClosingDone();
+          } else {
+            msg.innerHTML = '<span style="color:var(--error);">✗ 方向反了，再想想损益类结转方向规则。</span>';
+          }
+        });
+      });
+    }
+
+    function allClosingOk() { return STEPS.every(s => state.closing[s.key] && state.closing[s.key].ok); }
+    function checkAllClosingDone() {
+      const ok = allClosingOk();
+      document.getElementById('c-next').disabled = !ok;
+      if (ok) document.querySelector('.gs-step-btn[data-phase="closing"]').classList.add('done');
+    }
+
+    document.getElementById('c-back').addEventListener('click', () => switchPhase('vouchers'));
+    document.getElementById('c-next').addEventListener('click', () => switchPhase('reports'));
+
+    /* ---------- 阶段 3：期末报表 ---------- */
+    function renderReports() {
+      const bs = GS.reports.balanceSheet;
+      const is = GS.reports.incomeStatement;
+      const fmt = n => (n<0?'(':'') + Math.abs(n).toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2}) + (n<0?')':'');
+      const assetSum = bs.assets.reduce((a,b)=>a+b.amount,0);
+      const leSum    = bs.liabEquity.reduce((a,b)=>a+b.amount,0);
+      const diff     = Math.abs(assetSum - leSum) < 0.01;
+
+      document.getElementById('reports-area').innerHTML = `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="gs-balance-card">
+            <h3>${bs.title} · 资产方</h3>
+            <table>
+              ${bs.assets.map(a => `<tr><td>${escapeHtml(a.name)}</td><td class="amount">${fmt(a.amount)}</td></tr>`).join('')}
+              <tr class="total"><td>资产合计</td><td class="amount">${fmt(assetSum)}</td></tr>
+            </table>
+          </div>
+          <div class="gs-balance-card">
+            <h3>${bs.title} · 负债与所有者权益</h3>
+            <table>
+              ${bs.liabEquity.map(a => `<tr><td>${escapeHtml(a.name)}</td><td class="amount">${fmt(a.amount)}</td></tr>`).join('')}
+              <tr class="total"><td>负债与权益合计</td><td class="amount">${fmt(leSum)}</td></tr>
+            </table>
+          </div>
+        </div>
+        <div style="margin-top:16px; text-align:center; padding:12px; border-radius:8px;
+                    background:${diff?'var(--success-soft)':'var(--error-soft)'};
+                    color:${diff?'var(--success)':'var(--error)'}; font-weight:600;">
+          ${diff? '✓ 资产 = 负债 + 所有者权益 · 账账相符' : '✗ 资产 ≠ 负债+权益 · 差 '+fmt(assetSum-leSum)}
+        </div>
+        <div class="gs-balance-card" style="margin-top:16px;">
+          <h3>${is.title}</h3>
+          <table>
+            ${is.rows.map(r => `<tr${r.bold?' class="total"':''}><td>${escapeHtml(r.name)}</td><td class="amount">${fmt(r.amount)}</td></tr>`).join('')}
+          </table>
+        </div>
+        <div class="gs-hint" style="margin-top:16px;">
+          <b>🎓 全流程打通</b>：你刚刚从<b>原始凭证</b> → <b>记账凭证</b> → <b>月末三步结转</b> → <b>资产负债表 + 利润表</b>走完了一个完整会计期间。
+          真实考试常考：收入/费用结转方向、借贷必相等、净利润如何进入未分配利润。
+        </div>
+      `;
+      document.querySelector('.gs-step-btn[data-phase="reports"]').classList.add('done');
+    }
+
+    document.getElementById('r-back').addEventListener('click', () => switchPhase('closing'));
+    document.getElementById('r-restart').addEventListener('click', () => {
+      if (!confirm('清空全部进度，从头再做一遍？')) return;
+      localStorage.removeItem(STATE_KEY);
+      location.reload();
+    });
+
+    /* ---------- 初始化 ---------- */
+    renderVouchers();
+    renderClosing();
+    checkAllVouchersDone();
+    checkAllClosingDone();
+    switchPhase(state.phase);
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>初级会计交互式学习 · 闯关</title>
+  <meta name="description" content="初级会计《实务》与《经济法基础》微粒化交互式学习——对标 SQLBolt，免登录开箱即用。" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button class="btn btn-ghost" id="sidebar-toggle" style="padding:6px 14px;">☰ 课程</button>
+      <div class="brand"><span class="dot"></span>初级会计 · 闯关</div>
+      <nav class="nav-links">
+        <a class="nav-link active" href="index.html">闯关</a>
+        <a class="nav-link" href="exams.html">真题</a>
+        <a class="nav-link" href="grandslam.html">大满贯</a>
+        <a class="nav-link" href="cheatsheet.html">速查表</a>
+        <button class="nav-link" id="reset-btn" title="清除本地进度">重置</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 侧边课程列表 -->
+  <aside class="sidebar" id="sidebar">
+    <h3>课程目录</h3>
+    <div id="sidebar-list"></div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <!-- 主体：左右分栏 -->
+  <main class="page">
+    <section class="split">
+      <article class="card" id="left-pane"></article>
+      <article class="card">
+        <div id="right-pane"></div>
+        <div class="feedback" id="feedback"></div>
+      </article>
+    </section>
+  </main>
+
+  <!-- 底部控制栏 -->
+  <div class="controlbar">
+    <div class="controlbar-inner">
+      <div class="progress">
+        <span>进度</span>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+        <span id="progress-text">0 / 0</span>
+      </div>
+      <button class="btn btn-primary" id="submit-btn">提交</button>
+      <button class="btn btn-primary" id="next-btn" hidden>下一课 →</button>
+    </div>
+  </div>
+
+  <!-- 模态框容器（内容动态渲染） -->
+  <div class="modal-backdrop" id="modal-backdrop"></div>
+
+  <!-- 数据与脚本 -->
+  <script src="data/lessons.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
