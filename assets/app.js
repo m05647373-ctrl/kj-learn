@@ -116,6 +116,7 @@
     /* ----- 左侧知识微粒 ----- */
     leftPane.innerHTML = `
       <div class="lesson-tag">第 ${lesson.lesson_id} 课 · ${escapeHtml(lesson.subject)}</div>
+      ${renderTagBar(lesson.tags)}
       <h1 class="lesson-title">${escapeHtml(lesson.title)}</h1>
       <div class="lesson-content">${escapeHtml(lesson.content)}</div>
       <div class="scenario-box">${escapeHtml(lesson.scenario)}</div>
@@ -123,10 +124,24 @@
     `;
 
     /* ----- 右侧交互区 ----- */
+    const practiceCount = (window.PRACTICE || []).filter(p => p.source_lesson_id === lesson.lesson_id).length;
     rightPane.innerHTML = `
       <div class="sandbox-prompt">${escapeHtml(lesson.prompt)}</div>
       <div id="interact"></div>
+      ${practiceCount > 0 ? `
+        <div class="practice-entry">
+          <button id="practiceBtn" class="practice-btn" type="button">📚 再练 ${practiceCount} 题（举一反三）</button>
+        </div>
+      ` : `
+        <div class="practice-entry practice-entry-empty">
+          <span>📚 本课暂未配置扩展练习题（即将上线）</span>
+        </div>
+      `}
     `;
+    if (practiceCount > 0) {
+      const pbtn = $('#practiceBtn');
+      if (pbtn) pbtn.addEventListener('click', () => openPracticeModal(lesson.lesson_id));
+    }
 
     const interact = $('#interact');
     switch (lesson.interaction_type) {
@@ -745,6 +760,162 @@
       saveState();
     }
     renderLesson(state.currentId);
+  }
+
+  /* ============================================================
+   * 标签条渲染（v2 新增）
+   * ============================================================ */
+  const TAG_TYPE_LABEL = {
+    concept: '概念', calc: '计算', journal: '分录', law: '法条', comprehensive: '综合'
+  };
+  const TAG_LEVEL_LABEL = {
+    basic: '⭐ 基础', improve: '⭐⭐ 进阶', exam: '⭐⭐⭐ 真题级'
+  };
+  const HOT_TAGS = new Set([
+    'borrow-credit','six-elements','inventory-avg','vat-input','vat-transfer-out',
+    'depreciation-sl','depreciation-ddb','payroll','revenue-5step','profit-carry',
+    'limitation','archive','note-time','vat-rate','excise',
+    'iit-comprehensive','iit-special','property-tax','labor-probation'
+  ]);
+  const HOT_LABEL = {
+    'borrow-credit':'借贷方向','six-elements':'六要素','petty-cash':'库存现金',
+    'bad-debt':'坏账准备','note-discount':'票据贴现','inventory-avg':'存货加权平均',
+    'inventory-fifo':'存货先进先出','vat-input':'增值税进项','vat-output':'增值税销项',
+    'vat-transfer-out':'进项税转出','depreciation-sl':'直线折旧','depreciation-ddb':'双倍余额递减',
+    'intangible-amort':'无形资产摊销','short-loan':'短期借款','payroll':'五险一金',
+    'vat-settle':'月末结转增值税','equity-paid-in':'实收资本','surplus-reserve':'盈余公积',
+    'report-mapping':'报表归位','revenue-5step':'收入五步法','profit-carry':'本年利润结转',
+    'income-statement':'利润表勾稽','legal-act':'法律行为','limitation':'诉讼时效',
+    'archive':'档案保管期','accountant-job':'会计任职','note-type':'票据种类',
+    'note-time':'票据时效','vat-rate':'增值税税率','excise':'消费税范围',
+    'cit-taxable':'企业所得税','iit-comprehensive':'个税综合所得','iit-special':'个税专项扣除',
+    'property-tax':'房产税','stamp-tax':'印花税','tax-register':'税务登记',
+    'tax-enforcement':'税收强制','labor-probation':'劳动合同试用期','social-insurance':'社保'
+  };
+
+  function renderTagBar(tags) {
+    if (!tags) return '';
+    const parts = [];
+    if (tags.type)  parts.push(`<span class="tag tag-type">${TAG_TYPE_LABEL[tags.type] || tags.type}</span>`);
+    if (tags.level) parts.push(`<span class="tag tag-level tag-level-${tags.level}">${TAG_LEVEL_LABEL[tags.level] || tags.level}</span>`);
+    if (Array.isArray(tags.hot)) {
+      tags.hot.forEach((h) => {
+        const isHot = HOT_TAGS.has(h);
+        const label = HOT_LABEL[h] || h;
+        parts.push(`<span class="tag tag-hot${isHot ? ' tag-hot-fire' : ''}">${isHot ? '🔥 ' : ''}${escapeHtml(label)}</span>`);
+      });
+    }
+    return `<div class="tag-bar">${parts.join('')}</div>`;
+  }
+
+  /* ============================================================
+   * 练习模式弹层（v2 新增）—— 不影响主线闯关进度
+   * ============================================================ */
+  function openPracticeModal(lessonId) {
+    const pool = (window.PRACTICE || []).filter(p => p.source_lesson_id === lessonId);
+    if (pool.length === 0) return;
+    const lesson = findLesson(lessonId);
+
+    let idx = 0;
+    let correctCnt = 0;
+    let answeredCnt = 0;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'practice-modal-overlay';
+    overlay.innerHTML = `
+      <div class="practice-modal">
+        <div class="practice-modal-header">
+          <div>
+            <div class="practice-modal-title">📚 再练 · ${escapeHtml(lesson.title)}</div>
+            <div class="practice-modal-sub" id="pmSub">第 1 / ${pool.length} 题　·　已答 0 题　·　正确 0 题</div>
+          </div>
+          <button class="practice-modal-close" id="pmClose" type="button">关闭 ✕</button>
+        </div>
+        <div class="practice-modal-body" id="pmBody"></div>
+        <div class="practice-modal-foot">
+          <button class="btn-secondary" id="pmPrev" type="button">← 上一题</button>
+          <button class="btn-primary" id="pmSubmit" type="button">提交答案</button>
+          <button class="btn-primary" id="pmNext" type="button" hidden>下一题 →</button>
+        </div>
+      </div>`;
+    document.body.appendChild(overlay);
+
+    const pmBody = overlay.querySelector('#pmBody');
+    const pmSub  = overlay.querySelector('#pmSub');
+    const pmPrev = overlay.querySelector('#pmPrev');
+    const pmNext = overlay.querySelector('#pmNext');
+    const pmSubmit = overlay.querySelector('#pmSubmit');
+
+    function close() { overlay.remove(); }
+    overlay.querySelector('#pmClose').addEventListener('click', close);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+
+    function renderQ() {
+      const q = pool[idx];
+      const tagBar = renderTagBar({ type: q.type, level: q.level, hot: q.hot });
+      const isMulti = q.interaction_type === 'multi' || q.interaction_type === 'select';
+      const inputType = isMulti ? 'checkbox' : 'radio';
+      const optsHtml = q.options.map((o, i) =>
+        `<label class="practice-opt"><input type="${inputType}" name="pq" value="${i}"><span>${o.label ? '<b>' + o.label + '.</b> ' : ''}${escapeHtml(o.text)}</span></label>`
+      ).join('');
+      pmBody.innerHTML = `
+        ${tagBar}
+        <div class="practice-q-prompt">${escapeHtml(q.prompt)}</div>
+        <div class="practice-opts">${optsHtml}</div>
+        <div class="practice-feedback" id="pmFb"></div>
+      `;
+      pmSub.textContent = `第 ${idx + 1} / ${pool.length} 题　·　已答 ${answeredCnt} 题　·　正确 ${correctCnt} 题`;
+      pmSubmit.hidden = false;
+      pmSubmit.disabled = false;
+      pmSubmit.textContent = '提交答案';
+      pmNext.hidden = true;
+      pmPrev.disabled = (idx === 0);
+    }
+
+    pmSubmit.addEventListener('click', () => {
+      const q = pool[idx];
+      const isMulti = q.interaction_type === 'multi' || q.interaction_type === 'select';
+      const checked = Array.from(pmBody.querySelectorAll('input[name="pq"]:checked')).map(i => Number(i.value));
+      if (checked.length === 0) {
+        const fb = pmBody.querySelector('#pmFb');
+        fb.className = 'practice-feedback fb-warn';
+        fb.textContent = '请先选择答案再提交';
+        return;
+      }
+      const correctIdx = q.options.map((o, i) => o.is_correct ? i : -1).filter(i => i >= 0);
+      const isCorrect = isMulti
+        ? (checked.length === correctIdx.length && checked.every(i => correctIdx.includes(i)))
+        : (checked.length === 1 && correctIdx.includes(checked[0]));
+      answeredCnt += 1;
+      if (isCorrect) correctCnt += 1;
+
+      // 高亮正误
+      pmBody.querySelectorAll('.practice-opt').forEach((label, i) => {
+        if (correctIdx.includes(i)) label.classList.add('opt-correct');
+        if (checked.includes(i) && !correctIdx.includes(i)) label.classList.add('opt-wrong');
+        label.querySelector('input').disabled = true;
+      });
+      const fb = pmBody.querySelector('#pmFb');
+      fb.className = 'practice-feedback ' + (isCorrect ? 'fb-ok' : 'fb-err');
+      fb.innerHTML = `<b>${isCorrect ? '✅ 答对了' : '❌ 答错了'}</b><br>${escapeHtml(q.explain || '')}`;
+      pmSub.textContent = `第 ${idx + 1} / ${pool.length} 题　·　已答 ${answeredCnt} 题　·　正确 ${correctCnt} 题`;
+      pmSubmit.hidden = true;
+      pmNext.hidden = (idx === pool.length - 1);
+      if (idx === pool.length - 1) {
+        pmSubmit.hidden = false;
+        pmSubmit.textContent = `本轮结束 · 正确 ${correctCnt}/${pool.length}`;
+        pmSubmit.disabled = true;
+      }
+    });
+
+    pmNext.addEventListener('click', () => {
+      if (idx < pool.length - 1) { idx += 1; renderQ(); }
+    });
+    pmPrev.addEventListener('click', () => {
+      if (idx > 0) { idx -= 1; renderQ(); }
+    });
+
+    renderQ();
   }
 
   document.addEventListener('DOMContentLoaded', boot);

@@ -30,6 +30,7 @@ window.LESSONS = [
     scenario:
       '场景：你开了一家奶茶店。柜台里的现金、仓库里的珍珠和茶叶、已付款使用的制冰机、顾客赊账未付的单子——哪些才算资产？',
     interaction_type: 'select',
+    tags: { type: 'concept', level: 'basic', hot: ['six-elements'] },
     prompt: '从下列词条中，点选所有属于「资产」的项目（可多选）：',
     options: [
       { text: '库存现金', is_correct: true },
@@ -56,6 +57,7 @@ window.LESSONS = [
     scenario:
       '场景：期末盘点，财务小李把「应付职工薪酬」记到了所有者权益里，导致资产负债表不平。先把要素类别背牢，才能避免此类错误。',
     interaction_type: 'multi',
+    tags: { type: 'comprehensive', level: 'improve', hot: ['six-elements'] },
     prompt: '下列科目中，属于「所有者权益」的有（　）？【不定项 · 漏选 / 错选均不得分】',
     options: [
       { label: 'A', text: '实收资本',     is_correct: true  },
@@ -80,6 +82,7 @@ window.LESSONS = [
     scenario:
       '场景：期末整理科目余额表时，财务小李把若干科目混在一起。请你把它们拖进正确的要素栏，看看资产负债表两边能否摆平。',
     interaction_type: 'drag',
+    tags: { type: 'concept', level: 'basic', hot: ['six-elements', 'borrow-credit'] },
     prompt: '把下列科目拖到对应要素栏：',
     pool_label: '待归类科目',
     items: [
@@ -119,6 +122,7 @@ window.LESSONS = [
       '借贷记账法规则：资产/费用类，借增贷减；负债/所有者权益/收入类，贷增借减。每笔分录「有借必有贷，借贷必相等」。',
     scenario: '场景：公司从银行取现金 5,000 元备用。库存现金增加，银行存款减少，两边都是资产。',
     interaction_type: 'journal',
+    tags: { type: 'journal', level: 'basic', hot: ['borrow-credit'] },
     prompt: '请为「从银行提取现金 5,000 元」做会计分录：',
     slots: [
       {
@@ -147,6 +151,7 @@ window.LESSONS = [
       '试算平衡：① 发生额合计借 = 贷；② 余额合计借 = 贷。不平一定错，平不保证全对。重记、漏记、借贷方向颠倒等错误都无法通过试算发现。',
     scenario: '场景：月末借方合计 180 万、贷方合计 179.5 万，差 0.5 万，一定记错了。',
     interaction_type: 'single',
+    tags: { type: 'concept', level: 'improve', hot: ['borrow-credit'] },
     prompt: '下列错误，能通过试算平衡表发现的是（　　）？',
     options: [
       { text: '重记了某笔经济业务', is_correct: false },
@@ -167,6 +172,7 @@ window.LESSONS = [
       '业务场景：公司销售商品开出增值税专票，价款 20,000 元、税额 2,600 元，款收到存入银行。成本暂不考虑。请把科目词条拖到对应栏位：借方科目表示资产或费用增加，贷方科目表示收入或负债增加。',
     scenario: '场景：一笔销售业务对应 3 个科目。把它们拖进正确的借/贷栏即可。',
     interaction_type: 'drag',
+    tags: { type: 'journal', level: 'basic', hot: ['borrow-credit'] },
     prompt: '拖动下列科目到正确栏位：',
     items: ['银行存款', '主营业务收入', '应交税费——应交增值税（销项税额）'],
     answer: {
@@ -188,6 +194,7 @@ window.LESSONS = [
       '库存现金使用范围受限，超过限额须存入银行。备用金由出纳管理，实行「定额备用金」制度：核定额度、月末盘点、差额补齐。',
     scenario: '场景：公司核定库存现金限额 3,000 元，实际期末库存 8,500 元，多余需当日存入银行。',
     interaction_type: 'single',
+    tags: { type: 'law', level: 'basic', hot: ['petty-cash'] },
     prompt: '下列业务，可以使用现金结算的是（　　）？',
     options: [
       { text: '向供应商采购原材料 100,000 元', is_correct: false },
@@ -208,6 +215,7 @@ window.LESSONS = [
       '期末按预期信用损失模型计提坏账准备：借「信用减值损失」，贷「坏账准备」。「坏账准备」是应收账款的备抵科目，资产类但余额在贷方。',
     scenario: '场景：期末应收账款余额 500,000 元，信用损失率 2%。坏账准备账户原有贷方余额 4,000 元。',
     interaction_type: 'single',
+    tags: { type: 'calc', level: 'improve', hot: ['bad-debt'] },
     prompt: '本期应补提坏账准备的金额是（　　）？',
     options: [
       { text: '4,000 元', is_correct: false },
@@ -228,6 +236,7 @@ window.LESSONS = [
       '带息票据到期值 = 票面金额 + 票面利息；贴现利息 = 到期值 × 贴现率 × 贴现天数 / 360；贴现所得 = 到期值 − 贴现利息。',
     scenario: '场景：企业持有面值 100,000 元、期限 6 个月、票面利率 4% 的银行承兑汇票，持有 2 个月后贴现，贴现率 6%。',
     interaction_type: 'single',
+    tags: { type: 'concept', level: 'improve', hot: ['note-discount'] },
     prompt: '该票据的贴现所得（实际收到金额）最接近（　　）？',
     options: [
       { text: '98,960 元', is_correct: false },
@@ -251,6 +260,7 @@ window.LESSONS = [
       '一般纳税人购入原材料：按不含税价计入「原材料」；增值税进项税额单独记入「应交税费——应交增值税（进项税额）」；价税合计挂「应付账款」或冲减「银行存款」。',
     scenario: '场景：采购原材料一批，专票价款 10,000、税率 13%、税额 1,300，款未付。',
     interaction_type: 'journal',
+    tags: { type: 'journal', level: 'improve', hot: ['vat-input'] },
     prompt: '请完成上述采购业务的会计分录（款未付）：',
     slots: [
       {
@@ -286,6 +296,7 @@ window.LESSONS = [
     scenario:
       '场景：月初库存 100 件 @ 10 元；5 日购入 200 件 @ 12 元；15 日购入 100 件 @ 14 元；本月共发出 300 件。',
     interaction_type: 'single',
+    tags: { type: 'calc', level: 'improve', hot: ['inventory-avg'] },
     prompt: '本月发出 300 件存货的成本最接近（　　）？',
     options: [
       { text: '3,300 元', is_correct: false },
@@ -307,6 +318,7 @@ window.LESSONS = [
       '业务场景：公司从供应商处采购原材料一批，取得增值税专用发票。价款 50,000 元、进项税额 6,500 元，货款尚未支付，材料已验收入库。把科目词条拖到正确栏位：借方记资产或费用的增加，贷方记负债或权益的增加。',
     scenario: '场景：一笔采购业务对应 3 个科目，分别落在借/贷两边。',
     interaction_type: 'drag',
+    tags: { type: 'journal', level: 'basic', hot: ['vat-input'] },
     prompt: '拖动下列科目到正确栏位：',
     items: ['原材料', '应交税费——应交增值税（进项税额）', '应付账款'],
     answer: {
@@ -329,6 +341,7 @@ window.LESSONS = [
       '年限平均法：年折旧额 =（原值 − 预计净残值）÷ 预计使用年限。规则：当月增加的当月不提、下月起提；当月减少的当月照提、下月停提。',
     scenario: '场景：2024 年 3 月 10 日购入设备，原值 120,000、使用 5 年、净残值 6,000。',
     interaction_type: 'single',
+    tags: { type: 'calc', level: 'improve', hot: ['depreciation-sl'] },
     prompt: '该设备 2024 年全年应计提折旧为（　　）？',
     options: [
       { text: '22,800 元', is_correct: false },
@@ -350,6 +363,7 @@ window.LESSONS = [
       '双倍余额递减法：年折旧率 = 2 ÷ 预计使用年限；年折旧额 = 期初账面净值 × 年折旧率；最后两年改用直线法（剩余净值扣残值后平均）。',
     scenario: '场景：原值 100,000、使用 5 年、净残值 4,000，采用双倍余额递减法。',
     interaction_type: 'single',
+    tags: { type: 'calc', level: 'exam', hot: ['depreciation-ddb'] },
     prompt: '该资产第 2 年应计提的折旧额为（　　）？',
     options: [
       { text: '40,000 元', is_correct: false },
@@ -371,6 +385,7 @@ window.LESSONS = [
       '使用寿命有限的无形资产应在使用寿命内摊销；使用寿命不确定的不摊销但每年减值测试。自用：借「管理费用」贷「累计摊销」；出租：借「其他业务成本」贷「累计摊销」。',
     scenario: '场景：公司购入一项专利 120,000 元，预计使用 10 年，自用于生产管理。',
     interaction_type: 'journal',
+    tags: { type: 'journal', level: 'improve', hot: ['intangible-amort'] },
     prompt: '请做「一年摊销」的会计分录：',
     slots: [
       {
@@ -402,6 +417,7 @@ window.LESSONS = [
     scenario:
       '场景：2024-07-01 取得一年期短期借款 500,000 元，年利率 6%，按季计提利息，到期还本付息。',
     interaction_type: 'journal',
+    tags: { type: 'journal', level: 'improve', hot: ['short-loan'] },
     prompt: '请做「9 月末计提利息」的会计分录：',
     slots: [
       {
@@ -431,6 +447,7 @@ window.LESSONS = [
     scenario:
       '场景：当月车间工人工资 80,000、管理人员工资 40,000。计提养老保险：单位 16%，个人 8%。',
     interaction_type: 'single',
+    tags: { type: 'calc', level: 'improve', hot: ['payroll'] },
     prompt: '关于工资与社保的分录，下列说法正确的是（　　）？',
     options: [
       { text: '个人承担部分直接借「管理费用」', is_correct: false },
@@ -453,6 +470,7 @@ window.LESSONS = [
     scenario:
       '场景：某一般纳税人当月销项税额 26,000、进项税额 18,000、已交税金 3,000，月末结转。',
     interaction_type: 'single',
+    tags: { type: 'calc', level: 'improve', hot: ['vat-settle'] },
     prompt: '月末该企业应向「未交增值税」结转的金额是（　　）？',
     options: [
       { text: '26,000 元', is_correct: false },
@@ -476,6 +494,7 @@ window.LESSONS = [
     scenario:
       '场景：股东以银行存款 1,200,000 元投入甲有限责任公司，合同约定在注册资本中的份额为 1,000,000 元。',
     interaction_type: 'journal',
+    tags: { type: 'journal', level: 'improve', hot: ['equity-paid-in'] },
     prompt: '请完成股东出资的会计分录：',
     slots: [
       {
@@ -510,6 +529,7 @@ window.LESSONS = [
       '公司制企业按当年净利润 10% 计提「法定盈余公积」，累计达注册资本 50% 以上可不再计提。盈余公积可弥补亏损、转增资本、发放股利。',
     scenario: '场景：企业本年度实现净利润 800,000 元，法定盈余公积尚未达到上限。',
     interaction_type: 'single',
+    tags: { type: 'calc', level: 'basic', hot: ['surplus-reserve'] },
     prompt: '本年度应计提法定盈余公积的金额是（　　）？',
     options: [
       { text: '40,000 元', is_correct: false },
@@ -530,6 +550,7 @@ window.LESSONS = [
       '财务报表两大主表各有归属：资产负债表（时点表）反映资产、负债、所有者权益三大要素的余额；利润表（期间表）反映收入、费用、利润的发生额。把项目放对表，才能保证两张表都不串线。',
     scenario: '场景：月末做报表，实习生把收入、费用和资产科目混着放，导致利润表科目跑进了资产负债表。请你把项目拖回正确的表里。',
     interaction_type: 'drag',
+    tags: { type: 'concept', level: 'basic', hot: ['report-mapping'] },
     prompt: '把下列项目拖进对应报表：',
     pool_label: '待归位项目',
     items: [
@@ -569,6 +590,7 @@ window.LESSONS = [
     scenario:
       '场景：公司销售设备同时提供 1 年免费售后维修服务。合同总价 50,000。单独售价：设备 48,000、维修 4,000。',
     interaction_type: 'single',
+    tags: { type: 'concept', level: 'improve', hot: ['revenue-5step'] },
     prompt: '该合同应确认的设备销售收入（交易价格分摊后）最接近（　　）？',
     options: [
       { text: '50,000 元', is_correct: false },
@@ -591,6 +613,7 @@ window.LESSONS = [
     scenario:
       '场景：12 月末，主营业务收入 500,000、主营业务成本 300,000、管理费用 80,000、所得税费用 30,000。',
     interaction_type: 'single',
+    tags: { type: 'journal', level: 'basic', hot: ['profit-carry'] },
     prompt: '结转后本年利润的余额是（　　）？',
     options: [
       { text: '借方 90,000', is_correct: false },
@@ -611,6 +634,7 @@ window.LESSONS = [
       '利润表勾稽：营业收入 − 营业成本 − 税金及附加 − 销售费用 − 管理费用 − 研发费用 − 财务费用 + 其他收益 + 投资收益 ± 公允价值变动 − 信用减值损失 − 资产减值损失 + 资产处置收益 = 营业利润。营业利润 + 营业外收入 − 营业外支出 = 利润总额。',
     scenario: '场景：营业收入 1,000、营业成本 600、税金及附加 20、三费合计 150、营业外收入 30。',
     interaction_type: 'single',
+    tags: { type: 'concept', level: 'improve', hot: ['income-statement'] },
     prompt: '根据上述数据，利润总额为（　　）？',
     options: [
       { text: '230', is_correct: false },
@@ -635,6 +659,7 @@ window.LESSONS = [
     scenario:
       '场景：10 岁小明未经父母同意，将父母的手机以 2,000 元卖给了邻居。该行为效力如何？',
     interaction_type: 'single',
+    tags: { type: 'law', level: 'basic', hot: ['legal-act'] },
     prompt: '下列民事法律行为，属于「效力待定」的是（　　）？',
     options: [
       { text: '8 周岁儿童购买文具', is_correct: false },
@@ -657,6 +682,7 @@ window.LESSONS = [
     scenario:
       '场景：2022-03-01 甲欠乙 10 万元到期未还；2024-01-15 乙发催款函，甲承诺 3 月底前还。问乙请求法院保护的诉讼时效期间何时届满？',
     interaction_type: 'single',
+    tags: { type: 'law', level: 'improve', hot: ['limitation'] },
     prompt: '本案诉讼时效最终届满日是（　　）？',
     options: [
       { text: '2025-03-01', is_correct: false },
@@ -680,6 +706,7 @@ window.LESSONS = [
       '会计档案的保管期限分 10 年和 30 年两档（2016 年新规）。年度财务会计报告、会计档案鉴定意见书、会计档案保管清册保管期限为「永久」。',
     scenario: '场景：公司 2023 年度原始凭证已归档，问该批凭证应保管到哪一年？',
     interaction_type: 'single',
+    tags: { type: 'law', level: 'basic', hot: ['archive'] },
     prompt: '下列会计档案保管期限描述错误的是（　　）？',
     options: [
       { text: '原始凭证、记账凭证保管 30 年', is_correct: false },
@@ -700,6 +727,7 @@ window.LESSONS = [
       '会计机构负责人（会计主管）须具备会计师以上专业技术资格，或从事会计工作 3 年以上。国家机关、国有企事业单位的单位负责人的直系亲属不得担任本单位会计机构负责人，且不得与单位负责人互任出纳。把人员情形拖到对应栏位，判断能否担任会计主管（或关键岗位）。',
     scenario: '场景：某国有企业正在选聘财务部经理（会计机构负责人）。下列几位候选人或情形，哪些合法、哪些必须回避？',
     interaction_type: 'drag',
+    tags: { type: 'law', level: 'basic', hot: ['accountant-job'] },
     prompt: '把下列情形拖到对应栏位：',
     pool_label: '候选情形',
     items: [
@@ -739,6 +767,7 @@ window.LESSONS = [
       '票据包括汇票、本票、支票。汇票分银行汇票、商业汇票（又分银行承兑、商业承兑）。本票在我国特指银行本票（见票即付）。支票分现金支票（只能提现）、转账支票、普通支票。',
     scenario: '场景：甲公司为跨省大额付款选择票据工具，不允许退票，希望见票即付。',
     interaction_type: 'single',
+    tags: { type: 'concept', level: 'basic', hot: ['note-type'] },
     prompt: '最符合上述要求的票据是（　　）？',
     options: [
       { text: '商业承兑汇票', is_correct: false },
@@ -760,6 +789,7 @@ window.LESSONS = [
       '汇票、本票持票人对出票人、承兑人的权利：自票据到期日起 2 年；见票即付的本票自出票日起 2 年。支票持票人对出票人的权利：自出票日起 6 个月。追索权：自被拒绝日起 6 个月；再追索权：自清偿日或被起诉日起 3 个月。',
     scenario: '场景：2024-03-01 签发商业汇票，票面到期日 2024-09-01。问持票人对承兑人的权利何时消灭？',
     interaction_type: 'single',
+    tags: { type: 'law', level: 'improve', hot: ['note-time'] },
     prompt: '持票人对承兑人行使票据权利的时效届满日是（　　）？',
     options: [
       { text: '2024-09-01', is_correct: false },
@@ -782,6 +812,7 @@ window.LESSONS = [
       '现行一般纳税人增值税税率：13%（大多数货物及进口）、9%（交通运输/邮政/基础电信/建筑/不动产/农产品）、6%（现代服务、金融、生活服务等）、出口 0。小规模纳税人征收率 3%（阶段性优惠 1%）。',
     scenario: '场景：一般纳税人某月销售不动产、运输服务、咨询服务，四选一确定税率。',
     interaction_type: 'single',
+    tags: { type: 'law', level: 'basic', hot: ['vat-rate'] },
     prompt: '下列业务适用 9% 增值税税率的是（　　）？',
     options: [
       { text: '销售机器设备', is_correct: false },
@@ -802,6 +833,7 @@ window.LESSONS = [
       '消费税 15 个税目：烟、酒、高档化妆品、贵重首饰及珠宝玉石、鞭炮烟火、成品油、摩托车、小汽车、高尔夫球及球具、高档手表、游艇、木制一次性筷子、实木地板、电池、涂料。',
     scenario: '场景：某企业同时销售香烟、白酒、普通化妆品、啤酒花。哪些交消费税？',
     interaction_type: 'select',
+    tags: { type: 'concept', level: 'basic', hot: ['excise'] },
     prompt: '下列商品中，属于消费税征税范围的是（可多选）：',
     options: [
       { text: '香烟', is_correct: true },
@@ -828,6 +860,7 @@ window.LESSONS = [
     scenario:
       '场景：某小型微利企业 2024 年收入 500 万、成本费用 420 万、营业外支出（公益捐赠）10 万。假设利润总额在公益捐赠 12% 扣除限额内允许全额扣除。',
     interaction_type: 'single',
+    tags: { type: 'calc', level: 'improve', hot: ['cit-taxable'] },
     prompt: '该企业应纳税所得额为（　　）？',
     options: [
       { text: '80 万元', is_correct: false },
@@ -849,6 +882,7 @@ window.LESSONS = [
     scenario:
       '场景：张先生 2024 年综合所得应纳税所得额（扣完起征点、五险一金、专项附加后）为 96,000 元。适用税率 10%、速算扣除数 2,520。',
     interaction_type: 'single',
+    tags: { type: 'calc', level: 'improve', hot: ['iit-comprehensive'] },
     prompt: '张先生 2024 年综合所得应纳个人所得税为（　　）？',
     options: [
       { text: '9,600 元', is_correct: false },
@@ -872,6 +906,7 @@ window.LESSONS = [
     scenario:
       '场景：某企业自有办公楼原值 2,000 万元，当地扣除比例 30%；同时对外出租仓库一间年租金 60 万元。',
     interaction_type: 'single',
+    tags: { type: 'calc', level: 'exam', hot: ['property-tax'] },
     prompt: '该企业当年应纳房产税合计（　　）？',
     options: [
       { text: '16.8 万元', is_correct: false },
@@ -893,6 +928,7 @@ window.LESSONS = [
       '印花税只对税法列举的「应税凭证」征收，未列入名录的一律不征。常见应税：购销合同、借款合同、产权转移书据、营业账簿、财产租赁合同、加工承揽合同等。常见不征税：人身保险合同、委托代理合同（非产权转移）、个人租赁住房合同、企业内部承包经营合同等。',
     scenario: '场景：企业法务整理近期签订的合同，请按印花税税法判断哪些需要申报。',
     interaction_type: 'drag',
+    tags: { type: 'concept', level: 'basic', hot: ['stamp-tax'] },
     prompt: '把下列凭证拖到对应栏位：',
     pool_label: '待判定凭证',
     items: [
@@ -928,6 +964,7 @@ window.LESSONS = [
       '从事生产、经营的纳税人，自领取营业执照之日起 30 日内向税务机关申报办理税务登记；变更、注销登记也有相应期限。使用发票应当按规定开具、取得、保管，不得虚开。',
     scenario: '场景：A 公司 2024-03-10 领取营业执照，法定办理税务登记的最晚日期是？',
     interaction_type: 'single',
+    tags: { type: 'law', level: 'basic', hot: ['tax-register'] },
     prompt: 'A 公司办理税务登记的最晚日期是（　　）？',
     options: [
       { text: '2024-03-20', is_correct: false },
@@ -948,6 +985,7 @@ window.LESSONS = [
       '税收保全措施：针对尚未到期的欠税风险，经县以上税务局局长批准可冻结存款、查封扣押商品。强制执行：对逾期不缴者，可从存款中扣缴、拍卖查封扣押财产抵税。两者均不得及于个人/被扶养人维持生活必需品。',
     scenario: '场景：纳税人逾期未缴税款，经催告仍不缴纳，税务机关拟采取强制执行。',
     interaction_type: 'single',
+    tags: { type: 'law', level: 'improve', hot: ['tax-enforcement'] },
     prompt: '下列财产，税务机关「不得」作为强制执行标的的是（　　）？',
     options: [
       { text: '企业生产设备', is_correct: false },
@@ -970,6 +1008,7 @@ window.LESSONS = [
       '试用期规则：合同 3 月以下或以完成一定工作任务为期限的，不得约定试用期；3 月–1 年，试用期不超过 1 月；1–3 年，不超过 2 月；3 年以上及无固定期限，不超过 6 月。同一用人单位与同一劳动者只能约定一次试用期。',
     scenario: '场景：公司与新员工签订 2 年期劳动合同，约定试用期 3 个月。合法吗？',
     interaction_type: 'single',
+    tags: { type: 'law', level: 'basic', hot: ['labor-probation'] },
     prompt: '下列试用期约定合法的是（　　）？',
     options: [
       { text: '6 个月劳动合同约定试用期 2 个月', is_correct: false },
@@ -990,6 +1029,7 @@ window.LESSONS = [
       '社会保险五险：养老、医疗、失业、工伤、生育。由单位和个人共同缴纳的有养老、医疗、失业；由单位全额承担的有工伤、生育（2019 年起已与医疗合并征收，但单位仍承担）。',
     scenario: '场景：李女士参加五险，哪些是她个人也需要缴费的？',
     interaction_type: 'select',
+    tags: { type: 'law', level: 'basic', hot: ['social-insurance'] },
     prompt: '下列险种，需要个人「与」单位共同缴费的是（可多选）：',
     options: [
       { text: '养老保险', is_correct: true },
