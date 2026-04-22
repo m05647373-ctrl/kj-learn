@@ -3813,4 +3813,477 @@ window.PRACTICE.push(
     ],
     explain: 'D 错误：进口应税消费品照征消费税；E 错误：增值税在各流通环节征收，消费税一般在生产/进口环节，部分在零售环节。'
   }
+,
+  {
+    practice_id: 10321, source_lesson_id: 33,
+    type: 'calc', level: 'basic', hot: ['cit-taxable'],
+    interaction_type: 'single',
+    prompt: '某企业 2024 年利润总额 70 万元，无纳税调整事项，适用税率 25%。应纳企业所得税为（ ）。',
+    options: [
+      { text: '17.5 万元', is_correct: true },
+      { text: '21 万元', is_correct: false },
+      { text: '14 万元', is_correct: false },
+      { text: '25 万元', is_correct: false }
+    ],
+    explain: '应纳税所得额 = 利润总额（无调整）= 70 万；应纳税 = 70 × 25% = 17.5 万。'
+  },
+  {
+    practice_id: 10322, source_lesson_id: 33,
+    type: 'calc', level: 'basic', hot: ['cit-taxable'],
+    interaction_type: 'single',
+    prompt: '高新技术企业认定后，其企业所得税税率为（ ）。',
+    options: [
+      { text: '25%', is_correct: false },
+      { text: '20%', is_correct: false },
+      { text: '15%', is_correct: true },
+      { text: '10%', is_correct: false }
+    ],
+    explain: '高新技术企业适用 15% 优惠税率；普通企业 25%；小微企业有更低档次优惠。'
+  },
+  {
+    practice_id: 10323, source_lesson_id: 33,
+    type: 'calc', level: 'basic', hot: ['cit-taxable'],
+    interaction_type: 'single',
+    prompt: '某企业 2023 年亏损 80 万，2024 年利润总额 200 万（无其他调整）。2024 年应纳税所得额为（ ）万元。',
+    options: [
+      { text: '200', is_correct: false },
+      { text: '120', is_correct: true },
+      { text: '80', is_correct: false },
+      { text: '160', is_correct: false }
+    ],
+    explain: '以前年度亏损允许在税前弥补，期限最长 5 年。应纳税所得额 = 200 − 80 = 120 万。'
+  },
+  {
+    practice_id: 10324, source_lesson_id: 33,
+    type: 'calc', level: 'improve', hot: ['cit-taxable'],
+    interaction_type: 'single',
+    prompt: '某企业 2024 年利润总额 170 万，通过公益性社会组织向灾区捐款 25 万。公益性捐赠税前扣除限额为（ ）万元。',
+    options: [
+      { text: '20.4', is_correct: true },
+      { text: '17', is_correct: false },
+      { text: '25', is_correct: false },
+      { text: '12', is_correct: false }
+    ],
+    explain: '扣除限额 = 年度利润总额 × 12% = 170 × 12% = 20.4 万。实际捐赠 25 万超限，超出 4.6 万需调增应纳税所得额。'
+  },
+  {
+    practice_id: 10325, source_lesson_id: 33,
+    type: 'calc', level: 'improve', hot: ['cit-taxable'],
+    interaction_type: 'single',
+    prompt: '接上题，该企业 2024 年应纳税所得额为（ ）万元。',
+    options: [
+      { text: '174.6', is_correct: true },
+      { text: '170', is_correct: false },
+      { text: '145', is_correct: false },
+      { text: '165.4', is_correct: false }
+    ],
+    explain: '捐赠超出限额 4.6 万不得扣除，调增：170 + 4.6 = 174.6 万。'
+  },
+  {
+    practice_id: 10326, source_lesson_id: 33,
+    type: 'calc', level: 'improve', hot: ['cit-taxable'],
+    interaction_type: 'single',
+    prompt: '某高新技术企业应纳税所得额 400 万元，若适用 15% 优惠税率，比普通企业（25%）节税（ ）万元。',
+    options: [
+      { text: '40', is_correct: true },
+      { text: '60', is_correct: false },
+      { text: '20', is_correct: false },
+      { text: '100', is_correct: false }
+    ],
+    explain: '普通税 = 400 × 25% = 100 万；优惠税 = 400 × 15% = 60 万；节税 = 40 万。'
+  },
+  {
+    practice_id: 10327, source_lesson_id: 33,
+    type: 'concept', level: 'improve', hot: ['cit-taxable'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，计算企业所得税应纳税所得额时不得扣除的有（ ）。',
+    options: [
+      { label: 'A', text: '向投资者支付的股息', is_correct: true },
+      { label: 'B', text: '税收滞纳金', is_correct: true },
+      { label: 'C', text: '超过限额的公益性捐赠', is_correct: true },
+      { label: 'D', text: '合理的职工福利费', is_correct: false }
+    ],
+    explain: 'A 股息属利润分配，不得扣除；B 税收滞纳金不得扣除；C 超限捐赠不得扣除；D 职工福利费在工资总额 14% 以内可扣除。'
+  },
+  {
+    practice_id: 10328, source_lesson_id: 33,
+    type: 'concept', level: 'exam', hot: ['cit-taxable'],
+    interaction_type: 'single',
+    prompt: '【真题级】企业所得税中，关于亏损弥补的说法正确的是（ ）。',
+    options: [
+      { text: '亏损可无限期向后结转弥补', is_correct: false },
+      { text: '亏损可向前结转退税', is_correct: false },
+      { text: '一般企业亏损向后结转最长 5 年', is_correct: true },
+      { text: '高新技术企业亏损向后结转最长 5 年', is_correct: false }
+    ],
+    explain: '一般企业 5 年；高新技术企业和科技型中小企业自 2018 年起可延长至 10 年。'
+  },
+  {
+    practice_id: 10329, source_lesson_id: 33,
+    type: 'concept', level: 'exam', hot: ['cit-taxable'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列收入中，属于企业所得税免税收入的有（ ）。',
+    options: [
+      { label: 'A', text: '国债利息收入', is_correct: true },
+      { label: 'B', text: '符合条件的居民企业间股息红利', is_correct: true },
+      { label: 'C', text: '财政拨款', is_correct: false },
+      { label: 'D', text: '接受捐赠收入', is_correct: false }
+    ],
+    explain: 'A/B 是免税收入；C 财政拨款属不征税收入（非免税）；D 接受捐赠资产计入应税收入。免税 vs 不征税是高频考点。'
+  },
+  {
+    practice_id: 10331, source_lesson_id: 34,
+    type: 'calc', level: 'basic', hot: ['iit-comprehensive'],
+    interaction_type: 'single',
+    prompt: '居民个人综合所得应纳税所得额 36,000 元，适用税率 3%，速算扣除数 0。应纳个人所得税为（ ）元。',
+    options: [
+      { text: '1,080', is_correct: true },
+      { text: '720', is_correct: false },
+      { text: '1,800', is_correct: false },
+      { text: '2,160', is_correct: false }
+    ],
+    explain: '应纳税 = 36,000 × 3% − 0 = 1,080 元。'
+  },
+  {
+    practice_id: 10332, source_lesson_id: 34,
+    type: 'calc', level: 'basic', hot: ['iit-comprehensive'],
+    interaction_type: 'single',
+    prompt: '居民个人综合所得应纳税所得额 144,000 元，适用税率 10%，速算扣除数 2,520 元。应纳税为（ ）元。',
+    options: [
+      { text: '14,400', is_correct: false },
+      { text: '11,880', is_correct: true },
+      { text: '12,000', is_correct: false },
+      { text: '9,600', is_correct: false }
+    ],
+    explain: '应纳税 = 144,000 × 10% − 2,520 = 11,880 元。'
+  },
+  {
+    practice_id: 10333, source_lesson_id: 34,
+    type: 'calc', level: 'improve', hot: ['iit-comprehensive'],
+    interaction_type: 'single',
+    prompt: '张女士 2024 年工资薪金 360,000 元，专项扣除 12,000 元，专项附加扣除 24,000 元，基本减除费用 60,000 元。应纳税所得额为（ ）元。',
+    options: [
+      { text: '264,000', is_correct: true },
+      { text: '288,000', is_correct: false },
+      { text: '300,000', is_correct: false },
+      { text: '276,000', is_correct: false }
+    ],
+    explain: '360,000 − 60,000 − 12,000 − 24,000 = 264,000 元。'
+  },
+  {
+    practice_id: 10334, source_lesson_id: 34,
+    type: 'calc', level: 'improve', hot: ['iit-comprehensive'],
+    interaction_type: 'single',
+    prompt: '接上题，264,000 元适用税率 20%，速算扣除数 16,920 元。张女士应纳个人所得税为（ ）元。',
+    options: [
+      { text: '35,880', is_correct: true },
+      { text: '52,800', is_correct: false },
+      { text: '42,120', is_correct: false },
+      { text: '26,400', is_correct: false }
+    ],
+    explain: '264,000 × 20% − 16,920 = 52,800 − 16,920 = 35,880 元。'
+  },
+  {
+    practice_id: 10335, source_lesson_id: 34,
+    type: 'calc', level: 'improve', hot: ['iit-comprehensive'],
+    interaction_type: 'single',
+    prompt: '李先生取得一次性劳务报酬 50,000 元，预扣预缴时应纳税所得额为（ ）元。',
+    options: [
+      { text: '50,000', is_correct: false },
+      { text: '40,000', is_correct: true },
+      { text: '45,000', is_correct: false },
+      { text: '35,000', is_correct: false }
+    ],
+    explain: '劳务报酬预扣预缴：应纳税所得额 = 50,000 × (1 − 20%) = 40,000 元。'
+  },
+  {
+    practice_id: 10336, source_lesson_id: 34,
+    type: 'calc', level: 'improve', hot: ['iit-comprehensive'],
+    interaction_type: 'single',
+    prompt: '接上题，40,000 元适用预扣率 30%，速算扣除数 2,000 元。预扣预缴税额为（ ）元。',
+    options: [
+      { text: '10,000', is_correct: true },
+      { text: '12,000', is_correct: false },
+      { text: '8,000', is_correct: false },
+      { text: '14,000', is_correct: false }
+    ],
+    explain: '预扣税 = 40,000 × 30% − 2,000 = 10,000 元。'
+  },
+  {
+    practice_id: 10337, source_lesson_id: 34,
+    type: 'concept', level: 'improve', hot: ['iit-comprehensive'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，属于居民个人综合所得的有（ ）。',
+    options: [
+      { label: 'A', text: '工资薪金所得', is_correct: true },
+      { label: 'B', text: '劳务报酬所得', is_correct: true },
+      { label: 'C', text: '稿酬所得', is_correct: true },
+      { label: 'D', text: '特许权使用费所得', is_correct: true },
+      { label: 'E', text: '经营所得', is_correct: false }
+    ],
+    explain: '综合所得四项：工资薪金 + 劳务报酬 + 稿酬 + 特许权使用费。经营所得单独计税，不并入综合所得。'
+  },
+  {
+    practice_id: 10338, source_lesson_id: 34,
+    type: 'concept', level: 'exam', hot: ['iit-comprehensive'],
+    interaction_type: 'single',
+    prompt: '【真题级】居民个人与非居民个人的区分标准是（ ）。',
+    options: [
+      { text: '是否具有中国国籍', is_correct: false },
+      { text: '在中国境内有无住所，或无住所但居住满 183 天', is_correct: true },
+      { text: '是否在中国境内工作', is_correct: false },
+      { text: '是否取得中国收入', is_correct: false }
+    ],
+    explain: '居民个人：在中国境内有住所，或无住所但一个纳税年度内在境内居住满 183 天。与国籍无关。'
+  },
+  {
+    practice_id: 10339, source_lesson_id: 34,
+    type: 'concept', level: 'exam', hot: ['iit-comprehensive'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于专项附加扣除的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '子女教育每月可扣除 2,000 元（每个子女）', is_correct: true },
+      { label: 'B', text: '继续教育学历阶段每月扣 400 元', is_correct: true },
+      { label: 'C', text: '首套住房贷款利息每月扣 1,000 元', is_correct: true },
+      { label: 'D', text: '独生子女赡养老人每月扣 3,000 元', is_correct: true },
+      { label: 'E', text: '专项附加扣除由用人单位强制扣除', is_correct: false }
+    ],
+    explain: 'E 错误：专项附加扣除由纳税人自主申报，可通过扣缴义务人预扣或年度汇算自行申报，非强制。A/B/C/D 均为现行标准。'
+  },
+  {
+    practice_id: 10341, source_lesson_id: 35,
+    type: 'calc', level: 'basic', hot: ['property-tax'],
+    interaction_type: 'single',
+    prompt: '某企业自用办公楼原值 500 万元，当地规定扣除比例 20%。当年应纳房产税（从价计征）为（ ）万元。',
+    options: [
+      { text: '4.8', is_correct: true },
+      { text: '6.0', is_correct: false },
+      { text: '5.0', is_correct: false },
+      { text: '3.6', is_correct: false }
+    ],
+    explain: '从价：500 × (1 − 20%) × 1.2% = 4.8 万元。'
+  },
+  {
+    practice_id: 10342, source_lesson_id: 35,
+    type: 'calc', level: 'basic', hot: ['property-tax'],
+    interaction_type: 'single',
+    prompt: '某企业将厂房出租，年租金收入 80 万元。当年应纳房产税（从租计征）为（ ）万元。',
+    options: [
+      { text: '9.6', is_correct: true },
+      { text: '8.0', is_correct: false },
+      { text: '4.8', is_correct: false },
+      { text: '6.4', is_correct: false }
+    ],
+    explain: '从租：80 × 12% = 9.6 万元。'
+  },
+  {
+    practice_id: 10343, source_lesson_id: 35,
+    type: 'calc', level: 'basic', hot: ['property-tax'],
+    interaction_type: 'single',
+    prompt: '个人出租住房，年租金收入 36,000 元。应纳房产税为（ ）元。',
+    options: [
+      { text: '1,440', is_correct: true },
+      { text: '4,320', is_correct: false },
+      { text: '2,160', is_correct: false },
+      { text: '720', is_correct: false }
+    ],
+    explain: '个人出租住房适用优惠税率 4%：36,000 × 4% = 1,440 元（非 12%）。'
+  },
+  {
+    practice_id: 10344, source_lesson_id: 35,
+    type: 'calc', level: 'improve', hot: ['property-tax'],
+    interaction_type: 'single',
+    prompt: '某企业自有房产原值 2,000 万，当地扣除比例 30%，全年自用。应纳房产税为（ ）万元。',
+    options: [
+      { text: '16.8', is_correct: true },
+      { text: '24.0', is_correct: false },
+      { text: '14.0', is_correct: false },
+      { text: '19.2', is_correct: false }
+    ],
+    explain: '从价：2,000 × (1 − 30%) × 1.2% = 16.8 万元。'
+  },
+  {
+    practice_id: 10345, source_lesson_id: 35,
+    type: 'calc', level: 'improve', hot: ['property-tax'],
+    interaction_type: 'single',
+    prompt: '某企业房产原值 1,000 万，扣除比例 30%，1-3 月自用，4-12 月（9 个月）对外出租，年租金 60 万元。全年应纳房产税合计（ ）万元。',
+    options: [
+      { text: '7.5', is_correct: true },
+      { text: '8.4', is_correct: false },
+      { text: '5.25', is_correct: false },
+      { text: '9.6', is_correct: false }
+    ],
+    explain: '1-3 月从价（3/12）：1,000 × 70% × 1.2% × 3/12 = 2.1 万；4-12 月从租（租金 45 万）：45 × 12% = 5.4 万；合计 = 7.5 万。'
+  },
+  {
+    practice_id: 10346, source_lesson_id: 35,
+    type: 'concept', level: 'improve', hot: ['property-tax'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，免征房产税的有（ ）。',
+    options: [
+      { label: 'A', text: '个人所有的非营业用房产', is_correct: true },
+      { label: 'B', text: '国家机关自用房产', is_correct: true },
+      { label: 'C', text: '宗教寺庙自用房产', is_correct: true },
+      { label: 'D', text: '企业出租给员工的宿舍', is_correct: false }
+    ],
+    explain: 'A/B/C 均享有免税优惠；D 企业出租宿舍属从租计征范围，应征房产税。'
+  },
+  {
+    practice_id: 10347, source_lesson_id: 35,
+    type: 'concept', level: 'improve', hot: ['property-tax'],
+    interaction_type: 'single',
+    prompt: '下列关于房产税计税依据的说法，正确的是（ ）。',
+    options: [
+      { text: '融资租入的房产，由承租方按原值缴纳房产税', is_correct: true },
+      { text: '出租房产仍按原值从价计征', is_correct: false },
+      { text: '地价不计入房产原值', is_correct: false },
+      { text: '房产税按月征收', is_correct: false }
+    ],
+    explain: '融资租入视为承租方自用，承租方按原值缴纳；出租房产改从租计征；2009 年起地价计入房产原值；房产税按年征收、分次缴纳。'
+  },
+  {
+    practice_id: 10348, source_lesson_id: 35,
+    type: 'calc', level: 'exam', hot: ['property-tax'],
+    interaction_type: 'single',
+    prompt: '【真题级】某企业自用房产原值 3,000 万，扣除比例 30%；出租房产年租金 120 万。全年房产税合计（ ）万元。',
+    options: [
+      { text: '39.6', is_correct: true },
+      { text: '36.0', is_correct: false },
+      { text: '25.2', is_correct: false },
+      { text: '43.2', is_correct: false }
+    ],
+    explain: '从价：3,000 × 70% × 1.2% = 25.2 万；从租：120 × 12% = 14.4 万；合计 = 39.6 万。'
+  },
+  {
+    practice_id: 10349, source_lesson_id: 35,
+    type: 'concept', level: 'exam', hot: ['property-tax'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列关于房产税征税范围的说法，正确的是（ ）。',
+    options: [
+      { text: '在城市、县城、建制镇和工矿区征收', is_correct: true },
+      { text: '农村自用房屋也需缴纳房产税', is_correct: false },
+      { text: '全国所有地区统一征收', is_correct: false },
+      { text: '只在省会城市征收', is_correct: false }
+    ],
+    explain: '房产税只在城市、县城、建制镇、工矿区征收，不包括农村地区。'
+  },
+  {
+    practice_id: 10351, source_lesson_id: 36,
+    type: 'calc', level: 'basic', hot: ['stamp-tax'],
+    interaction_type: 'single',
+    prompt: '某企业签订购销合同，金额 2,000,000 元，适用税率 0.3‰。应缴印花税为（ ）元。',
+    options: [
+      { text: '600', is_correct: true },
+      { text: '2,000', is_correct: false },
+      { text: '300', is_correct: false },
+      { text: '6,000', is_correct: false }
+    ],
+    explain: '购销合同印花税 = 2,000,000 × 0.3‰ = 600 元。'
+  },
+  {
+    practice_id: 10352, source_lesson_id: 36,
+    type: 'calc', level: 'basic', hot: ['stamp-tax'],
+    interaction_type: 'single',
+    prompt: '某企业向银行借款 5,000,000 元签订借款合同，税率 0.05‰。应缴印花税为（ ）元。',
+    options: [
+      { text: '250', is_correct: true },
+      { text: '500', is_correct: false },
+      { text: '2,500', is_correct: false },
+      { text: '50', is_correct: false }
+    ],
+    explain: '借款合同印花税 = 5,000,000 × 0.05‰ = 250 元。'
+  },
+  {
+    practice_id: 10353, source_lesson_id: 36,
+    type: 'calc', level: 'basic', hot: ['stamp-tax'],
+    interaction_type: 'single',
+    prompt: '某公司实收资本与资本公积合计 10,000,000 元，营业账簿印花税税率 0.25‰。应纳印花税为（ ）元。',
+    options: [
+      { text: '2,500', is_correct: true },
+      { text: '10,000', is_correct: false },
+      { text: '1,000', is_correct: false },
+      { text: '5,000', is_correct: false }
+    ],
+    explain: '记载资金的营业账簿 = 10,000,000 × 0.25‰ = 2,500 元。'
+  },
+  {
+    practice_id: 10354, source_lesson_id: 36,
+    type: 'calc', level: 'improve', hot: ['stamp-tax'],
+    interaction_type: 'single',
+    prompt: '某企业签订厂房产权转移书据，成交金额 3,000,000 元，税率 0.5‰。应纳印花税为（ ）元。',
+    options: [
+      { text: '1,500', is_correct: true },
+      { text: '3,000', is_correct: false },
+      { text: '900', is_correct: false },
+      { text: '600', is_correct: false }
+    ],
+    explain: '产权转移书据印花税 = 3,000,000 × 0.5‰ = 1,500 元。'
+  },
+  {
+    practice_id: 10355, source_lesson_id: 36,
+    type: 'concept', level: 'improve', hot: ['stamp-tax'],
+    interaction_type: 'single',
+    prompt: '下列凭证中，不属于印花税征税范围的是（ ）。',
+    options: [
+      { text: '人身保险合同', is_correct: true },
+      { text: '购销合同', is_correct: false },
+      { text: '产权转移书据', is_correct: false },
+      { text: '借款合同', is_correct: false }
+    ],
+    explain: '印花税采用「正列举」原则，人身保险合同未列入征税范围，不征印花税。'
+  },
+  {
+    practice_id: 10356, source_lesson_id: 36,
+    type: 'concept', level: 'improve', hot: ['stamp-tax'],
+    interaction_type: 'single',
+    prompt: '下列合同中，需要缴纳印花税的是（ ）。',
+    options: [
+      { text: '加工承揽合同', is_correct: true },
+      { text: '委托代理合同', is_correct: false },
+      { text: '个人租赁住房合同', is_correct: false },
+      { text: '企业内部承包经营合同', is_correct: false }
+    ],
+    explain: '加工承揽合同属于印花税应税合同；委托代理合同、个人租赁住房合同、企业内部承包经营合同均不在征税范围。'
+  },
+  {
+    practice_id: 10357, source_lesson_id: 36,
+    type: 'concept', level: 'improve', hot: ['stamp-tax'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，属于印花税应税凭证的有（ ）。',
+    options: [
+      { label: 'A', text: '购销合同', is_correct: true },
+      { label: 'B', text: '借款合同', is_correct: true },
+      { label: 'C', text: '产权转移书据', is_correct: true },
+      { label: 'D', text: '营业账簿', is_correct: true },
+      { label: 'E', text: '人身保险合同', is_correct: false }
+    ],
+    explain: 'A/B/C/D 均为印花税应税凭证；E 人身保险合同未列入征税范围，不征印花税。'
+  },
+  {
+    practice_id: 10358, source_lesson_id: 36,
+    type: 'concept', level: 'exam', hot: ['stamp-tax'],
+    interaction_type: 'single',
+    prompt: '【真题级】关于印花税的说法，正确的是（ ）。',
+    options: [
+      { text: '印花税对所有经济合同均征收', is_correct: false },
+      { text: '同一凭证载有两个以上应税项目，按税率较高者全额计税', is_correct: false },
+      { text: '书立应税凭证的各方都是纳税义务人', is_correct: true },
+      { text: '应税凭证应在签订时贴花，不得事后补贴', is_correct: false }
+    ],
+    explain: '印花税各方当事人均为纳税义务人，均须贴花；只对税法列举的凭证征收；同一凭证多个应税项目分别计算；遗漏可以补贴并缴纳罚款。'
+  },
+  {
+    practice_id: 10359, source_lesson_id: 36,
+    type: 'concept', level: 'exam', hot: ['stamp-tax'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于印花税计税依据的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '购销合同按购销金额计税', is_correct: true },
+      { label: 'B', text: '借款合同按借款金额计税', is_correct: true },
+      { label: 'C', text: '记载资金的营业账簿按实收资本与资本公积合计计税', is_correct: true },
+      { label: 'D', text: '产权转移书据按所载金额计税', is_correct: true },
+      { label: 'E', text: '无金额合同免税', is_correct: false }
+    ],
+    explain: 'E 错误：凭证未标明金额的，应按签订时的市场价格或核定价格计税，不能免税。A/B/C/D 均为正确的计税依据规则。'
+  }
 );
