@@ -980,4 +980,474 @@ window.PRACTICE.push(
     ],
     explain: '应有余额 = 1,000,000 × 3% = 30,000；核销后已有余额 = 20,000 − 8,000 = 12,000；补提 = 30,000 − 12,000 = 18,000 元。'
   }
+,
+  {
+    practice_id: 10081, source_lesson_id: 9,
+    type: 'concept', level: 'basic', hot: ['note-discount'],
+    interaction_type: 'single',
+    prompt: '下列各项中，属于应收票据的是（ ）。',
+    options: [
+      { text: '银行汇票', is_correct: false },
+      { text: '商业承兑汇票', is_correct: true },
+      { text: '银行本票', is_correct: false },
+      { text: '支票', is_correct: false }
+    ],
+    explain: '应收票据核算的是商业汇票（商业承兑汇票和银行承兑汇票），不包括银行汇票、银行本票和支票。'
+  },
+  {
+    practice_id: 10082, source_lesson_id: 9,
+    type: 'concept', level: 'basic', hot: ['note-discount'],
+    interaction_type: 'single',
+    prompt: '带息商业汇票的到期值等于（ ）。',
+    options: [
+      { text: '票面金额', is_correct: false },
+      { text: '票面金额 ×（1 + 票面利率 × 期限）', is_correct: true },
+      { text: '票面金额 × 票面利率 × 期限', is_correct: false },
+      { text: '票面金额 ÷（1 + 票面利率）', is_correct: false }
+    ],
+    explain: '到期值 = 面值 + 面值 × 票面利率 × 期限 = 面值 ×（1 + 票面利率 × 期限）。'
+  },
+  {
+    practice_id: 10083, source_lesson_id: 9,
+    type: 'concept', level: 'basic', hot: ['note-discount'],
+    interaction_type: 'single',
+    prompt: '票据贴现时，贴现利息的计算基础是（ ）。',
+    options: [
+      { text: '票面金额', is_correct: false },
+      { text: '到期值', is_correct: true },
+      { text: '贴现所得', is_correct: false },
+      { text: '票面利息', is_correct: false }
+    ],
+    explain: '贴现利息 = 到期值 × 贴现率 × 贴现期（剩余天数/360），以到期值为计算基础。'
+  },
+  {
+    practice_id: 10084, source_lesson_id: 9,
+    type: 'calc', level: 'improve', hot: ['note-discount'],
+    interaction_type: 'single',
+    prompt: '企业持有面值 200,000 元、期限 6 个月、票面利率 6% 的银行承兑汇票，持有 1 个月后贴现，贴现率 8%。贴现所得最接近（ ）。',
+    options: [
+      { text: '199,133 元', is_correct: true },
+      { text: '200,000 元', is_correct: false },
+      { text: '197,200 元', is_correct: false },
+      { text: '206,000 元', is_correct: false }
+    ],
+    explain: '到期值 = 200,000 ×（1 + 6% × 6/12）= 206,000；贴现利息 = 206,000 × 8% × 5/12 ≈ 6,867；贴现所得 ≈ 199,133。'
+  },
+  {
+    practice_id: 10085, source_lesson_id: 9,
+    type: 'calc', level: 'improve', hot: ['note-discount'],
+    interaction_type: 'single',
+    prompt: '企业持有面值 500,000 元的不带息商业汇票，到期日前 90 天向银行贴现，贴现率 9%。贴现所得为（ ）。',
+    options: [
+      { text: '488,750 元', is_correct: true },
+      { text: '487,500 元', is_correct: false },
+      { text: '496,250 元', is_correct: false },
+      { text: '500,000 元', is_correct: false }
+    ],
+    explain: '不带息票据到期值 = 面值 500,000；贴现利息 = 500,000 × 9% × 90/360 = 11,250；贴现所得 = 488,750。'
+  },
+  {
+    practice_id: 10086, source_lesson_id: 9,
+    type: 'calc', level: 'improve', hot: ['note-discount'],
+    interaction_type: 'single',
+    prompt: '面值 100,000 元、票面利率 4.8%、期限 6 个月的带息票据，到期值为（ ）。',
+    options: [
+      { text: '102,400 元', is_correct: true },
+      { text: '104,800 元', is_correct: false },
+      { text: '100,480 元', is_correct: false },
+      { text: '100,000 元', is_correct: false }
+    ],
+    explain: '到期值 = 100,000 ×（1 + 4.8% × 6/12）= 100,000 × 1.024 = 102,400。'
+  },
+  {
+    practice_id: 10087, source_lesson_id: 9,
+    type: 'concept', level: 'improve', hot: ['note-discount'],
+    interaction_type: 'multi',
+    prompt: '下列关于应收票据贴现说法正确的有（ ）。',
+    options: [
+      { label: 'A', text: '带追索权的贴现应作为短期借款处理', is_correct: true },
+      { label: 'B', text: '贴现所得 = 到期值 − 贴现利息', is_correct: true },
+      { label: 'C', text: '不带息票据贴现所得一定等于票面金额', is_correct: false },
+      { label: 'D', text: '银行承兑汇票贴现后不存在追索风险', is_correct: true }
+    ],
+    explain: 'C 错误：不带息票据贴现所得 = 面值 − 贴现利息，一般小于面值。银行承兑汇票由银行承兑，到期银行付款，持票人无追索风险。'
+  },
+  {
+    practice_id: 10088, source_lesson_id: 9,
+    type: 'calc', level: 'exam', hot: ['note-discount'],
+    interaction_type: 'single',
+    prompt: '【真题级】一张面值 300,000 元、期限 90 天、不带息的商业承兑汇票，持票人在持有 30 天后向银行贴现，年贴现率 12%。贴现所得为（ ）。',
+    options: [
+      { text: '294,000 元', is_correct: true },
+      { text: '297,000 元', is_correct: false },
+      { text: '300,000 元', is_correct: false },
+      { text: '291,000 元', is_correct: false }
+    ],
+    explain: '不带息到期值 = 300,000；贴现期 = 90 − 30 = 60 天；贴现利息 = 300,000 × 12% × 60/360 = 6,000；贴现所得 = 294,000。'
+  },
+  {
+    practice_id: 10089, source_lesson_id: 9,
+    type: 'concept', level: 'exam', hot: ['note-discount'],
+    interaction_type: 'single',
+    prompt: '【真题级】企业将银行承兑汇票贴现（不附追索权），应贷记的科目是（ ）。',
+    options: [
+      { text: '应收票据', is_correct: true },
+      { text: '短期借款', is_correct: false },
+      { text: '财务费用', is_correct: false },
+      { text: '银行存款', is_correct: false }
+    ],
+    explain: '不附追索权视为终止确认：借：银行存款（贴现所得）/ 借或贷：财务费用（差额）/ 贷：应收票据（账面价值）。'
+  },
+  {
+    practice_id: 10091, source_lesson_id: 10,
+    type: 'concept', level: 'basic', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '一般纳税人购入原材料，增值税专用发票上的税额应记入（ ）。',
+    options: [
+      { text: '原材料', is_correct: false },
+      { text: '应交税费——应交增值税（进项税额）', is_correct: true },
+      { text: '管理费用', is_correct: false },
+      { text: '应付账款', is_correct: false }
+    ],
+    explain: '一般纳税人的进项税额可以抵扣，单独计入「应交税费——应交增值税（进项税额）」借方。'
+  },
+  {
+    practice_id: 10092, source_lesson_id: 10,
+    type: 'concept', level: 'basic', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '小规模纳税人购入原材料，增值税税额应（ ）。',
+    options: [
+      { text: '计入原材料成本', is_correct: true },
+      { text: '计入应交税费借方', is_correct: false },
+      { text: '计入管理费用', is_correct: false },
+      { text: '不做账务处理', is_correct: false }
+    ],
+    explain: '小规模纳税人不得抵扣进项税，价税合计全部计入存货成本。'
+  },
+  {
+    practice_id: 10093, source_lesson_id: 10,
+    type: 'concept', level: 'basic', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '一般纳税人购入材料发生的运杂费（取得 9% 增值税专票），运费本身应计入（ ）。',
+    options: [
+      { text: '原材料成本', is_correct: true },
+      { text: '管理费用', is_correct: false },
+      { text: '销售费用', is_correct: false },
+      { text: '财务费用', is_correct: false }
+    ],
+    explain: '外购存货的运杂费属于采购成本的一部分，计入原材料成本；运费对应的进项税额单独抵扣。'
+  },
+  {
+    practice_id: 10094, source_lesson_id: 10,
+    type: 'calc', level: 'improve', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '一般纳税人购入材料价款 80,000 元（税率 13%），另付运费 2,000 元（取得 9% 专票）。原材料入账成本为（ ）。',
+    options: [
+      { text: '82,000 元', is_correct: true },
+      { text: '80,000 元', is_correct: false },
+      { text: '92,580 元', is_correct: false },
+      { text: '82,180 元', is_correct: false }
+    ],
+    explain: '原材料入账 = 不含税价 80,000 + 不含税运费 2,000 = 82,000。进项税 = 80,000×13% + 2,000×9% = 10,580 单独计入。'
+  },
+  {
+    practice_id: 10095, source_lesson_id: 10,
+    type: 'calc', level: 'improve', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '小规模纳税人购入材料，专票注明价款 50,000 元、税额 6,500 元。该批材料入账成本为（ ）。',
+    options: [
+      { text: '56,500 元', is_correct: true },
+      { text: '50,000 元', is_correct: false },
+      { text: '43,500 元', is_correct: false },
+      { text: '63,000 元', is_correct: false }
+    ],
+    explain: '小规模纳税人不抵扣进项，入账成本 = 价款 + 税额 = 50,000 + 6,500 = 56,500。'
+  },
+  {
+    practice_id: 10096, source_lesson_id: 10,
+    type: 'calc', level: 'improve', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '企业预付材料款 30,000 元，到货后收到专票价款 45,000 元、税额 5,850 元。需补付（ ）。',
+    options: [
+      { text: '20,850 元', is_correct: true },
+      { text: '15,000 元', is_correct: false },
+      { text: '25,850 元', is_correct: false },
+      { text: '50,850 元', is_correct: false }
+    ],
+    explain: '应付总额 = 45,000 + 5,850 = 50,850；已预付 30,000；补付 = 50,850 − 30,000 = 20,850。'
+  },
+  {
+    practice_id: 10097, source_lesson_id: 10,
+    type: 'concept', level: 'improve', hot: ['vat-input'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，应计入外购存货采购成本的有（ ）。',
+    options: [
+      { label: 'A', text: '买价', is_correct: true },
+      { label: 'B', text: '运杂费', is_correct: true },
+      { label: 'C', text: '装卸费', is_correct: true },
+      { label: 'D', text: '入库前合理损耗', is_correct: true },
+      { label: 'E', text: '增值税进项税额（一般纳税人）', is_correct: false }
+    ],
+    explain: 'E 的进项税额可抵扣，不计入成本；其他四项均为采购成本的组成部分。'
+  },
+  {
+    practice_id: 10098, source_lesson_id: 10,
+    type: 'journal', level: 'exam', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '【真题级】一般纳税人赊购原材料 100,000 元（税率 13%），下列分录正确的是（ ）。',
+    options: [
+      { text: '借：原材料 100,000、应交税费——进项税额 13,000 / 贷：应付账款 113,000', is_correct: true },
+      { text: '借：原材料 113,000 / 贷：应付账款 113,000', is_correct: false },
+      { text: '借：原材料 100,000 / 贷：应付账款 100,000', is_correct: false },
+      { text: '借：原材料 100,000、应交税费——进项税额 13,000 / 贷：银行存款 113,000', is_correct: false }
+    ],
+    explain: '赊购→贷方为应付账款（非银行存款）；一般纳税人进项税单独列示。'
+  },
+  {
+    practice_id: 10099, source_lesson_id: 10,
+    type: 'concept', level: 'exam', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列各项中，不应计入存货成本的是（ ）。',
+    options: [
+      { text: '非正常消耗的直接材料', is_correct: true },
+      { text: '入库前的挑选整理费', is_correct: false },
+      { text: '运输途中的合理损耗', is_correct: false },
+      { text: '进口关税', is_correct: false }
+    ],
+    explain: '非正常消耗应计入当期损益，不计入存货成本。其他三项均属于存货采购成本。'
+  },
+  {
+    practice_id: 10101, source_lesson_id: 11,
+    type: 'concept', level: 'basic', hot: ['inventory-avg'],
+    interaction_type: 'single',
+    prompt: '月末一次加权平均法下，加权平均单位成本的计算公式正确的是（ ）。',
+    options: [
+      { text: '（月初存货成本 + 本月购入存货成本）÷（月初数量 + 本月购入数量）', is_correct: true },
+      { text: '本月购入存货成本 ÷ 本月购入数量', is_correct: false },
+      { text: '月初存货成本 ÷ 月初数量', is_correct: false },
+      { text: '本月发出存货成本 ÷ 本月发出数量', is_correct: false }
+    ],
+    explain: '月末一次加权平均把月初和本月全部购入合并计算，分子为总成本，分母为总数量。'
+  },
+  {
+    practice_id: 10102, source_lesson_id: 11,
+    type: 'concept', level: 'basic', hot: ['inventory-avg'],
+    interaction_type: 'single',
+    prompt: '下列存货计价方法中，日常发出时无法确定单位成本的是（ ）。',
+    options: [
+      { text: '月末一次加权平均法', is_correct: true },
+      { text: '先进先出法', is_correct: false },
+      { text: '移动加权平均法', is_correct: false },
+      { text: '个别计价法', is_correct: false }
+    ],
+    explain: '月末一次加权平均法要到月末才能算出单价，日常发出暂不登记单价。'
+  },
+  {
+    practice_id: 10103, source_lesson_id: 11,
+    type: 'concept', level: 'basic', hot: ['inventory-avg'],
+    interaction_type: 'single',
+    prompt: '先进先出法的特点是（ ）。',
+    options: [
+      { text: '期末存货接近最近购入成本', is_correct: true },
+      { text: '期末存货接近最早购入成本', is_correct: false },
+      { text: '发出成本接近最近购入成本', is_correct: false },
+      { text: '各批次发出成本完全相同', is_correct: false }
+    ],
+    explain: '先进先出：先买的先发，期末留下的是最后购入的，接近市价。'
+  },
+  {
+    practice_id: 10104, source_lesson_id: 11,
+    type: 'calc', level: 'improve', hot: ['inventory-avg'],
+    interaction_type: 'single',
+    prompt: '月初 200 件 @8 元，5 日购入 300 件 @9 元，20 日购入 100 件 @10 元。采用先进先出法发出 400 件，发出成本为（ ）。',
+    options: [
+      { text: '3,400 元', is_correct: true },
+      { text: '3,600 元', is_correct: false },
+      { text: '3,500 元', is_correct: false },
+      { text: '3,200 元', is_correct: false }
+    ],
+    explain: 'FIFO：先发月初 200×8 = 1,600，再发 5 日 200×9 = 1,800，合计 3,400。'
+  },
+  {
+    practice_id: 10105, source_lesson_id: 11,
+    type: 'calc', level: 'improve', hot: ['inventory-avg'],
+    interaction_type: 'single',
+    prompt: '月初 150 件 @20 元，本月购入 250 件 @22 元和 100 件 @25 元。加权平均法发出 350 件，发出成本为（ ）。',
+    options: [
+      { text: '7,700 元', is_correct: true },
+      { text: '7,350 元', is_correct: false },
+      { text: '8,050 元', is_correct: false },
+      { text: '7,000 元', is_correct: false }
+    ],
+    explain: '总成本 = 150×20 + 250×22 + 100×25 = 11,000；总量 500；均价 22；发出 350×22 = 7,700。'
+  },
+  {
+    practice_id: 10106, source_lesson_id: 11,
+    type: 'calc', level: 'improve', hot: ['inventory-avg'],
+    interaction_type: 'single',
+    prompt: '采用移动加权平均法，月初 100 件 @10 元，10 日购入 200 件 @11 元。10 日购入后的加权平均单价最接近（ ）。',
+    options: [
+      { text: '10.67 元', is_correct: true },
+      { text: '11.00 元', is_correct: false },
+      { text: '10.50 元', is_correct: false },
+      { text: '10.33 元', is_correct: false }
+    ],
+    explain: '购入后总成本 = 100×10 + 200×11 = 3,200；总量 300；均价 = 3,200÷300 ≈ 10.67。'
+  },
+  {
+    practice_id: 10107, source_lesson_id: 11,
+    type: 'concept', level: 'improve', hot: ['inventory-avg'],
+    interaction_type: 'multi',
+    prompt: '下列关于存货计价方法说法正确的有（ ）。',
+    options: [
+      { label: 'A', text: '先进先出法在物价上涨时会高估利润', is_correct: true },
+      { label: 'B', text: '加权平均法可以平滑物价波动对利润的影响', is_correct: true },
+      { label: 'C', text: '个别计价法适用于不可替代的贵重物品', is_correct: true },
+      { label: 'D', text: '企业可以随意变更存货计价方法', is_correct: false }
+    ],
+    explain: 'D 错误：存货计价方法一经确定不得随意变更，如需变更应遵循会计政策变更的规定。'
+  },
+  {
+    practice_id: 10108, source_lesson_id: 11,
+    type: 'calc', level: 'exam', hot: ['inventory-avg'],
+    interaction_type: 'single',
+    prompt: '【真题级】月初库存 A 材料 500 千克、金额 4,000 元；本月购入 A 材料两批共 1,500 千克、金额 13,000 元。月末一次加权平均单位成本为（ ）。',
+    options: [
+      { text: '8.5 元/千克', is_correct: true },
+      { text: '8.0 元/千克', is_correct: false },
+      { text: '8.67 元/千克', is_correct: false },
+      { text: '9.0 元/千克', is_correct: false }
+    ],
+    explain: '总成本 = 4,000 + 13,000 = 17,000；总量 = 500 + 1,500 = 2,000；均价 = 17,000 ÷ 2,000 = 8.5。'
+  },
+  {
+    practice_id: 10109, source_lesson_id: 11,
+    type: 'calc', level: 'exam', hot: ['inventory-avg'],
+    interaction_type: 'single',
+    prompt: '【真题级】在物价持续上涨的情况下，与加权平均法相比，采用先进先出法会使（ ）。',
+    options: [
+      { text: '当期利润偏高', is_correct: true },
+      { text: '当期利润偏低', is_correct: false },
+      { text: '期末存货成本偏低', is_correct: false },
+      { text: '当期利润不受影响', is_correct: false }
+    ],
+    explain: '物价上涨时 FIFO 发出的是较早低价存货，发出成本低→毛利高→利润偏高；期末存货按最近高价计量，成本偏高。'
+  },
+  {
+    practice_id: 10111, source_lesson_id: 12,
+    type: 'concept', level: 'basic', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '下列各项中，不计入存货成本的是（ ）。',
+    options: [
+      { text: '入库后的仓储费用', is_correct: true },
+      { text: '采购过程中的保险费', is_correct: false },
+      { text: '运输途中的合理损耗', is_correct: false },
+      { text: '进口关税', is_correct: false }
+    ],
+    explain: '入库后的仓储费用计入当期损益（管理费用），不计入存货成本。入库前的相关支出才计入成本。'
+  },
+  {
+    practice_id: 10112, source_lesson_id: 12,
+    type: 'concept', level: 'basic', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '存货的可变现净值是指（ ）。',
+    options: [
+      { text: '估计售价减去至完工时估计成本和销售费用后的净值', is_correct: true },
+      { text: '存货的市场售价', is_correct: false },
+      { text: '存货的重置成本', is_correct: false },
+      { text: '存货的账面价值', is_correct: false }
+    ],
+    explain: '可变现净值 = 估计售价 − 至完工时估计将要发生的成本 − 估计销售费用 − 相关税费。'
+  },
+  {
+    practice_id: 10113, source_lesson_id: 12,
+    type: 'concept', level: 'basic', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '存货期末计量应当按照（ ）。',
+    options: [
+      { text: '成本与可变现净值孰低', is_correct: true },
+      { text: '成本', is_correct: false },
+      { text: '可变现净值', is_correct: false },
+      { text: '公允价值', is_correct: false }
+    ],
+    explain: '存货期末按「成本与可变现净值孰低」计量，成本高于可变现净值时计提跌价准备。'
+  },
+  {
+    practice_id: 10114, source_lesson_id: 12,
+    type: 'calc', level: 'improve', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '某商品成本 100,000 元，期末可变现净值 85,000 元，此前未计提跌价准备。应计提存货跌价准备（ ）。',
+    options: [
+      { text: '15,000 元', is_correct: true },
+      { text: '85,000 元', is_correct: false },
+      { text: '100,000 元', is_correct: false },
+      { text: '0 元', is_correct: false }
+    ],
+    explain: '成本 100,000 > 可变现净值 85,000，差额 15,000 应计提跌价准备。'
+  },
+  {
+    practice_id: 10115, source_lesson_id: 12,
+    type: 'calc', level: 'improve', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '某存货成本 100,000 元，已提跌价准备 20,000 元。期末可变现净值恢复至 95,000 元，应转回跌价准备（ ）。',
+    options: [
+      { text: '15,000 元', is_correct: true },
+      { text: '20,000 元', is_correct: false },
+      { text: '5,000 元', is_correct: false },
+      { text: '0 元', is_correct: false }
+    ],
+    explain: '应有准备 = 100,000 − 95,000 = 5,000；已提 20,000；应转回 = 20,000 − 5,000 = 15,000。转回不得超过原已计提金额。'
+  },
+  {
+    practice_id: 10116, source_lesson_id: 12,
+    type: 'concept', level: 'improve', hot: ['vat-input'],
+    interaction_type: 'multi',
+    prompt: '下列关于存货跌价准备说法正确的有（ ）。',
+    options: [
+      { label: 'A', text: '存货跌价准备是存货的备抵科目', is_correct: true },
+      { label: 'B', text: '转回金额不得超过原已计提金额', is_correct: true },
+      { label: 'C', text: '计提时借记资产减值损失', is_correct: true },
+      { label: 'D', text: '存货报废时不需要转销跌价准备', is_correct: false }
+    ],
+    explain: 'D 错误：存货报废处置时，应同时结转已计提的跌价准备。'
+  },
+  {
+    practice_id: 10117, source_lesson_id: 12,
+    type: 'concept', level: 'improve', hot: ['vat-input'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，表明存货需要计提跌价准备的情形有（ ）。',
+    options: [
+      { label: 'A', text: '市场价格持续下跌且短期内无回升希望', is_correct: true },
+      { label: 'B', text: '产品更新换代导致原有存货过时', is_correct: true },
+      { label: 'C', text: '因季节性促销主动降价', is_correct: false },
+      { label: 'D', text: '存货已霉烂变质', is_correct: true }
+    ],
+    explain: 'C 属于正常经营行为，不表明发生减值。ABD 均表明存货可变现净值可能低于成本。'
+  },
+  {
+    practice_id: 10118, source_lesson_id: 12,
+    type: 'journal', level: 'exam', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '【真题级】计提存货跌价准备时，正确的会计分录是（ ）。',
+    options: [
+      { text: '借：资产减值损失 / 贷：存货跌价准备', is_correct: true },
+      { text: '借：管理费用 / 贷：存货跌价准备', is_correct: false },
+      { text: '借：存货跌价准备 / 贷：资产减值损失', is_correct: false },
+      { text: '借：营业外支出 / 贷：存货跌价准备', is_correct: false }
+    ],
+    explain: '计提跌价准备：借记「资产减值损失」（损益类），贷记「存货跌价准备」（资产备抵）。'
+  },
+  {
+    practice_id: 10119, source_lesson_id: 12,
+    type: 'concept', level: 'exam', hot: ['vat-input'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列关于存货盘亏处理说法正确的是（ ）。',
+    options: [
+      { text: '因管理不善造成的盘亏，扣除残料和保险赔款后计入管理费用', is_correct: true },
+      { text: '自然灾害造成的盘亏计入管理费用', is_correct: false },
+      { text: '盘亏的存货一律计入营业外支出', is_correct: false },
+      { text: '盘亏的存货不需要转出进项税额', is_correct: false }
+    ],
+    explain: '管理不善造成的存货盘亏净损失计入管理费用，且需转出进项税额；自然灾害造成的计入营业外支出。'
+  }
 );
