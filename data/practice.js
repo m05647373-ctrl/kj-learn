@@ -2865,4 +2865,476 @@ window.PRACTICE.push(
     ],
     explain: 'B 错误：净利润 = 利润总额 − 所得税费用（非利润总额乘以税率，因为可能有递延税）；A/C/D 均正确。'
   }
+,
+  {
+    practice_id: 10241, source_lesson_id: 25,
+    type: 'law', level: 'basic', hot: ['legal-act'],
+    interaction_type: 'single',
+    prompt: '下列民事法律行为中，属于无效民事法律行为的是（ ）。',
+    options: [
+      { text: '恶意串通损害第三人利益的合同', is_correct: true },
+      { text: '限制行为能力人订立的合同', is_correct: false },
+      { text: '受欺诈签订的合同', is_correct: false },
+      { text: '无权代理人签订的合同', is_correct: false }
+    ],
+    explain: '恶意串通损害他人利益——直接无效。限制行为能力人超范围行为——效力待定；受欺诈——可撤销；无权代理——效力待定（追认后有效）。'
+  },
+  {
+    practice_id: 10242, source_lesson_id: 25,
+    type: 'law', level: 'basic', hot: ['legal-act'],
+    interaction_type: 'single',
+    prompt: '下列各项中，属于可撤销民事法律行为的是（ ）。',
+    options: [
+      { text: '违反法律强制性规定的合同', is_correct: false },
+      { text: '因重大误解订立的合同', is_correct: true },
+      { text: '无民事行为能力人独立订立的合同', is_correct: false },
+      { text: '恶意串通损害国家利益的合同', is_correct: false }
+    ],
+    explain: '重大误解、欺诈、胁迫（相对人欺诈）、显失公平——可撤销；违法强制性规定、恶意串通——无效；无行为能力人独立订立——无效。'
+  },
+  {
+    practice_id: 10243, source_lesson_id: 25,
+    type: 'law', level: 'basic', hot: ['legal-act'],
+    interaction_type: 'single',
+    prompt: '关于委托代理，下列说法正确的是（ ）。',
+    options: [
+      { text: '委托代理必须以书面形式', is_correct: false },
+      { text: '代理人在授权范围内实施的代理行为，法律后果由被代理人承担', is_correct: true },
+      { text: '无权代理一律无效', is_correct: false },
+      { text: '转委托须经被代理人同意且不能再次转委托', is_correct: false }
+    ],
+    explain: '代理人在授权范围内的行为，法律后果归被代理人。口头委托也可成立；无权代理经追认可有效；转委托须经同意，但可再次转委托（法律无禁止）。'
+  },
+  {
+    practice_id: 10244, source_lesson_id: 25,
+    type: 'law', level: 'improve', hot: ['legal-act'],
+    interaction_type: 'single',
+    prompt: '甲（16 岁，有稳定劳动收入）以自己的收入购买手机一部，该行为效力为（ ）。',
+    options: [
+      { text: '有效', is_correct: true },
+      { text: '效力待定', is_correct: false },
+      { text: '无效', is_correct: false },
+      { text: '可撤销', is_correct: false }
+    ],
+    explain: '已满 16 周岁，以自己劳动收入为主要生活来源的，视为完全民事行为能力人，其订立的合同有效。'
+  },
+  {
+    practice_id: 10245, source_lesson_id: 25,
+    type: 'law', level: 'improve', hot: ['legal-act'],
+    interaction_type: 'multi',
+    prompt: '下列情形中，导致代理权终止的有（ ）。',
+    options: [
+      { label: 'A', text: '代理期限届满', is_correct: true },
+      { label: 'B', text: '被代理人取消委托', is_correct: true },
+      { label: 'C', text: '代理人丧失民事行为能力', is_correct: true },
+      { label: 'D', text: '代理人将代理事项转委托给他人', is_correct: false }
+    ],
+    explain: 'A/B/C 均导致委托代理终止。转委托本身不终止原代理权，只是追加一层代理关系。'
+  },
+  {
+    practice_id: 10246, source_lesson_id: 25,
+    type: 'law', level: 'improve', hot: ['legal-act'],
+    interaction_type: 'single',
+    prompt: '下列关于无权代理的说法中，正确的是（ ）。',
+    options: [
+      { text: '无权代理一律对被代理人不发生效力', is_correct: false },
+      { text: '被代理人追认后，无权代理对被代理人发生效力', is_correct: true },
+      { text: '善意第三人可以撤销无权代理行为', is_correct: true },
+      { text: '表见代理属于无权代理的一种，但对被代理人有效', is_correct: false }
+    ],
+    explain: '被代理人追认后有效；善意第三人在追认前也可撤销（给对方选择权）。表见代理实质是有权代理（相对人有理由相信），直接对被代理人有效，不需追认。'
+  },
+  {
+    practice_id: 10247, source_lesson_id: 25,
+    type: 'law', level: 'improve', hot: ['legal-act'],
+    interaction_type: 'multi',
+    prompt: '下列民事法律行为中，属于效力待定的有（ ）。',
+    options: [
+      { label: 'A', text: '限制民事行为能力人订立的与其年龄不相适应的合同', is_correct: true },
+      { label: 'B', text: '无权代理人以被代理人名义订立的合同', is_correct: true },
+      { label: 'C', text: '无权处分人处分他人财产的合同', is_correct: true },
+      { label: 'D', text: '受欺诈订立的合同', is_correct: false },
+      { label: 'E', text: '违反公序良俗的合同', is_correct: false }
+    ],
+    explain: 'D 受欺诈——可撤销；E 违反公序良俗——无效。A/B/C 均须经法定代理人或权利人追认方能生效，属效力待定。'
+  },
+  {
+    practice_id: 10248, source_lesson_id: 25,
+    type: 'law', level: 'exam', hot: ['legal-act'],
+    interaction_type: 'single',
+    prompt: '【真题级】甲公司业务员王某超越授权，以甲公司名义与乙公司签订合同，乙公司有理由相信王某有代理权。该合同效力为（ ）。',
+    options: [
+      { text: '无效', is_correct: false },
+      { text: '效力待定，须甲公司追认', is_correct: false },
+      { text: '有效（表见代理）', is_correct: true },
+      { text: '可撤销', is_correct: false }
+    ],
+    explain: '乙公司有合理理由相信王某有代理权，构成表见代理，合同直接对甲公司有效，无需追认。'
+  },
+  {
+    practice_id: 10249, source_lesson_id: 25,
+    type: 'law', level: 'exam', hot: ['legal-act'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于民事法律行为效力的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '无效的民事法律行为自始没有法律约束力', is_correct: true },
+      { label: 'B', text: '可撤销的民事法律行为在被撤销前仍有效', is_correct: true },
+      { label: 'C', text: '效力待定的民事法律行为经追认后自追认之日起有效', is_correct: false },
+      { label: 'D', text: '限制行为能力人纯获利益的行为无需追认即有效', is_correct: true }
+    ],
+    explain: 'C 错误：效力待定经追认后，效力溯及行为成立时，不是从追认之日起。A/B/D 均正确。'
+  },
+  {
+    practice_id: 10251, source_lesson_id: 26,
+    type: 'law', level: 'basic', hot: ['limitation'],
+    interaction_type: 'single',
+    prompt: '下列关于诉讼时效期间的说法，正确的是（ ）。',
+    options: [
+      { text: '一般诉讼时效期间为 2 年', is_correct: false },
+      { text: '一般诉讼时效期间为 3 年', is_correct: true },
+      { text: '最长诉讼时效期间为 15 年', is_correct: false },
+      { text: '劳动争议仲裁时效为 2 年', is_correct: false }
+    ],
+    explain: '2017 年《民法总则》将一般时效改为 3 年；最长时效 20 年；劳动争议仲裁时效 1 年。'
+  },
+  {
+    practice_id: 10252, source_lesson_id: 26,
+    type: 'law', level: 'basic', hot: ['limitation'],
+    interaction_type: 'single',
+    prompt: '下列情形中，导致诉讼时效中断的是（ ）。',
+    options: [
+      { text: '债权人因不可抗力无法行使请求权', is_correct: false },
+      { text: '债务人书面承诺还款', is_correct: true },
+      { text: '债权人出行在外无法联系', is_correct: false },
+      { text: '双方协商但未达成协议', is_correct: false }
+    ],
+    explain: '时效中断事由：权利人请求、义务人同意履行（含承诺）、提起诉讼或仲裁。不可抗力是中止事由。'
+  },
+  {
+    practice_id: 10253, source_lesson_id: 26,
+    type: 'law', level: 'basic', hot: ['limitation'],
+    interaction_type: 'single',
+    prompt: '诉讼时效中止与中断的根本区别在于（ ）。',
+    options: [
+      { text: '中止后时效重新起算，中断后继续计算剩余期间', is_correct: false },
+      { text: '中断后时效重新起算，中止后继续计算剩余期间', is_correct: true },
+      { text: '两者均导致时效重新起算', is_correct: false },
+      { text: '两者均导致时效继续计算', is_correct: false }
+    ],
+    explain: '中断 = 重新起算；中止 = 暂停，障碍消除后接续已过期间继续计算。'
+  },
+  {
+    practice_id: 10254, source_lesson_id: 26,
+    type: 'law', level: 'improve', hot: ['limitation'],
+    interaction_type: 'single',
+    prompt: '2021-06-01 某债权到期，债务人一直未还，债权人于 2023-05-01 向法院起诉，法院受理。诉讼时效最终届满日为（ ）。',
+    options: [
+      { text: '2024-06-01', is_correct: false },
+      { text: '2024-05-01', is_correct: false },
+      { text: '2026-05-01', is_correct: true },
+      { text: '2041-06-01', is_correct: false }
+    ],
+    explain: '起诉导致时效中断，从 2023-05-01 重新起算 3 年 → 2026-05-01。'
+  },
+  {
+    practice_id: 10255, source_lesson_id: 26,
+    type: 'law', level: 'improve', hot: ['limitation'],
+    interaction_type: 'multi',
+    prompt: '下列情形中，属于诉讼时效中止事由的有（ ）。',
+    options: [
+      { label: 'A', text: '不可抗力', is_correct: true },
+      { label: 'B', text: '无民事行为能力人未有法定代理人', is_correct: true },
+      { label: 'C', text: '继承开始后未确定继承人', is_correct: true },
+      { label: 'D', text: '权利人向义务人提出履行请求', is_correct: false },
+      { label: 'E', text: '义务人同意履行债务', is_correct: false }
+    ],
+    explain: 'D/E 是中断事由；A/B/C 是法定中止事由（《民法典》第 194 条）。'
+  },
+  {
+    practice_id: 10256, source_lesson_id: 26,
+    type: 'law', level: 'improve', hot: ['limitation'],
+    interaction_type: 'single',
+    prompt: '下列关于最长诉讼时效的说法，正确的是（ ）。',
+    options: [
+      { text: '最长时效为 20 年，自权利人知道损害之日起算', is_correct: false },
+      { text: '最长时效为 20 年，自权利被侵害之日起算', is_correct: true },
+      { text: '最长时效为 20 年，不适用中止、中断规定', is_correct: true },
+      { text: '超过 20 年的，人民法院可根据情况延长', is_correct: true }
+    ],
+    explain: '最长时效从权利被侵害时起算（客观标准），不适用中止中断，但法院可酌情延长。'
+  },
+  {
+    practice_id: 10257, source_lesson_id: 26,
+    type: 'law', level: 'improve', hot: ['limitation'],
+    interaction_type: 'single',
+    prompt: '甲欠乙货款 50,000 元，2020-03-01 到期。乙于 2022-12-01 向甲发催款函并有签收回执，甲未回应。乙的诉讼时效届满日为（ ）。',
+    options: [
+      { text: '2023-03-01', is_correct: false },
+      { text: '2025-12-01', is_correct: true },
+      { text: '2022-12-01', is_correct: false },
+      { text: '2040-03-01', is_correct: false }
+    ],
+    explain: '乙发催款函并有签收——属于权利人请求，时效中断，从 2022-12-01 重新起算 3 年 → 2025-12-01。'
+  },
+  {
+    practice_id: 10258, source_lesson_id: 26,
+    type: 'law', level: 'exam', hot: ['limitation'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列关于诉讼时效的说法，正确的是（ ）。',
+    options: [
+      { text: '当事人可以约定延长诉讼时效期间', is_correct: false },
+      { text: '诉讼时效届满后，义务人仍可自愿履行', is_correct: true },
+      { text: '诉讼时效届满后，债权本身消灭', is_correct: false },
+      { text: '超过诉讼时效的债权不受任何法律保护', is_correct: false }
+    ],
+    explain: '时效届满只消灭胜诉权，债权本身仍存在；义务人自愿履行有效，不得以时效为由要求返还。时效属强制性规定，当事人不可约定变更。'
+  },
+  {
+    practice_id: 10259, source_lesson_id: 26,
+    type: 'law', level: 'exam', hot: ['limitation'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于诉讼时效的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '诉讼时效届满后义务人取得时效利益，权利人的胜诉权消灭', is_correct: true },
+      { label: 'B', text: '义务人在诉讼时效届满后自愿履行的，不得请求返还', is_correct: true },
+      { label: 'C', text: '当事人可以协议延长诉讼时效', is_correct: false },
+      { label: 'D', text: '不超过 20 年最长时效的，权利人依法享有胜诉权', is_correct: true }
+    ],
+    explain: 'C 错误：诉讼时效属强制性规定，当事人不能协议变更。A/B/D 均正确。'
+  },
+  {
+    practice_id: 10261, source_lesson_id: 27,
+    type: 'law', level: 'basic', hot: ['archive'],
+    interaction_type: 'single',
+    prompt: '下列会计档案中，保管期限为永久的是（ ）。',
+    options: [
+      { text: '原始凭证', is_correct: false },
+      { text: '年度财务会计报告', is_correct: true },
+      { text: '总账', is_correct: false },
+      { text: '银行存款余额调节表', is_correct: false }
+    ],
+    explain: '永久保管：年度财务会计报告、会计档案鉴定销毁意见书、会计档案保管清册。'
+  },
+  {
+    practice_id: 10262, source_lesson_id: 27,
+    type: 'law', level: 'basic', hot: ['archive'],
+    interaction_type: 'single',
+    prompt: '下列会计档案中，保管期限为 10 年的是（ ）。',
+    options: [
+      { text: '记账凭证', is_correct: false },
+      { text: '明细账', is_correct: false },
+      { text: '月度财务会计报告', is_correct: true },
+      { text: '日记账', is_correct: false }
+    ],
+    explain: '月度/季度财务会计报告保管 10 年；原始凭证、记账凭证、各类账簿保管 30 年。'
+  },
+  {
+    practice_id: 10263, source_lesson_id: 27,
+    type: 'law', level: 'basic', hot: ['archive'],
+    interaction_type: 'single',
+    prompt: '下列关于会计档案保管的说法，正确的是（ ）。',
+    options: [
+      { text: '会计档案可以携带出境', is_correct: false },
+      { text: '当年形成的会计档案，在会计年度终了后可暂由会计机构保管 1 年', is_correct: true },
+      { text: '会计档案保管期满后可直接销毁', is_correct: false },
+      { text: '电子会计档案不属于会计档案范围', is_correct: false }
+    ],
+    explain: '当年档案暂由会计机构保管 1 年后移交档案机构；期满销毁须经鉴定并报批；电子档案同等法律效力。'
+  },
+  {
+    practice_id: 10264, source_lesson_id: 27,
+    type: 'law', level: 'improve', hot: ['archive'],
+    interaction_type: 'single',
+    prompt: '某公司 2010 年的原始凭证，最早可在哪一年销毁（ ）？',
+    options: [
+      { text: '2040 年', is_correct: false },
+      { text: '2041 年', is_correct: true },
+      { text: '2039 年', is_correct: false },
+      { text: '2020 年', is_correct: false }
+    ],
+    explain: '原始凭证保管 30 年；2010 年形成的档案，2010+30=2040 年到期，2041 年才可依法销毁。'
+  },
+  {
+    practice_id: 10265, source_lesson_id: 27,
+    type: 'law', level: 'improve', hot: ['archive'],
+    interaction_type: 'multi',
+    prompt: '下列关于会计档案销毁程序的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '必须编制会计档案销毁清册', is_correct: true },
+      { label: 'B', text: '单位负责人须在销毁清册上签署意见', is_correct: true },
+      { label: 'C', text: '销毁时须有监销人在场并在清册上签名', is_correct: true },
+      { label: 'D', text: '保管期满的会计档案可立即销毁，无需审批', is_correct: false }
+    ],
+    explain: 'D 错误：保管期满后须经鉴定，不具保存价值的才可销毁，且须履行编清册、领导签批、监销等手续。'
+  },
+  {
+    practice_id: 10266, source_lesson_id: 27,
+    type: 'law', level: 'improve', hot: ['archive'],
+    interaction_type: 'single',
+    prompt: '下列关于会计档案的表述，正确的是（ ）。',
+    options: [
+      { text: '会计档案的保管期限从档案形成的年度第一天起计算', is_correct: false },
+      { text: '会计档案的保管期限从档案形成的年度最后一天起计算', is_correct: true },
+      { text: '会计档案的保管期限从次年 1 月 1 日起计算', is_correct: false },
+      { text: '保管期限以自然年度为单位，从 1 月 1 日起计算', is_correct: false }
+    ],
+    explain: '保管期限从会计档案形成年度的年末（12 月 31 日）起计算。'
+  },
+  {
+    practice_id: 10267, source_lesson_id: 27,
+    type: 'law', level: 'improve', hot: ['archive'],
+    interaction_type: 'single',
+    prompt: '下列关于电子会计档案的说法，正确的是（ ）。',
+    options: [
+      { text: '电子会计档案不需要与纸质档案一同归档', is_correct: false },
+      { text: '符合条件的电子会计档案可以单独归档，不需要打印纸质档案', is_correct: true },
+      { text: '电子会计档案的保管期限比纸质档案短', is_correct: false },
+      { text: '电子会计档案不具有法律效力', is_correct: false }
+    ],
+    explain: '满足真实性、完整性、可用性、安全性条件的电子会计档案，可单独归档，与纸质档案具有同等法律效力，保管期限相同。'
+  },
+  {
+    practice_id: 10268, source_lesson_id: 27,
+    type: 'law', level: 'exam', hot: ['archive'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列会计档案中，保管期限为 30 年的是（ ）。',
+    options: [
+      { text: '年度财务会计报告', is_correct: false },
+      { text: '会计档案保管清册', is_correct: false },
+      { text: '记账凭证', is_correct: true },
+      { text: '月度财务会计报告', is_correct: false }
+    ],
+    explain: '年度报告和档案清册永久；月度/季度报告 10 年；原始凭证、记账凭证、各类账簿 30 年。'
+  },
+  {
+    practice_id: 10269, source_lesson_id: 27,
+    type: 'law', level: 'exam', hot: ['archive'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于会计档案保管期限的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '原始凭证保管期限为 30 年', is_correct: true },
+      { label: 'B', text: '年度财务会计报告保管期限为永久', is_correct: true },
+      { label: 'C', text: '银行存款余额调节表保管期限为 10 年', is_correct: true },
+      { label: 'D', text: '总账保管期限为 10 年', is_correct: false }
+    ],
+    explain: 'D 错误：总账（及各类账簿）保管期限为 30 年，不是 10 年。A/B/C 均正确。'
+  },
+  {
+    practice_id: 10271, source_lesson_id: 28,
+    type: 'law', level: 'basic', hot: ['accountant-job'],
+    interaction_type: 'single',
+    prompt: '担任会计机构负责人（会计主管人员）须具备的条件是（ ）。',
+    options: [
+      { text: '取得注册会计师资格', is_correct: false },
+      { text: '取得会计师以上专业技术资格，或从事会计工作 3 年以上', is_correct: true },
+      { text: '取得助理会计师资格', is_correct: false },
+      { text: '从事会计工作 1 年以上', is_correct: false }
+    ],
+    explain: '法定条件：会计师（中级）以上专业技术资格，或从事会计工作 3 年以上。两个条件满足其一即可。'
+  },
+  {
+    practice_id: 10272, source_lesson_id: 28,
+    type: 'law', level: 'basic', hot: ['accountant-job'],
+    interaction_type: 'single',
+    prompt: '下列各项中，不得担任本单位会计机构负责人的是（ ）。',
+    options: [
+      { text: '取得中级会计职称的外聘人员', is_correct: false },
+      { text: '从事会计工作 4 年的本单位员工', is_correct: false },
+      { text: '国有单位负责人的配偶', is_correct: true },
+      { text: '与单位无亲属关系的注册会计师', is_correct: false }
+    ],
+    explain: '直系亲属（配偶、父母、子女、兄弟姐妹）须回避；其余满足条件者均可担任。'
+  },
+  {
+    practice_id: 10273, source_lesson_id: 28,
+    type: 'law', level: 'basic', hot: ['accountant-job'],
+    interaction_type: 'single',
+    prompt: '下列关于出纳岗位的说法，正确的是（ ）。',
+    options: [
+      { text: '出纳可以兼任稽核工作', is_correct: false },
+      { text: '单位负责人的直系亲属不得担任本单位出纳', is_correct: false },
+      { text: '会计机构负责人不得兼任出纳', is_correct: true },
+      { text: '出纳可以兼任会计档案保管工作', is_correct: false }
+    ],
+    explain: '出纳不得兼任稽核、会计档案保管及收入、支出、债权债务账目的登记工作；会计机构负责人不得兼任出纳。'
+  },
+  {
+    practice_id: 10274, source_lesson_id: 28,
+    type: 'law', level: 'improve', hot: ['accountant-job'],
+    interaction_type: 'single',
+    prompt: '下列人员中，依法不得从事会计工作的是（ ）。',
+    options: [
+      { text: '曾因交通违章被行政处罚的人员', is_correct: false },
+      { text: '因提供虚假财务会计报告被吊销会计从业资格证书不满 5 年的人员', is_correct: true },
+      { text: '从未取得会计从业资格证书的大学毕业生', is_correct: false },
+      { text: '年满 60 周岁的退休会计人员', is_correct: false }
+    ],
+    explain: '被吊销会计从业资格证书的人员，5 年内不得再次取得资格，期间不得从事会计工作（《会计法》第 40 条）。'
+  },
+  {
+    practice_id: 10275, source_lesson_id: 28,
+    type: 'law', level: 'improve', hot: ['accountant-job'],
+    interaction_type: 'multi',
+    prompt: '下列人员中，应当回避不得担任本单位会计机构负责人的有（ ）。',
+    options: [
+      { label: 'A', text: '单位负责人的配偶', is_correct: true },
+      { label: 'B', text: '单位负责人的父母', is_correct: true },
+      { label: 'C', text: '单位负责人的子女', is_correct: true },
+      { label: 'D', text: '单位负责人的同事', is_correct: false },
+      { label: 'E', text: '单位负责人的朋友', is_correct: false }
+    ],
+    explain: '回避范围限于直系亲属：配偶、父母、子女、兄弟姐妹。同事和朋友不在回避范围内。'
+  },
+  {
+    practice_id: 10276, source_lesson_id: 28,
+    type: 'law', level: 'improve', hot: ['accountant-job'],
+    interaction_type: 'single',
+    prompt: '下列说法中，符合《会计法》对会计工作交接要求的是（ ）。',
+    options: [
+      { text: '会计人员离职时，可将账簿、凭证等移交给普通员工保管', is_correct: false },
+      { text: '移交人须在监交人监督下进行交接，移交清册一式三份', is_correct: true },
+      { text: '会计机构负责人移交时，无需监交人', is_correct: false },
+      { text: '交接完成后，移交人对移交前的会计资料不再承担责任', is_correct: false }
+    ],
+    explain: '交接须有监交人（单位负责人或指定人员）在场，编制移交清册一式三份；交接后移交人仍对原工作期间的问题承担责任。'
+  },
+  {
+    practice_id: 10277, source_lesson_id: 28,
+    type: 'law', level: 'improve', hot: ['accountant-job'],
+    interaction_type: 'single',
+    prompt: '下列关于会计人员继续教育的说法，正确的是（ ）。',
+    options: [
+      { text: '会计人员只需在取得资格时接受一次培训', is_correct: false },
+      { text: '会计人员应当参加继续教育，提高业务素质和会计职业道德水平', is_correct: true },
+      { text: '继续教育由会计人员自愿参加', is_correct: false },
+      { text: '继续教育学时要求由每位会计人员自行决定', is_correct: false }
+    ],
+    explain: '会计人员须参加继续教育，这是法定义务，并非自愿，旨在持续提升职业素质和道德水准。'
+  },
+  {
+    practice_id: 10278, source_lesson_id: 28,
+    type: 'law', level: 'exam', hot: ['accountant-job'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列关于会计工作岗位设置的说法，正确的是（ ）。',
+    options: [
+      { text: '出纳可以兼任会计档案保管工作', is_correct: false },
+      { text: '会计机构负责人可以兼任出纳', is_correct: false },
+      { text: '小企业可以由一人兼任多个会计岗位，但出纳不得兼任稽核', is_correct: true },
+      { text: '会计人员可以兼任与本职无关的其他业务工作', is_correct: false }
+    ],
+    explain: '规模较小的单位可一人兼多岗，但出纳严禁兼任稽核、登记债权债务账目及档案保管；会计机构负责人不得兼任出纳。'
+  },
+  {
+    practice_id: 10279, source_lesson_id: 28,
+    type: 'law', level: 'exam', hot: ['accountant-job'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于会计人员任职资格的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '担任会计机构负责人须取得会计师以上职称或从事会计工作 3 年以上', is_correct: true },
+      { label: 'B', text: '被吊销会计从业资格证书的人员，5 年内不得重新取得资格', is_correct: true },
+      { label: 'C', text: '单位负责人的直系亲属不得在本单位担任会计机构负责人', is_correct: true },
+      { label: 'D', text: '只要取得助理会计师职称，即可担任会计机构负责人', is_correct: false }
+    ],
+    explain: 'D 错误：助理会计师是初级职称，不满足「会计师（中级）以上」的要求。A/B/C 均正确。'
+  }
 );
