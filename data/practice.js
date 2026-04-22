@@ -4286,4 +4286,474 @@ window.PRACTICE.push(
     ],
     explain: 'E 错误：凭证未标明金额的，应按签订时的市场价格或核定价格计税，不能免税。A/B/C/D 均为正确的计税依据规则。'
   }
+,
+  {
+    practice_id: 10361, source_lesson_id: 37,
+    type: 'law', level: 'basic', hot: ['tax-register'],
+    interaction_type: 'single',
+    prompt: '纳税人自领取营业执照之日起，办理税务登记的法定期限为（ ）。',
+    options: [
+      { text: '15 日内', is_correct: false },
+      { text: '30 日内', is_correct: true },
+      { text: '60 日内', is_correct: false },
+      { text: '90 日内', is_correct: false }
+    ],
+    explain: '领取营业执照之日起 30 日内申报办理税务登记，逾期按规定处罚。'
+  },
+  {
+    practice_id: 10362, source_lesson_id: 37,
+    type: 'law', level: 'basic', hot: ['tax-register'],
+    interaction_type: 'single',
+    prompt: '某公司 2024-05-20 领取营业执照，办理税务登记的最晚日期是（ ）。',
+    options: [
+      { text: '2024-05-30', is_correct: false },
+      { text: '2024-06-09', is_correct: false },
+      { text: '2024-06-19', is_correct: true },
+      { text: '2024-06-30', is_correct: false }
+    ],
+    explain: '2024-05-20 + 30 天 = 2024-06-19。'
+  },
+  {
+    practice_id: 10363, source_lesson_id: 37,
+    type: 'law', level: 'basic', hot: ['tax-register'],
+    interaction_type: 'single',
+    prompt: '下列关于发票管理说法正确的是（ ）。',
+    options: [
+      { text: '企业可以为他人虚开发票，但需告知税务机关', is_correct: false },
+      { text: '取得虚开的增值税专用发票，不得抵扣进项税额', is_correct: true },
+      { text: '普通发票可以不按规定保管', is_correct: false },
+      { text: '发票遗失无需向税务机关报告', is_correct: false }
+    ],
+    explain: '取得虚开增值税专用发票的进项税额不得抵扣，且可能承担相应法律责任。虚开发票属违法行为，无论是否告知税务机关均不合法。'
+  },
+  {
+    practice_id: 10364, source_lesson_id: 37,
+    type: 'law', level: 'improve', hot: ['tax-register'],
+    interaction_type: 'single',
+    prompt: '纳税人依法终止纳税义务时，办理注销登记的正确顺序是（ ）。',
+    options: [
+      { text: '先注销工商，再注销税务', is_correct: false },
+      { text: '先注销税务，再注销工商', is_correct: true },
+      { text: '同时注销，顺序无要求', is_correct: false },
+      { text: '只需注销工商，税务自动注销', is_correct: false }
+    ],
+    explain: '依法应先向税务机关办理注销税务登记，再向工商机关办理注销登记。'
+  },
+  {
+    practice_id: 10365, source_lesson_id: 37,
+    type: 'law', level: 'improve', hot: ['tax-register'],
+    interaction_type: 'single',
+    prompt: '下列行为中，属于虚开发票的是（ ）。',
+    options: [
+      { text: '为他人开具与实际经营业务不符的发票', is_correct: true },
+      { text: '在规定期限内开具当月发票', is_correct: false },
+      { text: '将发票交由购货方保管', is_correct: false },
+      { text: '使用税控系统开具发票', is_correct: false }
+    ],
+    explain: '虚开发票包括：为他人/自己开具与实际业务不符的发票、让他人为自己虚开、介绍他人虚开，均属违法。'
+  },
+  {
+    practice_id: 10366, source_lesson_id: 37,
+    type: 'law', level: 'improve', hot: ['tax-register'],
+    interaction_type: 'multi',
+    prompt: '下列发生变化时须办理税务变更登记的有（ ）。',
+    options: [
+      { label: 'A', text: '企业名称变更', is_correct: true },
+      { label: 'B', text: '法定代表人变更', is_correct: true },
+      { label: 'C', text: '经营地址变更', is_correct: true },
+      { label: 'D', text: '注册资本增加', is_correct: true },
+      { label: 'E', text: '会计人员更换', is_correct: false }
+    ],
+    explain: '凡税务登记证载明事项发生变化（名称、法人、地址、注册资本等），均须在规定期限内办理变更登记。会计人员更换不涉及税务登记事项，无需变更。'
+  },
+  {
+    practice_id: 10367, source_lesson_id: 37,
+    type: 'law', level: 'improve', hot: ['tax-register'],
+    interaction_type: 'single',
+    prompt: '下列关于增值税专用发票使用的说法，正确的是（ ）。',
+    options: [
+      { text: '小规模纳税人可自行领购增值税专用发票', is_correct: false },
+      { text: '增值税专用发票只能由一般纳税人领购使用', is_correct: true },
+      { text: '取得专用发票即可无条件抵扣进项税', is_correct: false },
+      { text: '专用发票遗失不影响进项税额抵扣', is_correct: false }
+    ],
+    explain: '增值税专用发票只能由增值税一般纳税人领购使用；小规模纳税人不能自行领购（可申请税务机关代开）；取得专用发票须合规才可抵扣；遗失须按规定补救方可抵扣。'
+  },
+  {
+    practice_id: 10368, source_lesson_id: 37,
+    type: 'law', level: 'exam', hot: ['tax-register'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列关于税务登记的说法，正确的是（ ）。',
+    options: [
+      { text: '个体工商户不需要办理税务登记', is_correct: false },
+      { text: '扣缴义务人应当办理扣缴税款登记', is_correct: true },
+      { text: '外出经营活动无需向经营地税务机关报告', is_correct: false },
+      { text: '税务机关可拒绝接受纳税人办理税务登记', is_correct: false }
+    ],
+    explain: '扣缴义务人须向主管税务机关办理扣缴税款登记；个体工商户同样需要税务登记；外出经营须向经营地税务机关报告；税务机关无权拒绝合法登记申请。'
+  },
+  {
+    practice_id: 10369, source_lesson_id: 37,
+    type: 'law', level: 'exam', hot: ['tax-register'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于发票管理的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '发票由税务机关统一印制', is_correct: true },
+      { label: 'B', text: '单位和个人不得转借、转让发票', is_correct: true },
+      { label: 'C', text: '增值税专用发票只能由一般纳税人领购使用', is_correct: true },
+      { label: 'D', text: '普通发票可以抵扣增值税进项税额', is_correct: false }
+    ],
+    explain: 'D 错误：普通发票不能抵扣增值税进项，只有增值税专用发票（及海关进口增值税专用缴款书等）才可抵扣。A/B/C 均正确。'
+  },
+  {
+    practice_id: 10371, source_lesson_id: 38,
+    type: 'law', level: 'basic', hot: ['tax-enforcement'],
+    interaction_type: 'single',
+    prompt: '税务机关对纳税人欠缴税款征收滞纳金，日加收比例为（ ）。',
+    options: [
+      { text: '万分之三', is_correct: false },
+      { text: '万分之五', is_correct: true },
+      { text: '千分之一', is_correct: false },
+      { text: '千分之五', is_correct: false }
+    ],
+    explain: '欠缴税款滞纳金按日加收万分之五（0.05‰/天）。'
+  },
+  {
+    practice_id: 10372, source_lesson_id: 38,
+    type: 'calc', level: 'basic', hot: ['tax-enforcement'],
+    interaction_type: 'single',
+    prompt: '某纳税人欠缴税款 50,000 元，逾期 20 天未缴。应加收滞纳金（ ）元。',
+    options: [
+      { text: '25 元', is_correct: false },
+      { text: '50 元', is_correct: true },
+      { text: '100 元', is_correct: false },
+      { text: '500 元', is_correct: false }
+    ],
+    explain: '滞纳金 = 50,000 × 0.00005 × 20 = 50 元。'
+  },
+  {
+    practice_id: 10373, source_lesson_id: 38,
+    type: 'calc', level: 'basic', hot: ['tax-enforcement'],
+    interaction_type: 'single',
+    prompt: '某企业欠缴税款 100,000 元，逾期 30 天。应加收滞纳金（ ）元。',
+    options: [
+      { text: '150 元', is_correct: true },
+      { text: '300 元', is_correct: false },
+      { text: '1,500 元', is_correct: false },
+      { text: '3,000 元', is_correct: false }
+    ],
+    explain: '滞纳金 = 100,000 × 0.00005 × 30 = 150 元。'
+  },
+  {
+    practice_id: 10374, source_lesson_id: 38,
+    type: 'law', level: 'improve', hot: ['tax-enforcement'],
+    interaction_type: 'single',
+    prompt: '税务机关采取税收保全措施，须经（ ）批准。',
+    options: [
+      { text: '主管税务所所长', is_correct: false },
+      { text: '县以上税务局局长', is_correct: true },
+      { text: '省级税务机关负责人', is_correct: false },
+      { text: '国家税务总局', is_correct: false }
+    ],
+    explain: '税收保全措施须经县以上税务局（分局）局长批准，主管税务所无此权限。'
+  },
+  {
+    practice_id: 10375, source_lesson_id: 38,
+    type: 'law', level: 'improve', hot: ['tax-enforcement'],
+    interaction_type: 'single',
+    prompt: '下列财产中，税务机关不得采取税收保全措施的是（ ）。',
+    options: [
+      { text: '企业的生产设备', is_correct: false },
+      { text: '企业的银行存款', is_correct: false },
+      { text: '个人及其扶养家属维持生活必需的住房和用品', is_correct: true },
+      { text: '企业库存商品', is_correct: false }
+    ],
+    explain: '税收保全和强制执行均不得及于纳税人本人及其所扶养家属维持生活必需的住房和用品。'
+  },
+  {
+    practice_id: 10376, source_lesson_id: 38,
+    type: 'law', level: 'improve', hot: ['tax-enforcement'],
+    interaction_type: 'single',
+    prompt: '经催告逾期仍未缴纳税款的，税务机关书面通知银行扣缴税款，须经（ ）批准。',
+    options: [
+      { text: '主管税务所所长', is_correct: false },
+      { text: '县以上税务局局长', is_correct: true },
+      { text: '省级税务机关', is_correct: false },
+      { text: '法院', is_correct: false }
+    ],
+    explain: '强制扣缴存款须经县以上税务局局长批准，与保全措施的审批层级相同。'
+  },
+  {
+    practice_id: 10377, source_lesson_id: 38,
+    type: 'law', level: 'improve', hot: ['tax-enforcement'],
+    interaction_type: 'multi',
+    prompt: '下列属于税收强制执行措施的有（ ）。',
+    options: [
+      { label: 'A', text: '书面通知银行从欠税人存款中扣缴', is_correct: true },
+      { label: 'B', text: '拍卖查封扣押的商品抵缴税款', is_correct: true },
+      { label: 'C', text: '吊销营业执照', is_correct: false },
+      { label: 'D', text: '没收违法所得', is_correct: false }
+    ],
+    explain: 'A/B 是税收强制执行措施；C 吊销营业执照是工商机关的行政处罚；D 没收违法所得属税务行政处罚，非强制执行。'
+  },
+  {
+    practice_id: 10378, source_lesson_id: 38,
+    type: 'law', level: 'exam', hot: ['tax-enforcement'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列关于税收保全与强制执行的说法，正确的是（ ）。',
+    options: [
+      { text: '税收保全只能针对已到期的税款', is_correct: false },
+      { text: '税务机关可对任何欠税直接采取强制执行，无需催告', is_correct: false },
+      { text: '税收保全可针对有转移财产迹象的纳税人，即便税款未到期', is_correct: true },
+      { text: '强制执行可扣押个人唯一住房', is_correct: false }
+    ],
+    explain: '税收保全针对「有迹象」可能转移财产的纳税人，税款未到期亦可；强制执行须先书面催告；个人维持生活必需住房不得强制执行。'
+  },
+  {
+    practice_id: 10379, source_lesson_id: 38,
+    type: 'law', level: 'exam', hot: ['tax-enforcement'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于税务行政处罚的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '不缴或少缴税款，处 50%~5 倍罚款', is_correct: true },
+      { label: 'B', text: '偷税数额占应纳税额 10% 以上且超 1 万元，处 3 年以下有期徒刑', is_correct: true },
+      { label: 'C', text: '纳税人虚开增值税专用发票，由税务机关没收违法所得并处罚款', is_correct: true },
+      { label: 'D', text: '税务行政处罚可由税务所直接执行，无需局长批准', is_correct: false }
+    ],
+    explain: 'D 错误：重大处罚须经县以上税务局（分局）局长批准或集体审议，不能由税务所直接执行。A/B/C 均为法定条款。'
+  },
+  {
+    practice_id: 10381, source_lesson_id: 39,
+    type: 'law', level: 'basic', hot: ['labor-probation'],
+    interaction_type: 'single',
+    prompt: '劳动合同期限 3 个月以上不满 1 年的，试用期不得超过（ ）。',
+    options: [
+      { text: '15 天', is_correct: false },
+      { text: '1 个月', is_correct: true },
+      { text: '2 个月', is_correct: false },
+      { text: '3 个月', is_correct: false }
+    ],
+    explain: '3 月以上不满 1 年→上限 1 月；1 年以上不满 3 年→上限 2 月；3 年以上及无固定期限→上限 6 月。'
+  },
+  {
+    practice_id: 10382, source_lesson_id: 39,
+    type: 'law', level: 'basic', hot: ['labor-probation'],
+    interaction_type: 'single',
+    prompt: '下列劳动合同中，不得约定试用期的是（ ）。',
+    options: [
+      { text: '2 年固定期限劳动合同', is_correct: false },
+      { text: '3 年固定期限劳动合同', is_correct: false },
+      { text: '无固定期限劳动合同', is_correct: false },
+      { text: '以完成某项工程为期限的劳动合同', is_correct: true }
+    ],
+    explain: '以完成一定工作任务为期限的合同，以及期限不满 3 个月的合同，不得约定试用期。'
+  },
+  {
+    practice_id: 10383, source_lesson_id: 39,
+    type: 'law', level: 'basic', hot: ['labor-probation'],
+    interaction_type: 'single',
+    prompt: '同一用人单位与同一劳动者（ ）约定试用期。',
+    options: [
+      { text: '可多次', is_correct: false },
+      { text: '只能约定一次', is_correct: true },
+      { text: '续签时可重新约定', is_correct: false },
+      { text: '每次签新合同均可约定', is_correct: false }
+    ],
+    explain: '无论续签多少次，同一单位与同一劳动者只能约定一次试用期。'
+  },
+  {
+    practice_id: 10384, source_lesson_id: 39,
+    type: 'law', level: 'improve', hot: ['labor-probation'],
+    interaction_type: 'single',
+    prompt: '某公司与员工签订 2 年劳动合同，约定试用期 3 个月。该约定（ ）。',
+    options: [
+      { text: '完全合法', is_correct: false },
+      { text: '试用期超期，超出部分无效，实际按 2 个月执行', is_correct: true },
+      { text: '整个合同无效', is_correct: false },
+      { text: '试用期约定整体无效，视为无试用期', is_correct: false }
+    ],
+    explain: '1 年以上不满 3 年合同试用期上限 2 月，约定 3 月超出 1 月，超出部分无效，实际执行 2 月；合同其他条款有效。'
+  },
+  {
+    practice_id: 10385, source_lesson_id: 39,
+    type: 'law', level: 'improve', hot: ['labor-probation'],
+    interaction_type: 'single',
+    prompt: '试用期内，用人单位解除劳动合同须（ ）。',
+    options: [
+      { text: '无需理由，随时解除', is_correct: false },
+      { text: '提前 3 天通知即可', is_correct: false },
+      { text: '证明劳动者不符合录用条件', is_correct: true },
+      { text: '经劳动仲裁委员会批准', is_correct: false }
+    ],
+    explain: '试用期内用人单位解除合同，必须有证据证明劳动者不符合录用条件，不能随意解除；否则属违法解除，须支付赔偿金。'
+  },
+  {
+    practice_id: 10386, source_lesson_id: 39,
+    type: 'law', level: 'improve', hot: ['labor-probation'],
+    interaction_type: 'single',
+    prompt: '劳动者在试用期内解除劳动合同，需提前（ ）通知用人单位。',
+    options: [
+      { text: '3 天', is_correct: true },
+      { text: '15 天', is_correct: false },
+      { text: '30 天', is_correct: false },
+      { text: '无需通知', is_correct: false }
+    ],
+    explain: '试用期内劳动者解除合同提前 3 天通知；转正后须提前 30 天（书面）通知。'
+  },
+  {
+    practice_id: 10387, source_lesson_id: 39,
+    type: 'law', level: 'improve', hot: ['labor-probation'],
+    interaction_type: 'multi',
+    prompt: '下列关于试用期工资的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '不得低于本单位相同岗位最低档工资', is_correct: true },
+      { label: 'B', text: '不得低于劳动合同约定工资的 80%', is_correct: true },
+      { label: 'C', text: '不得低于用人单位所在地最低工资标准', is_correct: true },
+      { label: 'D', text: '用人单位可自行决定试用期工资，无下限', is_correct: false }
+    ],
+    explain: '试用期工资同时受三个下限约束：① 同岗位最低档；② 合同约定工资的 80%；③ 当地最低工资标准，三者取其高。'
+  },
+  {
+    practice_id: 10388, source_lesson_id: 39,
+    type: 'law', level: 'exam', hot: ['labor-probation'],
+    interaction_type: 'single',
+    prompt: '【真题级】甲公司与员工签订无固定期限劳动合同，约定试用期 8 个月。该约定（ ）。',
+    options: [
+      { text: '合法，无固定期限合同试用期无上限', is_correct: false },
+      { text: '超期 2 个月无效，实际按 6 个月执行', is_correct: true },
+      { text: '整个试用期约定无效，视为无试用期', is_correct: false },
+      { text: '合同因试用期违法而整体无效', is_correct: false }
+    ],
+    explain: '无固定期限合同试用期上限 6 个月，约定 8 个月超出 2 个月，超出部分无效，实际执行 6 个月；合同其他条款有效。'
+  },
+  {
+    practice_id: 10389, source_lesson_id: 39,
+    type: 'law', level: 'exam', hot: ['labor-probation'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列情形中，用人单位可以解除劳动合同的有（ ）。',
+    options: [
+      { label: 'A', text: '劳动者在试用期被证明不符合录用条件', is_correct: true },
+      { label: 'B', text: '劳动者严重违反用人单位规章制度', is_correct: true },
+      { label: 'C', text: '劳动者患病，在规定医疗期内', is_correct: false },
+      { label: 'D', text: '劳动者因工负伤，在停工留薪期内', is_correct: false }
+    ],
+    explain: 'C/D 属于不得解除的情形（医疗期内、工伤停工留薪期内受法律保护）。A/B 是法定可解除情形。'
+  },
+  {
+    practice_id: 10391, source_lesson_id: 40,
+    type: 'law', level: 'basic', hot: ['social-insurance'],
+    interaction_type: 'single',
+    prompt: '下列险种中，由用人单位全额承担、个人不缴费的是（ ）。',
+    options: [
+      { text: '养老保险', is_correct: false },
+      { text: '医疗保险', is_correct: false },
+      { text: '工伤保险', is_correct: true },
+      { text: '失业保险', is_correct: false }
+    ],
+    explain: '工伤保险和生育保险由用人单位全额缴纳，个人不缴费；养老、医疗、失业由单位和个人共同缴纳。'
+  },
+  {
+    practice_id: 10392, source_lesson_id: 40,
+    type: 'law', level: 'basic', hot: ['social-insurance'],
+    interaction_type: 'single',
+    prompt: '社会保险中，需要个人与单位共同缴费的险种共有（ ）种。',
+    options: [
+      { text: '2', is_correct: false },
+      { text: '3', is_correct: true },
+      { text: '4', is_correct: false },
+      { text: '5', is_correct: false }
+    ],
+    explain: '养老、医疗、失业三险由个人和单位共同缴费；工伤和生育由单位全额承担。共 3 种。'
+  },
+  {
+    practice_id: 10393, source_lesson_id: 40,
+    type: 'law', level: 'basic', hot: ['social-insurance'],
+    interaction_type: 'single',
+    prompt: '下列关于社会保险的说法，正确的是（ ）。',
+    options: [
+      { text: '个人可自愿选择是否参加社会保险', is_correct: false },
+      { text: '社会保险具有强制性，用人单位和劳动者必须依法参加', is_correct: true },
+      { text: '只有签订合同的员工才需参加社会保险', is_correct: false },
+      { text: '试用期内可暂不缴纳社会保险', is_correct: false }
+    ],
+    explain: '社会保险具有强制性，自用工之日起（包括试用期）就应依法参加并缴费，与是否签订合同无关。'
+  },
+  {
+    practice_id: 10394, source_lesson_id: 40,
+    type: 'calc', level: 'improve', hot: ['social-insurance'],
+    interaction_type: 'single',
+    prompt: '某员工月工资 10,000 元，养老保险个人缴费比例 8%。每月个人应缴养老保险费为（ ）元。',
+    options: [
+      { text: '600 元', is_correct: false },
+      { text: '800 元', is_correct: true },
+      { text: '1,600 元', is_correct: false },
+      { text: '2,400 元', is_correct: false }
+    ],
+    explain: '个人养老保险 = 10,000 × 8% = 800 元。单位缴费比例 16%，与个人部分不同。'
+  },
+  {
+    practice_id: 10395, source_lesson_id: 40,
+    type: 'calc', level: 'improve', hot: ['social-insurance'],
+    interaction_type: 'single',
+    prompt: '某员工月工资 10,000 元，单位养老 16%、医疗 8.5%、失业 0.5%。单位三险月缴费合计约（ ）元。',
+    options: [
+      { text: '1,600 元', is_correct: false },
+      { text: '2,000 元', is_correct: false },
+      { text: '2,500 元', is_correct: true },
+      { text: '3,200 元', is_correct: false }
+    ],
+    explain: '单位：养老 1,600 + 医疗 850 + 失业 50 = 2,500 元（各地比例略有差异，此为典型值）。'
+  },
+  {
+    practice_id: 10396, source_lesson_id: 40,
+    type: 'law', level: 'improve', hot: ['social-insurance'],
+    interaction_type: 'single',
+    prompt: '职工因工作遭受事故伤害，用人单位应在事故发生之日起（ ）内提出工伤认定申请。',
+    options: [
+      { text: '15 天', is_correct: false },
+      { text: '30 天', is_correct: true },
+      { text: '60 天', is_correct: false },
+      { text: '90 天', is_correct: false }
+    ],
+    explain: '用人单位应在事故发生之日起 30 日内提出工伤认定申请；用人单位未提出的，工伤职工或近亲属可在 1 年内提出。'
+  },
+  {
+    practice_id: 10397, source_lesson_id: 40,
+    type: 'law', level: 'improve', hot: ['social-insurance'],
+    interaction_type: 'multi',
+    prompt: '下列关于社会保险基金的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '社会保险基金专款专用，不得挪作他用', is_correct: true },
+      { label: 'B', text: '任何组织和个人不得侵占或挪用社会保险基金', is_correct: true },
+      { label: 'C', text: '社会保险基金可用于投资担保', is_correct: false },
+      { label: 'D', text: '社会保险基金监督由人大、审计机关等实施', is_correct: true }
+    ],
+    explain: 'C 错误：社会保险基金不得用于投资担保或偿还债务。A/B/D 均正确。'
+  },
+  {
+    practice_id: 10398, source_lesson_id: 40,
+    type: 'law', level: 'exam', hot: ['social-insurance'],
+    interaction_type: 'single',
+    prompt: '【真题级】劳动者达到法定退休年龄时，累计缴纳养老保险费不足 15 年的，正确处理方式是（ ）。',
+    options: [
+      { text: '直接领取基本养老金', is_correct: false },
+      { text: '可继续缴费至满 15 年后领取，或转入新农保/城居保', is_correct: true },
+      { text: '由用人单位补缴差额', is_correct: false },
+      { text: '由国家财政全额补贴', is_correct: false }
+    ],
+    explain: '累计缴费不足 15 年的，可申请延续缴费至满 15 年后按月领取；也可转入新型农村社会养老保险或城镇居民社会养老保险享受相应待遇。'
+  },
+  {
+    practice_id: 10399, source_lesson_id: 40,
+    type: 'law', level: 'exam', hot: ['social-insurance'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于失业保险的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '非本人意愿中断就业的失业人员可申领失业保险金', is_correct: true },
+      { label: 'B', text: '领取失业保险金期间，医疗保险费由失业保险基金缴纳', is_correct: true },
+      { label: 'C', text: '失业保险金的领取期限最长为 24 个月', is_correct: true },
+      { label: 'D', text: '自愿辞职的劳动者可申领失业保险金', is_correct: false }
+    ],
+    explain: 'D 错误：自愿辞职（本人意愿离职）不符合申领条件；A/B/C 均正确（累计缴费满 10 年最长领取 24 个月，医疗费由失业保险基金支付）。'
+  }
 );
