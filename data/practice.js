@@ -2392,4 +2392,477 @@ window.PRACTICE.push(
     ],
     explain: 'C 错误：利润分配顺序为弥补亏损→提法定盈余公积→提任意盈余公积→分配股利，不能跳过盈余公积先分股利。'
   }
+,
+  {
+    practice_id: 10201, source_lesson_id: 21,
+    type: 'concept', level: 'basic', hot: ['report-mapping'],
+    interaction_type: 'single',
+    prompt: '下列各项中，属于资产负债表项目的是（ ）。',
+    options: [
+      { text: '主营业务收入', is_correct: false },
+      { text: '应收账款', is_correct: true },
+      { text: '营业成本', is_correct: false },
+      { text: '管理费用', is_correct: false }
+    ],
+    explain: '应收账款是企业的资产，列示于资产负债表；其余三项是利润表科目（收入/成本/费用）。'
+  },
+  {
+    practice_id: 10202, source_lesson_id: 21,
+    type: 'concept', level: 'basic', hot: ['report-mapping'],
+    interaction_type: 'single',
+    prompt: '下列各项中，属于利润表项目的是（ ）。',
+    options: [
+      { text: '实收资本', is_correct: false },
+      { text: '应付账款', is_correct: false },
+      { text: '销售费用', is_correct: true },
+      { text: '库存商品', is_correct: false }
+    ],
+    explain: '销售费用是期间费用，反映在利润表；实收资本/应付账款/库存商品均属于资产负债表项目。'
+  },
+  {
+    practice_id: 10203, source_lesson_id: 21,
+    type: 'concept', level: 'basic', hot: ['report-mapping'],
+    interaction_type: 'single',
+    prompt: '资产负债表反映的是企业（ ）的财务状况。',
+    options: [
+      { text: '某一时点', is_correct: true },
+      { text: '某一期间', is_correct: false },
+      { text: '过去一年', is_correct: false },
+      { text: '未来一年', is_correct: false }
+    ],
+    explain: '资产负债表是时点报表，反映某一特定日期的资产、负债和所有者权益余额；利润表才是期间报表。'
+  },
+  {
+    practice_id: 10204, source_lesson_id: 21,
+    type: 'concept', level: 'improve', hot: ['report-mapping'],
+    interaction_type: 'multi',
+    prompt: '下列项目中，应列示在利润表中的有（ ）。',
+    options: [
+      { label: 'A', text: '主营业务收入', is_correct: true },
+      { label: 'B', text: '营业成本', is_correct: true },
+      { label: 'C', text: '财务费用', is_correct: true },
+      { label: 'D', text: '预付账款', is_correct: false },
+      { label: 'E', text: '营业外收入', is_correct: true }
+    ],
+    explain: '预付账款是资产负债表项目；其余均为利润表项目（收入/成本/费用/利得）。'
+  },
+  {
+    practice_id: 10205, source_lesson_id: 21,
+    type: 'concept', level: 'improve', hot: ['report-mapping'],
+    interaction_type: 'multi',
+    prompt: '下列项目中，应列示在资产负债表中的有（ ）。',
+    options: [
+      { label: 'A', text: '货币资金', is_correct: true },
+      { label: 'B', text: '盈余公积', is_correct: true },
+      { label: 'C', text: '所得税费用', is_correct: false },
+      { label: 'D', text: '应付职工薪酬', is_correct: true },
+      { label: 'E', text: '投资收益', is_correct: false }
+    ],
+    explain: '所得税费用和投资收益是利润表科目；其余三项分别属于资产、所有者权益、负债，列资产负债表。'
+  },
+  {
+    practice_id: 10206, source_lesson_id: 21,
+    type: 'concept', level: 'improve', hot: ['report-mapping'],
+    interaction_type: 'single',
+    prompt: '下列说法中，正确的是（ ）。',
+    options: [
+      { text: '利润表反映时点数据', is_correct: false },
+      { text: '资产负债表反映期间数据', is_correct: false },
+      { text: '净利润同时出现在两张报表中', is_correct: true },
+      { text: '收入只在资产负债表中列示', is_correct: false }
+    ],
+    explain: '净利润：利润表末行计算得出，同时作为所有者权益变动的来源，在资产负债表「未分配利润」中体现，两张表均有。'
+  },
+  {
+    practice_id: 10207, source_lesson_id: 21,
+    type: 'concept', level: 'improve', hot: ['report-mapping'],
+    interaction_type: 'single',
+    prompt: '编制资产负债表时，「未分配利润」的数据来源于（ ）。',
+    options: [
+      { text: '利润分配表或利润表', is_correct: true },
+      { text: '现金流量表', is_correct: false },
+      { text: '所有者权益变动表', is_correct: false },
+      { text: '备查簿', is_correct: false }
+    ],
+    explain: '未分配利润 = 期初余额 + 本期净利润 − 本期分配，其中净利润来自利润表；也可从利润分配表取数。'
+  },
+  {
+    practice_id: 10208, source_lesson_id: 21,
+    type: 'concept', level: 'exam', hot: ['report-mapping'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列各项中，不影响利润表「营业利润」的是（ ）。',
+    options: [
+      { text: '营业外收入', is_correct: true },
+      { text: '投资收益', is_correct: false },
+      { text: '信用减值损失', is_correct: false },
+      { text: '资产减值损失', is_correct: false }
+    ],
+    explain: '营业外收入/支出在营业利润之后、利润总额之前，不计入营业利润；后三项均参与营业利润计算。'
+  },
+  {
+    practice_id: 10209, source_lesson_id: 21,
+    type: 'concept', level: 'exam', hot: ['report-mapping'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列项目中，在计算「营业利润」时需要扣除的有（ ）。',
+    options: [
+      { label: 'A', text: '营业成本', is_correct: true },
+      { label: 'B', text: '税金及附加', is_correct: true },
+      { label: 'C', text: '三项期间费用', is_correct: true },
+      { label: 'D', text: '营业外支出', is_correct: false },
+      { label: 'E', text: '资产减值损失', is_correct: true }
+    ],
+    explain: '营业外支出在营业利润之后扣除，不参与营业利润计算；其余四项均需扣除。'
+  },
+  {
+    practice_id: 10211, source_lesson_id: 22,
+    type: 'concept', level: 'basic', hot: ['revenue-5step'],
+    interaction_type: 'single',
+    prompt: '新收入准则「五步法」的第一步是（ ）。',
+    options: [
+      { text: '识别合同', is_correct: true },
+      { text: '确定交易价格', is_correct: false },
+      { text: '识别履约义务', is_correct: false },
+      { text: '确认收入', is_correct: false }
+    ],
+    explain: '五步法顺序：①识别合同→②识别履约义务→③确定交易价格→④分摊交易价格→⑤履约时确认收入。'
+  },
+  {
+    practice_id: 10212, source_lesson_id: 22,
+    type: 'concept', level: 'basic', hot: ['revenue-5step'],
+    interaction_type: 'single',
+    prompt: '下列情形中，应在「某一时点」确认收入的是（ ）。',
+    options: [
+      { text: '建造合同', is_correct: false },
+      { text: '软件定制开发合同', is_correct: false },
+      { text: '商品销售（买方已取得控制权）', is_correct: true },
+      { text: '为期一年的物业服务合同', is_correct: false }
+    ],
+    explain: '商品销售在控制权转移时点一次确认；建造、定制开发、持续服务均属于时段确认。'
+  },
+  {
+    practice_id: 10213, source_lesson_id: 22,
+    type: 'calc', level: 'improve', hot: ['revenue-5step'],
+    interaction_type: 'single',
+    prompt: '合同总价 50,000 元，含设备（单独售价 48,000）和一年免费维修（单独售价 4,000）。应分摊给设备的收入最接近（ ）。',
+    options: [
+      { text: '48,000 元', is_correct: false },
+      { text: '46,154 元', is_correct: true },
+      { text: '46,000 元', is_correct: false },
+      { text: '50,000 元', is_correct: false }
+    ],
+    explain: '按单独售价比例分摊：设备收入 = 50,000 × 48,000 ÷ (48,000 + 4,000) ≈ 46,154 元。'
+  },
+  {
+    practice_id: 10214, source_lesson_id: 22,
+    type: 'calc', level: 'improve', hot: ['revenue-5step'],
+    interaction_type: 'single',
+    prompt: '合同总价 120,000 元，含三项履约义务，单独售价分别为 60,000、30,000、10,000。分摊给第二项义务的收入为（ ）。',
+    options: [
+      { text: '30,000 元', is_correct: false },
+      { text: '36,000 元', is_correct: true },
+      { text: '40,000 元', is_correct: false },
+      { text: '24,000 元', is_correct: false }
+    ],
+    explain: '第二项分摊 = 120,000 × 30,000 ÷ (60,000+30,000+10,000) = 120,000 × 30% = 36,000 元。'
+  },
+  {
+    practice_id: 10215, source_lesson_id: 22,
+    type: 'concept', level: 'improve', hot: ['revenue-5step'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，属于「时段」确认收入的有（ ）。',
+    options: [
+      { label: 'A', text: '为客户提供为期 2 年的清洁服务', is_correct: true },
+      { label: 'B', text: '建造一栋办公楼（建造期 18 个月）', is_correct: true },
+      { label: 'C', text: '销售标准化商品（已发货未到客户）', is_correct: false },
+      { label: 'D', text: '按月提供咨询服务', is_correct: true }
+    ],
+    explain: 'C 属于时点确认（货物已发出但尚未转移控制权时不能确认）；A/B/D 均属持续提供服务，按时段确认。'
+  },
+  {
+    practice_id: 10216, source_lesson_id: 22,
+    type: 'concept', level: 'improve', hot: ['revenue-5step'],
+    interaction_type: 'single',
+    prompt: '下列关于「可变对价」的说法，正确的是（ ）。',
+    options: [
+      { text: '可变对价一律不计入交易价格', is_correct: false },
+      { text: '估计的可变对价金额不超过「极可能不会发生重大转回」的限额时才计入', is_correct: true },
+      { text: '可变对价应全额计入合同资产', is_correct: false },
+      { text: '可变对价不影响履约义务的分摊', is_correct: false }
+    ],
+    explain: '可变对价需满足「极可能不会发生重大转回」的约束，在该限额内才可纳入交易价格。'
+  },
+  {
+    practice_id: 10217, source_lesson_id: 22,
+    type: 'calc', level: 'improve', hot: ['revenue-5step'],
+    interaction_type: 'single',
+    prompt: '固定款项 1,000,000 元，另有奖励款 200,000 元（实现概率 70%）。期望交易价格为（ ）。',
+    options: [
+      { text: '1,200,000 元', is_correct: false },
+      { text: '1,140,000 元', is_correct: true },
+      { text: '1,000,000 元', is_correct: false },
+      { text: '1,100,000 元', is_correct: false }
+    ],
+    explain: '期望法：1,000,000 + 200,000 × 70% = 1,140,000 元。'
+  },
+  {
+    practice_id: 10218, source_lesson_id: 22,
+    type: 'concept', level: 'exam', hot: ['revenue-5step'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列关于收入确认「控制权转移」的说法，错误的是（ ）。',
+    options: [
+      { text: '发出商品即控制权转移', is_correct: true },
+      { text: '客户有能力主导商品的使用并获得几乎全部经济利益为控制权转移', is_correct: false },
+      { text: '控制权转移可以是时点也可以是时段', is_correct: false },
+      { text: '风险报酬转移是判断控制权的参考指标之一', is_correct: false }
+    ],
+    explain: '发出商品不等于控制权转移，还需综合判断。控制权的核心是「主导使用并获得几乎全部经济利益」。'
+  },
+  {
+    practice_id: 10219, source_lesson_id: 22,
+    type: 'concept', level: 'exam', hot: ['revenue-5step'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列各项中，属于「合同负债」的有（ ）。',
+    options: [
+      { label: 'A', text: '收到客户预付款但尚未履约', is_correct: true },
+      { label: 'B', text: '已履约但尚未开票', is_correct: false },
+      { label: 'C', text: '客户已付款且企业已履约', is_correct: false },
+      { label: 'D', text: '收到定金后部分履约，剩余未履约', is_correct: true }
+    ],
+    explain: 'B 已履约未开票属于合同资产；C 已履约已付款应确认收入；A 和 D 均是收款在先、履约在后，属合同负债。'
+  },
+  {
+    practice_id: 10221, source_lesson_id: 23,
+    type: 'concept', level: 'basic', hot: ['profit-carry'],
+    interaction_type: 'single',
+    prompt: '期末结转收入时，应（ ）。',
+    options: [
+      { text: '借：主营业务收入 / 贷：本年利润', is_correct: true },
+      { text: '借：本年利润 / 贷：主营业务收入', is_correct: false },
+      { text: '借：主营业务收入 / 贷：利润分配', is_correct: false },
+      { text: '借：本年利润 / 贷：利润分配', is_correct: false }
+    ],
+    explain: '结转收入：将收入类科目贷方余额转入本年利润贷方，分录为借：主营业务收入 / 贷：本年利润。'
+  },
+  {
+    practice_id: 10222, source_lesson_id: 23,
+    type: 'concept', level: 'basic', hot: ['profit-carry'],
+    interaction_type: 'single',
+    prompt: '期末结转费用时，应（ ）。',
+    options: [
+      { text: '借：管理费用 / 贷：本年利润', is_correct: false },
+      { text: '借：本年利润 / 贷：管理费用', is_correct: true },
+      { text: '借：利润分配 / 贷：管理费用', is_correct: false },
+      { text: '借：管理费用 / 贷：利润分配', is_correct: false }
+    ],
+    explain: '结转费用：将费用类科目借方余额转入本年利润借方，分录为借：本年利润 / 贷：管理费用。'
+  },
+  {
+    practice_id: 10223, source_lesson_id: 23,
+    type: 'calc', level: 'basic', hot: ['profit-carry'],
+    interaction_type: 'single',
+    prompt: '主营业务收入 500,000、主营业务成本 300,000、管理费用 80,000、所得税费用 30,000，结转后本年利润余额为（ ）。',
+    options: [
+      { text: '贷方 90,000', is_correct: true },
+      { text: '借方 90,000', is_correct: false },
+      { text: '贷方 120,000', is_correct: false },
+      { text: '贷方 200,000', is_correct: false }
+    ],
+    explain: '本年利润 = 500,000 − 300,000 − 80,000 − 30,000 = 90,000，贷方余额表示盈利。'
+  },
+  {
+    practice_id: 10224, source_lesson_id: 23,
+    type: 'calc', level: 'improve', hot: ['profit-carry'],
+    interaction_type: 'single',
+    prompt: '营业收入 800,000、营业成本 480,000、销售费用 60,000、财务费用 20,000、营业外支出 40,000，本年利润为（ ）。',
+    options: [
+      { text: '200,000', is_correct: true },
+      { text: '240,000', is_correct: false },
+      { text: '260,000', is_correct: false },
+      { text: '160,000', is_correct: false }
+    ],
+    explain: '本年利润 = 800,000 − 480,000 − 60,000 − 20,000 − 40,000 = 200,000。'
+  },
+  {
+    practice_id: 10225, source_lesson_id: 23,
+    type: 'calc', level: 'improve', hot: ['profit-carry'],
+    interaction_type: 'single',
+    prompt: '营业收入 300,000、营业成本 180,000、管理费用 50,000、所得税费用 14,000，本年净利润为（ ）。',
+    options: [
+      { text: '56,000', is_correct: true },
+      { text: '70,000', is_correct: false },
+      { text: '66,000', is_correct: false },
+      { text: '86,000', is_correct: false }
+    ],
+    explain: '净利润 = 300,000 − 180,000 − 50,000 − 14,000 = 56,000。'
+  },
+  {
+    practice_id: 10226, source_lesson_id: 23,
+    type: 'concept', level: 'improve', hot: ['profit-carry'],
+    interaction_type: 'single',
+    prompt: '年末将「本年利润」转入「利润分配——未分配利润」时，若本年盈利，分录为（ ）。',
+    options: [
+      { text: '借：本年利润 / 贷：利润分配——未分配利润', is_correct: true },
+      { text: '借：利润分配——未分配利润 / 贷：本年利润', is_correct: false },
+      { text: '借：本年利润 / 贷：盈余公积', is_correct: false },
+      { text: '借：利润分配——未分配利润 / 贷：盈余公积', is_correct: false }
+    ],
+    explain: '盈利时本年利润贷方余额，年末转出：借：本年利润 / 贷：利润分配——未分配利润。'
+  },
+  {
+    practice_id: 10227, source_lesson_id: 23,
+    type: 'concept', level: 'improve', hot: ['profit-carry'],
+    interaction_type: 'multi',
+    prompt: '下列说法中，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '「本年利润」科目年末无余额', is_correct: true },
+      { label: 'B', text: '结转后「本年利润」余额即为净利润', is_correct: false },
+      { label: 'C', text: '亏损时借：利润分配——未分配利润 / 贷：本年利润', is_correct: false },
+      { label: 'D', text: '所得税费用也需结转进本年利润', is_correct: true }
+    ],
+    explain: 'A 正确：结转完成后本年利润清零；B 错误：结转前贷方余额才是净利润；C 错误：亏损时本年利润借方，结转分录方向相反；D 正确。'
+  },
+  {
+    practice_id: 10228, source_lesson_id: 23,
+    type: 'journal', level: 'exam', hot: ['profit-carry'],
+    interaction_type: 'single',
+    prompt: '【真题级】企业本年亏损 50,000 元，年末结转本年利润的分录为（ ）。',
+    options: [
+      { text: '借：利润分配——未分配利润 50,000 / 贷：本年利润 50,000', is_correct: true },
+      { text: '借：本年利润 50,000 / 贷：利润分配——未分配利润 50,000', is_correct: false },
+      { text: '借：本年利润 50,000 / 贷：盈余公积 50,000', is_correct: false },
+      { text: '借：盈余公积 50,000 / 贷：本年利润 50,000', is_correct: false }
+    ],
+    explain: '亏损时本年利润借方余额 50,000，结转：借：利润分配——未分配利润 / 贷：本年利润（将亏损转入未分配利润借方，体现累计亏损）。'
+  },
+  {
+    practice_id: 10229, source_lesson_id: 23,
+    type: 'concept', level: 'exam', hot: ['profit-carry'],
+    interaction_type: 'single',
+    prompt: '【真题级】关于「本年利润」科目，下列说法正确的是（ ）。',
+    options: [
+      { text: '该科目年末有余额，结转后清零', is_correct: true },
+      { text: '该科目贷方余额表示亏损', is_correct: false },
+      { text: '结转时将费用转入该科目贷方', is_correct: false },
+      { text: '该科目属于负债类科目', is_correct: false }
+    ],
+    explain: '本年利润属于所有者权益类科目，贷方余额表示盈利，年末结转后清零；费用结转进借方（不是贷方）。'
+  },
+  {
+    practice_id: 10231, source_lesson_id: 24,
+    type: 'concept', level: 'basic', hot: ['income-statement'],
+    interaction_type: 'single',
+    prompt: '「营业利润」的计算中，不包括（ ）。',
+    options: [
+      { text: '营业外收入', is_correct: true },
+      { text: '投资收益', is_correct: false },
+      { text: '资产减值损失', is_correct: false },
+      { text: '税金及附加', is_correct: false }
+    ],
+    explain: '营业外收入在营业利润之后、利润总额之前，不参与营业利润计算。'
+  },
+  {
+    practice_id: 10232, source_lesson_id: 24,
+    type: 'calc', level: 'basic', hot: ['income-statement'],
+    interaction_type: 'single',
+    prompt: '营业收入 1,000、营业成本 600、税金及附加 20、三费合计 150、营业外收入 30，利润总额为（ ）。',
+    options: [
+      { text: '260', is_correct: true },
+      { text: '230', is_correct: false },
+      { text: '280', is_correct: false },
+      { text: '200', is_correct: false }
+    ],
+    explain: '营业利润 = 1,000 − 600 − 20 − 150 = 230；利润总额 = 230 + 30 = 260。'
+  },
+  {
+    practice_id: 10233, source_lesson_id: 24,
+    type: 'calc', level: 'improve', hot: ['income-statement'],
+    interaction_type: 'single',
+    prompt: '营业收入 2,000,000、营业成本 1,200,000、税金及附加 40,000、三费 300,000、其他收益 50,000、投资收益 30,000，营业利润为（ ）。',
+    options: [
+      { text: '540,000', is_correct: true },
+      { text: '500,000', is_correct: false },
+      { text: '480,000', is_correct: false },
+      { text: '580,000', is_correct: false }
+    ],
+    explain: '营业利润 = 2,000,000 − 1,200,000 − 40,000 − 300,000 + 50,000 + 30,000 = 540,000。'
+  },
+  {
+    practice_id: 10234, source_lesson_id: 24,
+    type: 'calc', level: 'improve', hot: ['income-statement'],
+    interaction_type: 'single',
+    prompt: '利润总额 400,000 元，所得税税率 25%，净利润为（ ）。',
+    options: [
+      { text: '300,000', is_correct: true },
+      { text: '400,000', is_correct: false },
+      { text: '320,000', is_correct: false },
+      { text: '350,000', is_correct: false }
+    ],
+    explain: '所得税费用 = 400,000 × 25% = 100,000；净利润 = 400,000 − 100,000 = 300,000。'
+  },
+  {
+    practice_id: 10235, source_lesson_id: 24,
+    type: 'calc', level: 'improve', hot: ['income-statement'],
+    interaction_type: 'single',
+    prompt: '营业收入 1,500,000、营业成本 900,000、税金及附加 30,000、三费 200,000、投资损失 20,000，营业利润为（ ）。',
+    options: [
+      { text: '350,000', is_correct: true },
+      { text: '370,000', is_correct: false },
+      { text: '330,000', is_correct: false },
+      { text: '380,000', is_correct: false }
+    ],
+    explain: '营业利润 = 1,500,000 − 900,000 − 30,000 − 200,000 − 20,000 = 350,000（投资损失从营业利润中扣）。'
+  },
+  {
+    practice_id: 10236, source_lesson_id: 24,
+    type: 'concept', level: 'improve', hot: ['income-statement'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，计入「利润总额」但不计入「营业利润」的有（ ）。',
+    options: [
+      { label: 'A', text: '营业外收入', is_correct: true },
+      { label: 'B', text: '营业外支出', is_correct: true },
+      { label: 'C', text: '信用减值损失', is_correct: false },
+      { label: 'D', text: '公允价值变动收益', is_correct: false },
+      { label: 'E', text: '资产处置收益', is_correct: false }
+    ],
+    explain: '营业外收入/支出在营业利润之后、利润总额之前，只影响利润总额；C/D/E 均参与营业利润计算。'
+  },
+  {
+    practice_id: 10237, source_lesson_id: 24,
+    type: 'concept', level: 'improve', hot: ['income-statement'],
+    interaction_type: 'single',
+    prompt: '下列各项中，在利润表中「营业利润」与「利润总额」之间列示的是（ ）。',
+    options: [
+      { text: '营业外收入和营业外支出', is_correct: true },
+      { text: '投资收益', is_correct: false },
+      { text: '资产减值损失', is_correct: false },
+      { text: '财务费用', is_correct: false }
+    ],
+    explain: '营业外收入和营业外支出调整营业利润得到利润总额，列在两者之间；其他均参与营业利润计算。'
+  },
+  {
+    practice_id: 10238, source_lesson_id: 24,
+    type: 'calc', level: 'exam', hot: ['income-statement'],
+    interaction_type: 'single',
+    prompt: '【真题级】营业利润 580,000、营业外收入 60,000、营业外支出 20,000、所得税费用 154,000，净利润为（ ）。',
+    options: [
+      { text: '466,000', is_correct: true },
+      { text: '620,000', is_correct: false },
+      { text: '426,000', is_correct: false },
+      { text: '580,000', is_correct: false }
+    ],
+    explain: '利润总额 = 580,000 + 60,000 − 20,000 = 620,000；净利润 = 620,000 − 154,000 = 466,000。'
+  },
+  {
+    practice_id: 10239, source_lesson_id: 24,
+    type: 'concept', level: 'exam', hot: ['income-statement'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于利润表的说法中，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '利润表反映一定期间的经营成果', is_correct: true },
+      { label: 'B', text: '净利润 = 利润总额 × (1 − 所得税税率)', is_correct: false },
+      { label: 'C', text: '营业外收支不影响营业利润', is_correct: true },
+      { label: 'D', text: '利润总额 = 营业利润 + 营业外收入 − 营业外支出', is_correct: true }
+    ],
+    explain: 'B 错误：净利润 = 利润总额 − 所得税费用（非利润总额乘以税率，因为可能有递延税）；A/C/D 均正确。'
+  }
 );
