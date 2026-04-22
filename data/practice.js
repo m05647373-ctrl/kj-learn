@@ -3337,4 +3337,480 @@ window.PRACTICE.push(
     ],
     explain: 'D 错误：助理会计师是初级职称，不满足「会计师（中级）以上」的要求。A/B/C 均正确。'
   }
+,
+  {
+    practice_id: 10281, source_lesson_id: 29,
+    type: 'concept', level: 'basic', hot: ['note-type'],
+    interaction_type: 'single',
+    prompt: '下列票据中，出票人与付款人为同一人的是（ ）。',
+    options: [
+      { text: '汇票', is_correct: false },
+      { text: '本票', is_correct: true },
+      { text: '支票', is_correct: false },
+      { text: '商业承兑汇票', is_correct: false }
+    ],
+    explain: '本票由出票人自己承诺付款，出票人即付款人；汇票和支票均委托他人（银行或企业）付款。'
+  },
+  {
+    practice_id: 10282, source_lesson_id: 29,
+    type: 'concept', level: 'basic', hot: ['note-type'],
+    interaction_type: 'single',
+    prompt: '下列关于银行汇票的说法，正确的是（ ）。',
+    options: [
+      { text: '银行汇票见票即付，无需承兑', is_correct: true },
+      { text: '银行汇票只能用于同城结算', is_correct: false },
+      { text: '银行汇票由收款人签发', is_correct: false },
+      { text: '银行汇票不能背书转让', is_correct: false }
+    ],
+    explain: '银行汇票由银行签发、见票即付，可用于异地结算，可背书转让。汇票由出票人（此处为银行）签发，非收款人。'
+  },
+  {
+    practice_id: 10283, source_lesson_id: 29,
+    type: 'concept', level: 'basic', hot: ['note-type'],
+    interaction_type: 'single',
+    prompt: '支票的付款期限为（ ）。',
+    options: [
+      { text: '自出票日起 10 日', is_correct: true },
+      { text: '自出票日起 6 个月', is_correct: false },
+      { text: '自到期日起 6 个月', is_correct: false },
+      { text: '自出票日起 30 日', is_correct: false }
+    ],
+    explain: '支票付款期限为自出票日起 10 日（同城）。超期支票银行可拒付。'
+  },
+  {
+    practice_id: 10284, source_lesson_id: 29,
+    type: 'law', level: 'improve', hot: ['note-type'],
+    interaction_type: 'multi',
+    prompt: '下列关于票据说法正确的有（ ）。',
+    options: [
+      { label: 'A', text: '银行本票见票即付，不得退票', is_correct: true },
+      { label: 'B', text: '商业承兑汇票由承兑企业承兑，信用风险高于银行承兑汇票', is_correct: true },
+      { label: 'C', text: '转账支票可以提取现金', is_correct: false },
+      { label: 'D', text: '汇票分为银行汇票和商业汇票', is_correct: true },
+      { label: 'E', text: '银行承兑汇票到期银行无条件付款', is_correct: true }
+    ],
+    explain: 'C 错误：转账支票只能转账，不能提取现金；现金支票才能提现。'
+  },
+  {
+    practice_id: 10285, source_lesson_id: 29,
+    type: 'law', level: 'improve', hot: ['note-type'],
+    interaction_type: 'single',
+    prompt: '下列票据中，属于「见票即付」的有（ ）。',
+    options: [
+      { text: '银行汇票和银行本票', is_correct: true },
+      { text: '商业汇票', is_correct: false },
+      { text: '支票', is_correct: false },
+      { text: '商业承兑汇票', is_correct: false }
+    ],
+    explain: '银行汇票和银行本票均见票即付；商业汇票有承兑期，到期付款；支票有 10 日提示付款期。'
+  },
+  {
+    practice_id: 10286, source_lesson_id: 29,
+    type: 'law', level: 'improve', hot: ['note-type'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，属于汇票必要记载事项的有（ ）。',
+    options: [
+      { label: 'A', text: '表明「汇票」字样', is_correct: true },
+      { label: 'B', text: '无条件支付的委托', is_correct: true },
+      { label: 'C', text: '确定的金额', is_correct: true },
+      { label: 'D', text: '付款人名称', is_correct: true },
+      { label: 'E', text: '利率（带息汇票）', is_correct: false }
+    ],
+    explain: '利率不是必要记载事项，未记载利率的视为不带息。A-D 均为汇票必须记载事项。'
+  },
+  {
+    practice_id: 10287, source_lesson_id: 29,
+    type: 'law', level: 'improve', hot: ['note-type'],
+    interaction_type: 'single',
+    prompt: '甲公司以背书方式将一张银行承兑汇票转让给乙公司，则（ ）。',
+    options: [
+      { text: '甲公司对乙公司承担票据追索权责任', is_correct: true },
+      { text: '甲公司脱离票据关系，不再承担任何责任', is_correct: false },
+      { text: '乙公司取得的权利不得超过甲公司', is_correct: false },
+      { text: '须经出票银行同意方可背书', is_correct: false }
+    ],
+    explain: '背书人（甲）对被背书人（乙）及其后手承担担保付款责任；背书不需经银行同意；被背书人取得的权利与背书人相同，不受甲权利的限制。'
+  },
+  {
+    practice_id: 10288, source_lesson_id: 29,
+    type: 'law', level: 'exam', hot: ['note-type'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列各项中，不属于票据无效情形的是（ ）。',
+    options: [
+      { text: '欠缺法定必要记载事项', is_correct: false },
+      { text: '记载事项与实际情况不符', is_correct: false },
+      { text: '背书不连续', is_correct: true },
+      { text: '票据金额大写小写不一致', is_correct: false }
+    ],
+    explain: '背书不连续不导致票据本身无效，但持票人不能依票据法主张权利（须另行证明取得合法性）；其他三项均导致票据无效。'
+  },
+  {
+    practice_id: 10289, source_lesson_id: 29,
+    type: 'law', level: 'exam', hot: ['note-type'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列关于商业汇票的说法，正确的是（ ）。',
+    options: [
+      { text: '商业汇票的付款期限最长 6 个月', is_correct: true },
+      { text: '商业汇票只能背书一次', is_correct: false },
+      { text: '银行承兑汇票到期承兑人可以拒绝付款', is_correct: false },
+      { text: '商业汇票一律不得贴现', is_correct: false }
+    ],
+    explain: '商业汇票最长付款期限 6 个月；可多次背书；银行承兑到期无条件付款；银行承兑汇票可向银行贴现。'
+  },
+  {
+    practice_id: 10291, source_lesson_id: 30,
+    type: 'law', level: 'basic', hot: ['note-time'],
+    interaction_type: 'single',
+    prompt: '持票人对汇票承兑人的票据权利时效为（ ）。',
+    options: [
+      { text: '自出票日起 6 个月', is_correct: false },
+      { text: '自到期日起 1 年', is_correct: false },
+      { text: '自到期日起 2 年', is_correct: true },
+      { text: '自出票日起 2 年', is_correct: false }
+    ],
+    explain: '汇票/本票持票人对出票人、承兑人的权利：自到期日起 2 年；见票即付者自出票日起 2 年。'
+  },
+  {
+    practice_id: 10292, source_lesson_id: 30,
+    type: 'law', level: 'basic', hot: ['note-time'],
+    interaction_type: 'single',
+    prompt: '支票持票人对出票人的票据权利时效为（ ）。',
+    options: [
+      { text: '自出票日起 10 日', is_correct: false },
+      { text: '自出票日起 6 个月', is_correct: true },
+      { text: '自出票日起 2 年', is_correct: false },
+      { text: '自出票日起 1 年', is_correct: false }
+    ],
+    explain: '支票持票人对出票人的权利：自出票日起 6 个月。'
+  },
+  {
+    practice_id: 10293, source_lesson_id: 30,
+    type: 'law', level: 'basic', hot: ['note-time'],
+    interaction_type: 'single',
+    prompt: '持票人因被拒绝付款行使追索权，追索权时效为（ ）。',
+    options: [
+      { text: '自被拒绝日起 3 个月', is_correct: false },
+      { text: '自被拒绝日起 6 个月', is_correct: true },
+      { text: '自被拒绝日起 1 年', is_correct: false },
+      { text: '自被拒绝日起 2 年', is_correct: false }
+    ],
+    explain: '追索权：自被拒绝承兑或被拒绝付款日起 6 个月。'
+  },
+  {
+    practice_id: 10294, source_lesson_id: 30,
+    type: 'law', level: 'improve', hot: ['note-time'],
+    interaction_type: 'single',
+    prompt: '甲持有一张 2024-01-01 到期的商业汇票，2024-06-01 被拒绝付款，甲向乙追索，乙于 2025-01-01 清偿后，乙向出票人丙行使再追索权的时效届满日是（ ）。',
+    options: [
+      { text: '2025-04-01', is_correct: true },
+      { text: '2025-07-01', is_correct: false },
+      { text: '2026-01-01', is_correct: false },
+      { text: '2025-01-01', is_correct: false }
+    ],
+    explain: '再追索权：自清偿日起 3 个月，即 2025-01-01 起 3 个月 → 2025-04-01 届满。'
+  },
+  {
+    practice_id: 10295, source_lesson_id: 30,
+    type: 'law', level: 'improve', hot: ['note-time'],
+    interaction_type: 'single',
+    prompt: '下列关于票据权利时效中断的说法，正确的是（ ）。',
+    options: [
+      { text: '票据权利时效适用诉讼时效中断的一般规则', is_correct: false },
+      { text: '票据权利时效不因主张权利等行为中断', is_correct: true },
+      { text: '票据权利时效中断后重新起算', is_correct: false },
+      { text: '票据权利时效可因当事人协议延长', is_correct: false }
+    ],
+    explain: '票据权利的时效是除斥期间，不适用中断、中止规则，期满权利绝对消灭，不可延长。'
+  },
+  {
+    practice_id: 10296, source_lesson_id: 30,
+    type: 'law', level: 'improve', hot: ['note-time'],
+    interaction_type: 'multi',
+    prompt: '下列关于票据时效说法正确的有（ ）。',
+    options: [
+      { label: 'A', text: '汇票承兑人权利时效 2 年，自到期日起算', is_correct: true },
+      { label: 'B', text: '见票即付本票的持票人权利时效 2 年，自出票日起算', is_correct: true },
+      { label: 'C', text: '支票出票人权利时效 6 个月', is_correct: true },
+      { label: 'D', text: '追索权时效 6 个月，再追索权时效 3 个月', is_correct: true },
+      { label: 'E', text: '票据时效届满后，票据债务人仍须履行付款义务', is_correct: false }
+    ],
+    explain: 'E 错误：票据时效届满，票据权利消灭，债务人可拒绝付款（但可能还有民法上的不当得利之债）。'
+  },
+  {
+    practice_id: 10297, source_lesson_id: 30,
+    type: 'law', level: 'improve', hot: ['note-time'],
+    interaction_type: 'single',
+    prompt: '2023-03-01 签发、2023-09-01 到期的银行承兑汇票，持票人最迟应在何时向承兑行主张票据权利？',
+    options: [
+      { text: '2024-03-01', is_correct: false },
+      { text: '2024-09-01', is_correct: false },
+      { text: '2025-09-01', is_correct: true },
+      { text: '2025-03-01', is_correct: false }
+    ],
+    explain: '持票人对承兑行的权利 2 年，自到期日 2023-09-01 起算，届满日 2025-09-01。'
+  },
+  {
+    practice_id: 10298, source_lesson_id: 30,
+    type: 'law', level: 'exam', hot: ['note-time'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列关于票据时效的说法，正确的是（ ）。',
+    options: [
+      { text: '票据权利时效届满，持票人丧失实体权利但保留诉讼权利', is_correct: false },
+      { text: '票据权利时效届满，票据债务人取得时效抗辩权', is_correct: true },
+      { text: '票据时效届满后，持票人可依不当得利向出票人主张', is_correct: true },
+      { text: '票据权利时效属于诉讼时效，可以中断', is_correct: false }
+    ],
+    explain: '票据时效届满后持票人丧失票据权利（实体权利），但仍可依不当得利向相关当事人主张民事权利；票据债务人取得时效抗辩权，可以拒绝付款。'
+  },
+  {
+    practice_id: 10299, source_lesson_id: 30,
+    type: 'law', level: 'exam', hot: ['note-time'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列各项中，属于票据权利消灭原因的有（ ）。',
+    options: [
+      { label: 'A', text: '超过票据权利时效', is_correct: true },
+      { label: 'B', text: '票据记载事项欠缺', is_correct: true },
+      { label: 'C', text: '持票人放弃票据权利', is_correct: true },
+      { label: 'D', text: '票据被盗但已挂失止付', is_correct: false }
+    ],
+    explain: '挂失止付只是临时措施，权利并未消灭（须申请公示催告）；A/B/C 均可导致票据权利消灭。'
+  },
+  {
+    practice_id: 10301, source_lesson_id: 31,
+    type: 'law', level: 'basic', hot: ['vat-rate'],
+    interaction_type: 'single',
+    prompt: '下列业务中，适用 13% 增值税税率的是（ ）。',
+    options: [
+      { text: '提供运输服务', is_correct: false },
+      { text: '销售机器设备', is_correct: true },
+      { text: '提供咨询服务', is_correct: false },
+      { text: '销售不动产', is_correct: false }
+    ],
+    explain: '机器设备属于一般货物，适用 13%；运输 9%；咨询等现代服务 6%；不动产 9%。'
+  },
+  {
+    practice_id: 10302, source_lesson_id: 31,
+    type: 'law', level: 'basic', hot: ['vat-rate'],
+    interaction_type: 'single',
+    prompt: '下列业务中，适用 6% 增值税税率的是（ ）。',
+    options: [
+      { text: '销售粮食', is_correct: false },
+      { text: '提供建筑服务', is_correct: false },
+      { text: '提供金融服务', is_correct: true },
+      { text: '销售农产品', is_correct: false }
+    ],
+    explain: '金融服务属于现代服务，适用 6%；粮食/农产品 9%；建筑服务 9%。'
+  },
+  {
+    practice_id: 10303, source_lesson_id: 31,
+    type: 'law', level: 'basic', hot: ['vat-rate'],
+    interaction_type: 'single',
+    prompt: '小规模纳税人适用的增值税征收率为（ ）。',
+    options: [
+      { text: '1%', is_correct: false },
+      { text: '3%', is_correct: true },
+      { text: '6%', is_correct: false },
+      { text: '13%', is_correct: false }
+    ],
+    explain: '小规模纳税人适用 3% 征收率（阶段性优惠减按 1%）。注意题目若考阶段性优惠会明确说明。'
+  },
+  {
+    practice_id: 10304, source_lesson_id: 31,
+    type: 'law', level: 'improve', hot: ['vat-rate'],
+    interaction_type: 'multi',
+    prompt: '下列业务中，适用 9% 增值税税率的有（ ）。',
+    options: [
+      { label: 'A', text: '提供道路运输服务', is_correct: true },
+      { label: 'B', text: '销售住宅不动产', is_correct: true },
+      { label: 'C', text: '提供邮政服务', is_correct: true },
+      { label: 'D', text: '提供广告设计服务', is_correct: false },
+      { label: 'E', text: '提供基础电信服务', is_correct: true }
+    ],
+    explain: '广告设计属于现代服务，税率 6%；其余运输/不动产/邮政/基础电信均适用 9%。'
+  },
+  {
+    practice_id: 10305, source_lesson_id: 31,
+    type: 'calc', level: 'improve', hot: ['vat-rate'],
+    interaction_type: 'single',
+    prompt: '一般纳税人含税销售额 113 万元（税率 13%），其不含税销售额和增值税销项税额分别为（ ）。',
+    options: [
+      { text: '100 万元、13 万元', is_correct: true },
+      { text: '113 万元、14.69 万元', is_correct: false },
+      { text: '100 万元、14.69 万元', is_correct: false },
+      { text: '87 万元、13 万元', is_correct: false }
+    ],
+    explain: '不含税 = 113 ÷ 1.13 = 100 万；销项 = 100 × 13% = 13 万。注意含税价还原须除以（1+税率）。'
+  },
+  {
+    practice_id: 10306, source_lesson_id: 31,
+    type: 'calc', level: 'improve', hot: ['vat-rate'],
+    interaction_type: 'single',
+    prompt: '小规模纳税人含税销售额 10.3 万元，征收率 3%，应纳增值税为（ ）。',
+    options: [
+      { text: '3,000 元', is_correct: true },
+      { text: '3,090 元', is_correct: false },
+      { text: '1,000 元', is_correct: false },
+      { text: '4,000 元', is_correct: false }
+    ],
+    explain: '不含税 = 103,000 ÷ 1.03 = 100,000；应纳税 = 100,000 × 3% = 3,000 元。'
+  },
+  {
+    practice_id: 10307, source_lesson_id: 31,
+    type: 'law', level: 'improve', hot: ['vat-rate'],
+    interaction_type: 'single',
+    prompt: '下列关于增值税进项税额抵扣的说法，正确的是（ ）。',
+    options: [
+      { text: '一般纳税人购进农产品，可按 9% 扣除率计算进项税额', is_correct: true },
+      { text: '小规模纳税人可以抵扣进项税额', is_correct: false },
+      { text: '用于免税项目的进项税额可以抵扣', is_correct: false },
+      { text: '非正常损失的货物进项税额可以抵扣', is_correct: false }
+    ],
+    explain: '小规模纳税人不得抵扣进项；免税项目和非正常损失进项不得抵扣；购进农产品可按 9% 扣除率（或适用 10% 的情形）抵扣。'
+  },
+  {
+    practice_id: 10308, source_lesson_id: 31,
+    type: 'law', level: 'exam', hot: ['vat-rate'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列项目中，免征增值税的是（ ）。',
+    options: [
+      { text: '销售农业机械', is_correct: false },
+      { text: '提供技术转让服务并开专票', is_correct: false },
+      { text: '农业生产者销售自产农产品', is_correct: true },
+      { text: '销售二手汽车', is_correct: false }
+    ],
+    explain: '农业生产者销售自产农产品免征增值税；技术转让可申请免税但须审批；销售农机和二手汽车适用简易征收，不属于免税。'
+  },
+  {
+    practice_id: 10309, source_lesson_id: 31,
+    type: 'law', level: 'exam', hot: ['vat-rate'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于增值税税率的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '出口货物适用 0 税率', is_correct: true },
+      { label: 'B', text: '提供国际旅客运输服务适用 0 税率', is_correct: true },
+      { label: 'C', text: '销售不动产适用 9% 税率', is_correct: true },
+      { label: 'D', text: '一般纳税人提供餐饮服务适用 13% 税率', is_correct: false },
+      { label: 'E', text: '提供现代服务业适用 6% 税率', is_correct: true }
+    ],
+    explain: 'D 错误：餐饮服务属于生活服务，税率 6%，不是 13%。'
+  },
+  {
+    practice_id: 10311, source_lesson_id: 32,
+    type: 'law', level: 'basic', hot: ['excise'],
+    interaction_type: 'single',
+    prompt: '下列商品中，不属于消费税征收范围的是（ ）。',
+    options: [
+      { text: '高档化妆品', is_correct: false },
+      { text: '鞭炮', is_correct: false },
+      { text: '普通化妆品', is_correct: true },
+      { text: '游艇', is_correct: false }
+    ],
+    explain: '消费税仅对高档化妆品征税，普通化妆品已从征税范围中删除。'
+  },
+  {
+    practice_id: 10312, source_lesson_id: 32,
+    type: 'law', level: 'basic', hot: ['excise'],
+    interaction_type: 'single',
+    prompt: '下列商品中，属于消费税征收范围的是（ ）。',
+    options: [
+      { text: '高档手表', is_correct: true },
+      { text: '普通手表', is_correct: false },
+      { text: '自行车', is_correct: false },
+      { text: '普通家具', is_correct: false }
+    ],
+    explain: '消费税税目中有「高档手表」，普通手表不在其中；自行车和普通家具均不征消费税。'
+  },
+  {
+    practice_id: 10313, source_lesson_id: 32,
+    type: 'law', level: 'basic', hot: ['excise'],
+    interaction_type: 'single',
+    prompt: '消费税的纳税环节，一般是在（ ）。',
+    options: [
+      { text: '生产销售环节一次性缴纳', is_correct: true },
+      { text: '零售环节缴纳', is_correct: false },
+      { text: '进口环节不征', is_correct: false },
+      { text: '每个流通环节均征', is_correct: false }
+    ],
+    explain: '消费税在生产、委托加工或进口环节征收，实行一次性课税；金银首饰、高档手表在零售环节征收是特例。'
+  },
+  {
+    practice_id: 10314, source_lesson_id: 32,
+    type: 'law', level: 'improve', hot: ['excise'],
+    interaction_type: 'multi',
+    prompt: '下列商品中，属于消费税征税范围的有（ ）。',
+    options: [
+      { label: 'A', text: '成品油', is_correct: true },
+      { label: 'B', text: '摩托车', is_correct: true },
+      { label: 'C', text: '电动自行车', is_correct: false },
+      { label: 'D', text: '实木地板', is_correct: true },
+      { label: 'E', text: '木制一次性筷子', is_correct: true }
+    ],
+    explain: '电动自行车不在 15 个消费税税目内；其他均属消费税应税消费品。'
+  },
+  {
+    practice_id: 10315, source_lesson_id: 32,
+    type: 'law', level: 'improve', hot: ['excise'],
+    interaction_type: 'single',
+    prompt: '下列关于消费税计税方式的说法，正确的是（ ）。',
+    options: [
+      { text: '消费税只能从价定率征收', is_correct: false },
+      { text: '白酒同时适用从价定率和从量定额复合计征', is_correct: true },
+      { text: '成品油只从量定额征收', is_correct: false },
+      { text: '高档手表从量定额征收', is_correct: false }
+    ],
+    explain: '白酒采用复合计征（从价 20% + 从量 0.5 元/500 克）；成品油从量定额；高档手表从价定率。'
+  },
+  {
+    practice_id: 10316, source_lesson_id: 32,
+    type: 'calc', level: 'improve', hot: ['excise'],
+    interaction_type: 'single',
+    prompt: '某企业生产白酒，当月销售 2,000 斤，不含税售价 80 元/斤。白酒消费税：从价税率 20%，从量 0.5 元/斤。应纳消费税为（ ）。',
+    options: [
+      { text: '33,000 元', is_correct: true },
+      { text: '32,000 元', is_correct: false },
+      { text: '1,000 元', is_correct: false },
+      { text: '34,000 元', is_correct: false }
+    ],
+    explain: '从价 = 2000 × 80 × 20% = 32,000；从量 = 2000 × 0.5 = 1,000；合计 = 33,000 元。'
+  },
+  {
+    practice_id: 10317, source_lesson_id: 32,
+    type: 'law', level: 'improve', hot: ['excise'],
+    interaction_type: 'single',
+    prompt: '委托加工应税消费品，消费税由（ ）代收代缴。',
+    options: [
+      { text: '委托方', is_correct: false },
+      { text: '受托方', is_correct: true },
+      { text: '税务机关', is_correct: false },
+      { text: '委托方和受托方共同缴纳', is_correct: false }
+    ],
+    explain: '委托加工应税消费品，由受托方（加工方）在交货时代收代缴消费税；受托方为个人的，由委托方缴纳。'
+  },
+  {
+    practice_id: 10318, source_lesson_id: 32,
+    type: 'law', level: 'exam', hot: ['excise'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列各项中，需要缴纳消费税的是（ ）。',
+    options: [
+      { text: '生产企业将自产普通化妆品对外销售', is_correct: false },
+      { text: '生产企业将自产高档手表作为福利发放给员工', is_correct: true },
+      { text: '商业企业销售外购的白酒', is_correct: false },
+      { text: '进口普通服装', is_correct: false }
+    ],
+    explain: '高档手表属于消费税应税消费品，视同销售需缴消费税；白酒在生产环节已征，商业销售不再征；普通服装和普通化妆品不在征税范围。'
+  },
+  {
+    practice_id: 10319, source_lesson_id: 32,
+    type: 'law', level: 'exam', hot: ['excise'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于消费税的说法，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '消费税属于价内税，含在货物销售价格之中', is_correct: true },
+      { label: 'B', text: '增值税属于价外税，消费税属于价内税', is_correct: true },
+      { label: 'C', text: '金银首饰消费税在零售环节缴纳', is_correct: true },
+      { label: 'D', text: '进口应税消费品免征消费税', is_correct: false },
+      { label: 'E', text: '消费税和增值税都在生产环节征收', is_correct: false }
+    ],
+    explain: 'D 错误：进口应税消费品照征消费税；E 错误：增值税在各流通环节征收，消费税一般在生产/进口环节，部分在零售环节。'
+  }
 );
