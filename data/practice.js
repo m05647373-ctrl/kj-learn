@@ -1450,4 +1450,476 @@ window.PRACTICE.push(
     ],
     explain: '管理不善造成的存货盘亏净损失计入管理费用，且需转出进项税额；自然灾害造成的计入营业外支出。'
   }
+,
+  {
+    practice_id: 10121, source_lesson_id: 13,
+    type: 'concept', level: 'basic', hot: ['depreciation-sl'],
+    interaction_type: 'single',
+    prompt: '下列关于固定资产折旧的说法中，正确的是（ ）。',
+    options: [
+      { text: '当月增加的固定资产当月开始计提折旧', is_correct: false },
+      { text: '当月增加的固定资产下月开始计提折旧', is_correct: true },
+      { text: '当月减少的固定资产下月照提折旧', is_correct: false },
+      { text: '已提足折旧的固定资产继续计提折旧', is_correct: false }
+    ],
+    explain: '规则：当月增加下月起提，当月减少当月照提。已提足折旧的不再计提。'
+  },
+  {
+    practice_id: 10122, source_lesson_id: 13,
+    type: 'concept', level: 'basic', hot: ['depreciation-sl'],
+    interaction_type: 'single',
+    prompt: '下列固定资产中，不应计提折旧的是（ ）。',
+    options: [
+      { text: '经营租出的机器设备', is_correct: false },
+      { text: '季节性停用的机器设备', is_correct: false },
+      { text: '已提足折旧仍在使用的设备', is_correct: true },
+      { text: '大修停用的生产设备', is_correct: false }
+    ],
+    explain: '经营租出、季节停用、大修停用均照提折旧；已提足折旧的不再计提。'
+  },
+  {
+    practice_id: 10123, source_lesson_id: 13,
+    type: 'calc', level: 'basic', hot: ['depreciation-sl'],
+    interaction_type: 'single',
+    prompt: '某设备原值 240,000 元、预计净残值 12,000 元、预计使用 10 年，采用年限平均法，月折旧额为（ ）。',
+    options: [
+      { text: '1,900 元', is_correct: true },
+      { text: '2,000 元', is_correct: false },
+      { text: '2,280 元', is_correct: false },
+      { text: '1,800 元', is_correct: false }
+    ],
+    explain: '年折旧 = (240,000 − 12,000) ÷ 10 = 22,800；月折旧 = 22,800 ÷ 12 = 1,900 元。'
+  },
+  {
+    practice_id: 10124, source_lesson_id: 13,
+    type: 'calc', level: 'improve', hot: ['depreciation-sl'],
+    interaction_type: 'single',
+    prompt: '某设备原值 360,000 元、净残值 36,000 元、使用年限 8 年，5 月购入。采用年限平均法，当年应计提折旧（ ）。',
+    options: [
+      { text: '23,625 元', is_correct: true },
+      { text: '28,350 元', is_correct: false },
+      { text: '40,500 元', is_correct: false },
+      { text: '33,750 元', is_correct: false }
+    ],
+    explain: '年折旧 = (360,000 − 36,000) ÷ 8 = 40,500；月折旧 = 3,375。5 月购入当月不提，6-12 月共 7 个月：3,375 × 7 = 23,625。'
+  },
+  {
+    practice_id: 10125, source_lesson_id: 13,
+    type: 'calc', level: 'improve', hot: ['depreciation-sl'],
+    interaction_type: 'single',
+    prompt: '某设备原值 150,000 元、净残值 6,000 元、使用年限 6 年。该设备于 10 月出售，当年应计提折旧（ ）。',
+    options: [
+      { text: '20,000 元', is_correct: true },
+      { text: '18,000 元', is_correct: false },
+      { text: '24,000 元', is_correct: false },
+      { text: '22,000 元', is_correct: false }
+    ],
+    explain: '月折旧 = (150,000 − 6,000) ÷ 6 ÷ 12 = 2,000。10 月处置当月照提，1-10 月共 10 个月：2,000 × 10 = 20,000。'
+  },
+  {
+    practice_id: 10126, source_lesson_id: 13,
+    type: 'calc', level: 'improve', hot: ['depreciation-sl'],
+    interaction_type: 'single',
+    prompt: '固定资产原值 500,000 元、净残值 20,000 元、使用年限 10 年，已使用 3 年。该资产的账面净值为（ ）。',
+    options: [
+      { text: '356,000 元', is_correct: true },
+      { text: '350,000 元', is_correct: false },
+      { text: '368,000 元', is_correct: false },
+      { text: '380,000 元', is_correct: false }
+    ],
+    explain: '年折旧 = (500,000 − 20,000) ÷ 10 = 48,000；累计折旧 = 48,000 × 3 = 144,000；净值 = 500,000 − 144,000 = 356,000。'
+  },
+  {
+    practice_id: 10127, source_lesson_id: 13,
+    type: 'concept', level: 'improve', hot: ['depreciation-sl'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，影响固定资产折旧额计算的因素有（ ）。',
+    options: [
+      { label: 'A', text: '固定资产原值', is_correct: true },
+      { label: 'B', text: '预计使用年限', is_correct: true },
+      { label: 'C', text: '预计净残值', is_correct: true },
+      { label: 'D', text: '已提折旧额', is_correct: false },
+      { label: 'E', text: '折旧方法', is_correct: true }
+    ],
+    explain: '折旧额取决于原值、净残值、使用年限和折旧方法。已提折旧额是计算结果，不是影响因素。'
+  },
+  {
+    practice_id: 10128, source_lesson_id: 13,
+    type: 'concept', level: 'exam', hot: ['depreciation-sl'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列各项中，不影响固定资产年折旧额的是（ ）。',
+    options: [
+      { text: '固定资产减值准备', is_correct: true },
+      { text: '固定资产原价', is_correct: false },
+      { text: '预计使用寿命', is_correct: false },
+      { text: '预计净残值', is_correct: false }
+    ],
+    explain: '年限平均法下年折旧额 = (原值 − 净残值) ÷ 使用年限。减值准备不影响折旧计算（但影响账面价值）。注意：考试中若已计提减值准备，后续折旧应以减值后账面价值为基础，但这属于特殊情况。'
+  },
+  {
+    practice_id: 10129, source_lesson_id: 13,
+    type: 'concept', level: 'exam', hot: ['depreciation-sl'],
+    interaction_type: 'single',
+    prompt: '【真题级】某企业 2024 年 3 月购入设备一台，原值 120,000 元、净残值 6,000 元、使用年限 5 年。2024 年该设备应计提折旧（ ）。',
+    options: [
+      { text: '17,100 元', is_correct: true },
+      { text: '22,800 元', is_correct: false },
+      { text: '19,000 元', is_correct: false },
+      { text: '20,900 元', is_correct: false }
+    ],
+    explain: '月折旧 = (120,000 − 6,000) ÷ 5 ÷ 12 = 1,900。3 月购入当月不提，4-12 月共 9 个月 = 1,900 × 9 = 17,100。与课内原题一致，强化记忆。'
+  },
+  {
+    practice_id: 10131, source_lesson_id: 14,
+    type: 'concept', level: 'basic', hot: ['depreciation-ddb'],
+    interaction_type: 'single',
+    prompt: '双倍余额递减法的年折旧率等于（ ）。',
+    options: [
+      { text: '2 ÷ 预计使用年限', is_correct: true },
+      { text: '(1 − 预计净残值率) ÷ 预计使用年限', is_correct: false },
+      { text: '尚可使用年限 ÷ 年数总和', is_correct: false },
+      { text: '2 ÷ 预计使用年限 × (1 − 净残值率)', is_correct: false }
+    ],
+    explain: '双倍余额递减法年折旧率 = 2 ÷ 预计使用年限，前期不考虑净残值。'
+  },
+  {
+    practice_id: 10132, source_lesson_id: 14,
+    type: 'concept', level: 'basic', hot: ['depreciation-ddb'],
+    interaction_type: 'single',
+    prompt: '双倍余额递减法下，计算各年折旧额时（ ）。',
+    options: [
+      { text: '前期不扣除预计净残值，最后两年改直线法并扣除净残值', is_correct: true },
+      { text: '每年都需要扣除预计净残值', is_correct: false },
+      { text: '只有第一年不扣除预计净残值', is_correct: false },
+      { text: '始终不考虑预计净残值', is_correct: false }
+    ],
+    explain: '关键规则：前期按期初净值 × 折旧率，不扣残值；最后两年 = (净值 − 残值) ÷ 2。'
+  },
+  {
+    practice_id: 10133, source_lesson_id: 14,
+    type: 'calc', level: 'basic', hot: ['depreciation-ddb'],
+    interaction_type: 'single',
+    prompt: '原值 100,000 元、净残值 4,000 元、使用 5 年，双倍余额递减法下第 1 年折旧额为（ ）。',
+    options: [
+      { text: '40,000 元', is_correct: true },
+      { text: '38,400 元', is_correct: false },
+      { text: '20,000 元', is_correct: false },
+      { text: '19,200 元', is_correct: false }
+    ],
+    explain: '折旧率 = 2/5 = 40%；第 1 年 = 100,000 × 40% = 40,000。不扣净残值。'
+  },
+  {
+    practice_id: 10134, source_lesson_id: 14,
+    type: 'calc', level: 'improve', hot: ['depreciation-ddb'],
+    interaction_type: 'single',
+    prompt: '承上题条件，第 3 年折旧额为（ ）。',
+    options: [
+      { text: '14,400 元', is_correct: true },
+      { text: '12,960 元', is_correct: false },
+      { text: '8,800 元', is_correct: false },
+      { text: '21,600 元', is_correct: false }
+    ],
+    explain: '第 1 年 40,000；第 2 年 (100,000−40,000)×40% = 24,000；第 3 年 (100,000−40,000−24,000)×40% = 36,000×40% = 14,400。'
+  },
+  {
+    practice_id: 10135, source_lesson_id: 14,
+    type: 'calc', level: 'improve', hot: ['depreciation-ddb'],
+    interaction_type: 'single',
+    prompt: '承上题条件，第 4 年和第 5 年每年折旧额为（ ）。',
+    options: [
+      { text: '8,800 元', is_correct: true },
+      { text: '7,200 元', is_correct: false },
+      { text: '10,800 元', is_correct: false },
+      { text: '14,400 元', is_correct: false }
+    ],
+    explain: '前 3 年累计折旧 = 40,000+24,000+14,400 = 78,400；剩余净值 = 100,000−78,400 = 21,600；最后两年 = (21,600−4,000)÷2 = 8,800。'
+  },
+  {
+    practice_id: 10136, source_lesson_id: 14,
+    type: 'calc', level: 'improve', hot: ['depreciation-ddb'],
+    interaction_type: 'single',
+    prompt: '某设备原值 120,000 元、净残值 12,000 元、使用 5 年，采用年数总和法。第 1 年折旧额为（ ）。',
+    options: [
+      { text: '36,000 元', is_correct: true },
+      { text: '43,200 元', is_correct: false },
+      { text: '24,000 元', is_correct: false },
+      { text: '21,600 元', is_correct: false }
+    ],
+    explain: '可折旧额 = 120,000−12,000 = 108,000；年数总和 = 5+4+3+2+1 = 15；第 1 年 = 108,000 × 5/15 = 36,000。'
+  },
+  {
+    practice_id: 10137, source_lesson_id: 14,
+    type: 'concept', level: 'improve', hot: ['depreciation-ddb'],
+    interaction_type: 'multi',
+    prompt: '下列关于加速折旧法的说法中，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '双倍余额递减法前期折旧多后期折旧少', is_correct: true },
+      { label: 'B', text: '年数总和法各年折旧额逐年递减', is_correct: true },
+      { label: 'C', text: '加速折旧法下固定资产使用年限内折旧总额大于年限平均法', is_correct: false },
+      { label: 'D', text: '加速折旧法适用于技术更新较快的资产', is_correct: true }
+    ],
+    explain: 'C 错误：无论哪种折旧方法，折旧总额 = 原值 − 净残值，总额相同，只是各年分布不同。'
+  },
+  {
+    practice_id: 10138, source_lesson_id: 14,
+    type: 'calc', level: 'exam', hot: ['depreciation-ddb'],
+    interaction_type: 'single',
+    prompt: '【真题级】某设备原值 120,000 元、净残值 12,000 元、使用 5 年，年数总和法下第 2 年折旧额为（ ）。',
+    options: [
+      { text: '28,800 元', is_correct: true },
+      { text: '36,000 元', is_correct: false },
+      { text: '21,600 元', is_correct: false },
+      { text: '14,400 元', is_correct: false }
+    ],
+    explain: '可折旧额 108,000；年数总和 15；第 2 年 = 108,000 × 4/15 = 28,800。'
+  },
+  {
+    practice_id: 10139, source_lesson_id: 14,
+    type: 'calc', level: 'exam', hot: ['depreciation-ddb'],
+    interaction_type: 'single',
+    prompt: '【真题级】原值 200,000 元、残值 10,000 元、使用 8 年，双倍余额递减法下第 2 年折旧额最接近（ ）。',
+    options: [
+      { text: '37,500 元', is_correct: true },
+      { text: '50,000 元', is_correct: false },
+      { text: '28,125 元', is_correct: false },
+      { text: '25,000 元', is_correct: false }
+    ],
+    explain: '折旧率 = 2/8 = 25%；第 1 年 = 200,000×25% = 50,000；第 2 年 = (200,000−50,000)×25% = 37,500。'
+  },
+  {
+    practice_id: 10141, source_lesson_id: 15,
+    type: 'concept', level: 'basic', hot: ['intangible-amort'],
+    interaction_type: 'single',
+    prompt: '下列关于无形资产摊销的说法中，正确的是（ ）。',
+    options: [
+      { text: '使用寿命有限的无形资产应按期摊销', is_correct: true },
+      { text: '使用寿命不确定的无形资产也应按期摊销', is_correct: false },
+      { text: '无形资产摊销一律计入管理费用', is_correct: false },
+      { text: '无形资产当月增加当月不摊销', is_correct: false }
+    ],
+    explain: '使用寿命不确定的不摊销但需每年减值测试；出租的无形资产摊销计入其他业务成本；无形资产当月增加当月开始摊销。'
+  },
+  {
+    practice_id: 10142, source_lesson_id: 15,
+    type: 'concept', level: 'basic', hot: ['intangible-amort'],
+    interaction_type: 'single',
+    prompt: '无形资产与固定资产在折旧/摊销起始时点上的区别是（ ）。',
+    options: [
+      { text: '无形资产当月增加当月摊销，固定资产当月增加下月计提', is_correct: true },
+      { text: '两者都是当月增加下月开始', is_correct: false },
+      { text: '两者都是当月增加当月开始', is_correct: false },
+      { text: '无形资产当月增加下月摊销，固定资产当月增加当月计提', is_correct: false }
+    ],
+    explain: '无形资产：当月增加当月摊、当月减少当月停；固定资产：当月增加下月提、当月减少当月提。方向相反。'
+  },
+  {
+    practice_id: 10143, source_lesson_id: 15,
+    type: 'calc', level: 'basic', hot: ['intangible-amort'],
+    interaction_type: 'single',
+    prompt: '购入专利权 480,000 元，预计使用 10 年，月摊销额为（ ）。',
+    options: [
+      { text: '4,000 元', is_correct: true },
+      { text: '4,800 元', is_correct: false },
+      { text: '40,000 元', is_correct: false },
+      { text: '48,000 元', is_correct: false }
+    ],
+    explain: '年摊销 = 480,000 ÷ 10 = 48,000；月摊销 = 48,000 ÷ 12 = 4,000 元。'
+  },
+  {
+    practice_id: 10144, source_lesson_id: 15,
+    type: 'calc', level: 'improve', hot: ['intangible-amort'],
+    interaction_type: 'single',
+    prompt: '7 月 1 日购入一项专利 240,000 元，使用年限 10 年。当年应摊销（ ）。',
+    options: [
+      { text: '12,000 元', is_correct: true },
+      { text: '24,000 元', is_correct: false },
+      { text: '14,000 元', is_correct: false },
+      { text: '10,000 元', is_correct: false }
+    ],
+    explain: '月摊销 = 240,000 ÷ 10 ÷ 12 = 2,000。当月增加当月摊，7-12 月共 6 个月 = 2,000 × 6 = 12,000。'
+  },
+  {
+    practice_id: 10145, source_lesson_id: 15,
+    type: 'journal', level: 'improve', hot: ['intangible-amort'],
+    interaction_type: 'single',
+    prompt: '企业将一项专利权出租给其他单位使用，每月摊销 5,000 元。摊销时应借记的科目是（ ）。',
+    options: [
+      { text: '其他业务成本', is_correct: true },
+      { text: '管理费用', is_correct: false },
+      { text: '销售费用', is_correct: false },
+      { text: '营业外支出', is_correct: false }
+    ],
+    explain: '出租无形资产取得的收入计入其他业务收入，对应的摊销计入其他业务成本。自用才计入管理费用。'
+  },
+  {
+    practice_id: 10146, source_lesson_id: 15,
+    type: 'calc', level: 'improve', hot: ['intangible-amort'],
+    interaction_type: 'single',
+    prompt: '某无形资产原值 500,000 元，原使用年限 10 年，已摊销 3 年后计提减值准备 50,000 元，剩余使用年限调整为 5 年。减值后每年摊销额为（ ）。',
+    options: [
+      { text: '60,000 元', is_correct: true },
+      { text: '50,000 元', is_correct: false },
+      { text: '70,000 元', is_correct: false },
+      { text: '65,000 元', is_correct: false }
+    ],
+    explain: '已摊销 = 500,000÷10×3 = 150,000；减值前账面 = 350,000；减值后 = 350,000−50,000 = 300,000；新年摊销 = 300,000÷5 = 60,000。'
+  },
+  {
+    practice_id: 10147, source_lesson_id: 15,
+    type: 'concept', level: 'improve', hot: ['intangible-amort'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，属于无形资产的有（ ）。',
+    options: [
+      { label: 'A', text: '专利权', is_correct: true },
+      { label: 'B', text: '非专利技术', is_correct: true },
+      { label: 'C', text: '商标权', is_correct: true },
+      { label: 'D', text: '商誉', is_correct: false },
+      { label: 'E', text: '土地使用权', is_correct: true }
+    ],
+    explain: '商誉不属于无形资产，商誉不具有可辨认性。专利权、非专利技术、商标权、土地使用权均属于无形资产。'
+  },
+  {
+    practice_id: 10148, source_lesson_id: 15,
+    type: 'concept', level: 'exam', hot: ['intangible-amort'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列各项中，关于使用寿命不确定的无形资产说法正确的是（ ）。',
+    options: [
+      { text: '不摊销，但应在每个会计期间进行减值测试', is_correct: true },
+      { text: '按 10 年摊销', is_correct: false },
+      { text: '不摊销，也不做减值测试', is_correct: false },
+      { text: '按合同约定年限摊销', is_correct: false }
+    ],
+    explain: '使用寿命不确定的无形资产不摊销，但至少在每年年末进行减值测试。'
+  },
+  {
+    practice_id: 10149, source_lesson_id: 15,
+    type: 'journal', level: 'exam', hot: ['intangible-amort'],
+    interaction_type: 'single',
+    prompt: '【真题级】企业出售一项无形资产，取得价款 80,000 元，该资产原值 120,000 元，已摊销 60,000 元，已提减值准备 5,000 元。处置损益为（ ）。',
+    options: [
+      { text: '利得 25,000 元', is_correct: true },
+      { text: '利得 20,000 元', is_correct: false },
+      { text: '损失 40,000 元', is_correct: false },
+      { text: '利得 80,000 元', is_correct: false }
+    ],
+    explain: '账面价值 = 120,000 − 60,000 − 5,000 = 55,000；处置损益 = 80,000 − 55,000 = 25,000（利得），计入资产处置损益。'
+  },
+  {
+    practice_id: 10151, source_lesson_id: 16,
+    type: 'concept', level: 'basic', hot: ['short-loan'],
+    interaction_type: 'single',
+    prompt: '下列关于短期借款的说法中，正确的是（ ）。',
+    options: [
+      { text: '短期借款是指企业向银行或其他金融机构借入的期限在一年以内的各种借款', is_correct: true },
+      { text: '短期借款利息一律在取得借款时扣除', is_correct: false },
+      { text: '短期借款利息应计入营业外支出', is_correct: false },
+      { text: '短期借款到期不能偿还时转为应付账款', is_correct: false }
+    ],
+    explain: '短期借款期限≤1年；利息计入财务费用；不能偿还时应协商展期或转长期借款，不是应付账款。'
+  },
+  {
+    practice_id: 10152, source_lesson_id: 16,
+    type: 'concept', level: 'basic', hot: ['short-loan'],
+    interaction_type: 'single',
+    prompt: '企业按期计提短期借款利息时，应借记的科目是（ ）。',
+    options: [
+      { text: '财务费用', is_correct: true },
+      { text: '管理费用', is_correct: false },
+      { text: '应付利息', is_correct: false },
+      { text: '短期借款', is_correct: false }
+    ],
+    explain: '计提利息：借「财务费用」贷「应付利息」。财务费用在借方表示费用增加。'
+  },
+  {
+    practice_id: 10153, source_lesson_id: 16,
+    type: 'journal', level: 'basic', hot: ['short-loan'],
+    interaction_type: 'single',
+    prompt: '企业取得短期借款时，正确的会计分录是（ ）。',
+    options: [
+      { text: '借：银行存款 / 贷：短期借款', is_correct: true },
+      { text: '借：短期借款 / 贷：银行存款', is_correct: false },
+      { text: '借：银行存款 / 贷：应付账款', is_correct: false },
+      { text: '借：库存现金 / 贷：短期借款', is_correct: false }
+    ],
+    explain: '取得借款：银行存款（资产）增加记借方，短期借款（负债）增加记贷方。'
+  },
+  {
+    practice_id: 10154, source_lesson_id: 16,
+    type: 'calc', level: 'improve', hot: ['short-loan'],
+    interaction_type: 'single',
+    prompt: '企业借入 600,000 元短期借款，年利率 6%，按季计提利息。每季度应计提的利息为（ ）。',
+    options: [
+      { text: '9,000 元', is_correct: true },
+      { text: '6,000 元', is_correct: false },
+      { text: '36,000 元', is_correct: false },
+      { text: '3,000 元', is_correct: false }
+    ],
+    explain: '季度利息 = 600,000 × 6% × 3/12 = 9,000 元。'
+  },
+  {
+    practice_id: 10155, source_lesson_id: 16,
+    type: 'calc', level: 'improve', hot: ['short-loan'],
+    interaction_type: 'single',
+    prompt: '企业 1 月 1 日借入 1,000,000 元短期借款，年利率 4.8%，按月计提利息。每月应计提利息（ ）。',
+    options: [
+      { text: '4,000 元', is_correct: true },
+      { text: '4,800 元', is_correct: false },
+      { text: '48,000 元', is_correct: false },
+      { text: '40,000 元', is_correct: false }
+    ],
+    explain: '月利息 = 1,000,000 × 4.8% ÷ 12 = 4,000 元。'
+  },
+  {
+    practice_id: 10156, source_lesson_id: 16,
+    type: 'calc', level: 'improve', hot: ['short-loan'],
+    interaction_type: 'single',
+    prompt: '企业 4 月 1 日借入 800,000 元，年利率 6%，期限 9 个月，到期一次还本付息。到期应偿还的本息合计为（ ）。',
+    options: [
+      { text: '836,000 元', is_correct: true },
+      { text: '848,000 元', is_correct: false },
+      { text: '800,000 元', is_correct: false },
+      { text: '830,000 元', is_correct: false }
+    ],
+    explain: '利息 = 800,000 × 6% × 9/12 = 36,000；到期还本付息 = 800,000 + 36,000 = 836,000 元。'
+  },
+  {
+    practice_id: 10157, source_lesson_id: 16,
+    type: 'journal', level: 'improve', hot: ['short-loan'],
+    interaction_type: 'multi',
+    prompt: '下列关于短期借款利息处理的说法中，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '按期计提利息时借记财务费用', is_correct: true },
+      { label: 'B', text: '按期计提利息时贷记应付利息', is_correct: true },
+      { label: 'C', text: '实际支付利息时借记应付利息', is_correct: true },
+      { label: 'D', text: '利息金额较小时可在实际支付时直接计入财务费用', is_correct: true },
+      { label: 'E', text: '短期借款利息应资本化计入固定资产', is_correct: false }
+    ],
+    explain: '短期借款利息费用化，不资本化。金额较小时可不预提直接在支付时记入财务费用。'
+  },
+  {
+    practice_id: 10158, source_lesson_id: 16,
+    type: 'calc', level: 'exam', hot: ['short-loan'],
+    interaction_type: 'single',
+    prompt: '【真题级】企业 7 月 1 日借入 2,000,000 元，年利率 5.4%，按半年计提利息。12 月 31 日应计提利息（ ）。',
+    options: [
+      { text: '54,000 元', is_correct: true },
+      { text: '108,000 元', is_correct: false },
+      { text: '27,000 元', is_correct: false },
+      { text: '45,000 元', is_correct: false }
+    ],
+    explain: '半年利息 = 2,000,000 × 5.4% × 6/12 = 54,000 元。'
+  },
+  {
+    practice_id: 10159, source_lesson_id: 16,
+    type: 'journal', level: 'exam', hot: ['short-loan'],
+    interaction_type: 'single',
+    prompt: '【真题级】企业偿还到期短期借款 500,000 元，同时支付已计提的利息 15,000 元。正确的分录是（ ）。',
+    options: [
+      { text: '借：短期借款 500,000、应付利息 15,000 / 贷：银行存款 515,000', is_correct: true },
+      { text: '借：短期借款 515,000 / 贷：银行存款 515,000', is_correct: false },
+      { text: '借：财务费用 515,000 / 贷：银行存款 515,000', is_correct: false },
+      { text: '借：短期借款 500,000、财务费用 15,000 / 贷：银行存款 515,000', is_correct: false }
+    ],
+    explain: '利息已计提过，偿还时冲减应付利息（而非再记财务费用）。本金冲短期借款。'
+  }
 );
