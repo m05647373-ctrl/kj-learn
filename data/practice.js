@@ -1922,4 +1922,474 @@ window.PRACTICE.push(
     ],
     explain: '利息已计提过，偿还时冲减应付利息（而非再记财务费用）。本金冲短期借款。'
   }
+,
+  {
+    practice_id: 10161, source_lesson_id: 17,
+    type: 'concept', level: 'basic', hot: ['payroll'],
+    interaction_type: 'single',
+    prompt: '下列各项中，不属于职工薪酬核算范围的是（ ）。',
+    options: [
+      { text: '工资奖金', is_correct: false },
+      { text: '五险一金', is_correct: false },
+      { text: '职工教育经费', is_correct: false },
+      { text: '股东分红', is_correct: true }
+    ],
+    explain: '股东分红属于利润分配，不属于职工薪酬。职工薪酬包括工资、奖金、津贴、五险一金、福利费、工会经费、职工教育经费等。'
+  },
+  {
+    practice_id: 10162, source_lesson_id: 17,
+    type: 'concept', level: 'basic', hot: ['payroll'],
+    interaction_type: 'single',
+    prompt: '计提车间工人工资时，应借记的科目是（ ）。',
+    options: [
+      { text: '生产成本', is_correct: true },
+      { text: '管理费用', is_correct: false },
+      { text: '销售费用', is_correct: false },
+      { text: '制造费用', is_correct: false }
+    ],
+    explain: '车间直接生产工人的工资计入生产成本；车间管理人员工资计入制造费用；行政管理人员工资计入管理费用。'
+  },
+  {
+    practice_id: 10163, source_lesson_id: 17,
+    type: 'concept', level: 'basic', hot: ['payroll'],
+    interaction_type: 'single',
+    prompt: '下列关于应付职工薪酬的说法中，错误的是（ ）。',
+    options: [
+      { text: '职工薪酬包括辞退福利', is_correct: false },
+      { text: '非货币性福利也属于职工薪酬', is_correct: false },
+      { text: '个人承担的社保由企业直接计入管理费用', is_correct: true },
+      { text: '短期薪酬应在职工提供服务期间确认', is_correct: false }
+    ],
+    explain: '个人承担的社保从应付职工薪酬中代扣，不直接计入费用。'
+  },
+  {
+    practice_id: 10164, source_lesson_id: 17,
+    type: 'calc', level: 'advanced', hot: ['payroll'],
+    interaction_type: 'single',
+    prompt: '某企业当月车间工人工资 120,000 元、管理人员工资 60,000 元、销售人员工资 20,000 元。计提工资时「应付职工薪酬」贷方发生额合计为（ ）。',
+    options: [
+      { text: '200,000 元', is_correct: true },
+      { text: '180,000 元', is_correct: false },
+      { text: '120,000 元', is_correct: false },
+      { text: '140,000 元', is_correct: false }
+    ],
+    explain: '全部工资均通过应付职工薪酬归集：120,000 + 60,000 + 20,000 = 200,000 元。'
+  },
+  {
+    practice_id: 10165, source_lesson_id: 17,
+    type: 'calc', level: 'advanced', hot: ['payroll'],
+    interaction_type: 'single',
+    prompt: '承上题，单位承担养老保险 16%、医疗保险 8%、失业保险 0.5%。单位应承担的社保费用合计为（ ）。',
+    options: [
+      { text: '49,000 元', is_correct: true },
+      { text: '32,000 元', is_correct: false },
+      { text: '45,000 元', is_correct: false },
+      { text: '56,000 元', is_correct: false }
+    ],
+    explain: '单位社保比例 = 16% + 8% + 0.5% = 24.5%；200,000 × 24.5% = 49,000 元。'
+  },
+  {
+    practice_id: 10166, source_lesson_id: 17,
+    type: 'calc', level: 'advanced', hot: ['payroll'],
+    interaction_type: 'single',
+    prompt: '某企业工资总额 200,000 元，个人承担养老 8%、医疗 2%、失业 0.5%。实际发放工资时银行存款支付金额为（ ）。',
+    options: [
+      { text: '179,000 元', is_correct: true },
+      { text: '200,000 元', is_correct: false },
+      { text: '190,000 元', is_correct: false },
+      { text: '175,000 元', is_correct: false }
+    ],
+    explain: '个人代扣 = 200,000 × (8%+2%+0.5%) = 21,000；实发 = 200,000 − 21,000 = 179,000 元。'
+  },
+  {
+    practice_id: 10167, source_lesson_id: 17,
+    type: 'journal', level: 'advanced', hot: ['payroll'],
+    interaction_type: 'multi',
+    prompt: '下列关于非货币性福利的处理，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '以自产产品发放福利应视同销售', is_correct: true },
+      { label: 'B', text: '外购商品发放福利取得的进项税额可以抵扣', is_correct: false },
+      { label: 'C', text: '自产产品发放福利按售价和增值税确认应付职工薪酬', is_correct: true },
+      { label: 'D', text: '非货币性福利不需要通过应付职工薪酬核算', is_correct: false }
+    ],
+    explain: 'B 错误：外购商品用于集体福利，进项税额不得抵扣，需做进项税额转出。D 错误：非货币性福利也要通过应付职工薪酬核算。'
+  },
+  {
+    practice_id: 10168, source_lesson_id: 17,
+    type: 'calc', level: 'exam', hot: ['payroll'],
+    interaction_type: 'single',
+    prompt: '【真题级】企业将自产产品作为福利发放给职工，产品成本 50,000 元（等于售价），增值税税率 13%。应确认的应付职工薪酬为（ ）。',
+    options: [
+      { text: '56,500 元', is_correct: true },
+      { text: '50,000 元', is_correct: false },
+      { text: '63,500 元', is_correct: false },
+      { text: '43,500 元', is_correct: false }
+    ],
+    explain: '视同销售：应付职工薪酬 = 售价 + 销项税 = 50,000 + 50,000 × 13% = 56,500 元。'
+  },
+  {
+    practice_id: 10169, source_lesson_id: 17,
+    type: 'journal', level: 'exam', hot: ['payroll'],
+    interaction_type: 'single',
+    prompt: '【真题级】发放工资时代扣个人所得税 5,000 元，正确的处理是（ ）。',
+    options: [
+      { text: '借：应付职工薪酬 5,000 / 贷：应交税费——应交个人所得税 5,000', is_correct: true },
+      { text: '借：管理费用 5,000 / 贷：应交税费——应交个人所得税 5,000', is_correct: false },
+      { text: '借：应付职工薪酬 5,000 / 贷：银行存款 5,000', is_correct: false },
+      { text: '借：其他应收款 5,000 / 贷：银行存款 5,000', is_correct: false }
+    ],
+    explain: '代扣个税从应付职工薪酬中扣除，贷记应交个人所得税；实际缴纳时再借记应交税费、贷记银行存款。'
+  },
+  {
+    practice_id: 10171, source_lesson_id: 18,
+    type: 'concept', level: 'basic', hot: ['vat-settle'],
+    interaction_type: 'single',
+    prompt: '一般纳税人月末增值税的结转方向取决于（ ）。',
+    options: [
+      { text: '销项税额与进项税额的差额正负', is_correct: true },
+      { text: '本月销售收入金额', is_correct: false },
+      { text: '本月采购金额', is_correct: false },
+      { text: '上月留抵税额', is_correct: false }
+    ],
+    explain: '销项 > 进项，差额为应纳税额，结转至未交增值税（贷方）；销项 < 进项，形成留抵，不结转。'
+  },
+  {
+    practice_id: 10172, source_lesson_id: 18,
+    type: 'concept', level: 'basic', hot: ['vat-settle'],
+    interaction_type: 'single',
+    prompt: '下列各项中，需要做进项税额转出的是（ ）。',
+    options: [
+      { text: '因管理不善导致原材料被盗', is_correct: true },
+      { text: '正常生产领用原材料', is_correct: false },
+      { text: '销售产品', is_correct: false },
+      { text: '购入用于生产的设备', is_correct: false }
+    ],
+    explain: '非正常损失（管理不善导致的被盗、霉烂变质等）对应的进项税额不得抵扣，需要转出。'
+  },
+  {
+    practice_id: 10173, source_lesson_id: 18,
+    type: 'concept', level: 'basic', hot: ['vat-settle'],
+    interaction_type: 'single',
+    prompt: '月末增值税留抵税额应（ ）。',
+    options: [
+      { text: '保留在「应交增值税」借方，不做结转分录', is_correct: true },
+      { text: '结转至「未交增值税」借方', is_correct: false },
+      { text: '结转至「未交增值税」贷方', is_correct: false },
+      { text: '冲减本月销项税额', is_correct: false }
+    ],
+    explain: '留抵税额表示本月进项大于销项，自动留在应交增值税借方余额中，不需要做结转分录。'
+  },
+  {
+    practice_id: 10174, source_lesson_id: 18,
+    type: 'calc', level: 'advanced', hot: ['vat-settle'],
+    interaction_type: 'single',
+    prompt: '某企业当月销项税额 130,000 元、进项税额 85,000 元、已预交增值税 20,000 元。月末应结转至「未交增值税」的金额为（ ）。',
+    options: [
+      { text: '25,000 元', is_correct: true },
+      { text: '45,000 元', is_correct: false },
+      { text: '65,000 元', is_correct: false },
+      { text: '30,000 元', is_correct: false }
+    ],
+    explain: '应纳 = 130,000 − 85,000 = 45,000；已交 20,000；未交 = 45,000 − 20,000 = 25,000 元。'
+  },
+  {
+    practice_id: 10175, source_lesson_id: 18,
+    type: 'calc', level: 'advanced', hot: ['vat-settle'],
+    interaction_type: 'single',
+    prompt: '某企业当月销项税额 50,000 元、进项税额 65,000 元。月末应（ ）。',
+    options: [
+      { text: '不做结转分录，留抵 15,000 元', is_correct: true },
+      { text: '结转未交增值税 15,000 元', is_correct: false },
+      { text: '申请退税 15,000 元', is_correct: false },
+      { text: '冲减销项税额 15,000 元', is_correct: false }
+    ],
+    explain: '进项 > 销项，留抵 = 65,000 − 50,000 = 15,000 元，保留在应交增值税借方，不结转。'
+  },
+  {
+    practice_id: 10176, source_lesson_id: 18,
+    type: 'calc', level: 'advanced', hot: ['vat-settle'],
+    interaction_type: 'single',
+    prompt: '因管理不善导致原材料毁损，材料成本 100,000 元，增值税税率 13%。应转出的进项税额为（ ）。',
+    options: [
+      { text: '13,000 元', is_correct: true },
+      { text: '100,000 元', is_correct: false },
+      { text: '113,000 元', is_correct: false },
+      { text: '87,000 元', is_correct: false }
+    ],
+    explain: '进项税额转出 = 100,000 × 13% = 13,000 元。会计分录：借记待处理财产损溢，贷记原材料、应交税费——进项税额转出。'
+  },
+  {
+    practice_id: 10177, source_lesson_id: 18,
+    type: 'journal', level: 'advanced', hot: ['vat-settle'],
+    interaction_type: 'multi',
+    prompt: '下列各项中，属于视同销售需要计算销项税额的有（ ）。',
+    options: [
+      { label: 'A', text: '将自产产品用于对外捐赠', is_correct: true },
+      { label: 'B', text: '将自产产品用于集体福利', is_correct: true },
+      { label: 'C', text: '将外购商品用于个人消费', is_correct: false },
+      { label: 'D', text: '将自产产品用于在建工程', is_correct: false }
+    ],
+    explain: 'C 和 D：外购商品用于个人消费做进项税额转出；自产产品用于在建工程（营改增后不再视同销售）。A、B 均视同销售。'
+  },
+  {
+    practice_id: 10178, source_lesson_id: 18,
+    type: 'calc', level: 'exam', hot: ['vat-settle'],
+    interaction_type: 'single',
+    prompt: '【真题级】某企业当月销项税额 260,000 元、进项税额 180,000 元、进项税额转出 13,000 元、已交税金 30,000 元。月末应结转未交增值税（ ）。',
+    options: [
+      { text: '63,000 元', is_correct: true },
+      { text: '50,000 元', is_correct: false },
+      { text: '80,000 元', is_correct: false },
+      { text: '93,000 元', is_correct: false }
+    ],
+    explain: '应纳 = 260,000 − 180,000 + 13,000 = 93,000；未交 = 93,000 − 30,000 = 63,000 元。'
+  },
+  {
+    practice_id: 10179, source_lesson_id: 18,
+    type: 'concept', level: 'exam', hot: ['vat-settle'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列关于增值税会计处理的说法中，错误的是（ ）。',
+    options: [
+      { text: '小规模纳税人的增值税也通过「应交税费——应交增值税」多栏式明细核算', is_correct: true },
+      { text: '一般纳税人应设置进项税额、销项税额等专栏', is_correct: false },
+      { text: '月末有应交未交增值税时，应结转至未交增值税科目', is_correct: false },
+      { text: '预交的增值税在「已交税金」专栏核算', is_correct: false }
+    ],
+    explain: '小规模纳税人不需要设置多栏式明细账，直接在「应交税费——应交增值税」科目下核算即可。'
+  },
+  {
+    practice_id: 10181, source_lesson_id: 19,
+    type: 'concept', level: 'basic', hot: ['equity-paid-in'],
+    interaction_type: 'single',
+    prompt: '投资者投入资本超过其在注册资本中所占份额的部分，应计入（ ）。',
+    options: [
+      { text: '资本公积', is_correct: true },
+      { text: '实收资本', is_correct: false },
+      { text: '盈余公积', is_correct: false },
+      { text: '营业外收入', is_correct: false }
+    ],
+    explain: '超出注册资本份额的部分为资本溢价，计入资本公积——资本溢价。'
+  },
+  {
+    practice_id: 10182, source_lesson_id: 19,
+    type: 'concept', level: 'basic', hot: ['equity-paid-in'],
+    interaction_type: 'single',
+    prompt: '下列各项中，不能用资本公积进行的是（ ）。',
+    options: [
+      { text: '弥补亏损', is_correct: true },
+      { text: '转增资本', is_correct: false },
+      { text: '形成溢价', is_correct: false },
+      { text: '资本公积转增股本', is_correct: false }
+    ],
+    explain: '资本公积不能用来弥补亏损，弥补亏损应使用盈余公积或以后年度利润。'
+  },
+  {
+    practice_id: 10183, source_lesson_id: 19,
+    type: 'concept', level: 'basic', hot: ['equity-paid-in'],
+    interaction_type: 'single',
+    prompt: '有限责任公司接受投资者以非货币性资产出资，应按（ ）作为入账价值。',
+    options: [
+      { text: '合同约定价值（公允）', is_correct: true },
+      { text: '投资者账面价值', is_correct: false },
+      { text: '评估价值与账面价值的较低者', is_correct: false },
+      { text: '评估价值与合同价值的较高者', is_correct: false }
+    ],
+    explain: '非货币性资产出资按合同各方确认的公允价值（即约定价值）入账。'
+  },
+  {
+    practice_id: 10184, source_lesson_id: 19,
+    type: 'calc', level: 'advanced', hot: ['equity-paid-in'],
+    interaction_type: 'single',
+    prompt: '甲公司接受某投资者投入货币资金 2,000,000 元，约定在注册资本中的份额为 1,500,000 元。应确认的资本公积为（ ）。',
+    options: [
+      { text: '500,000 元', is_correct: true },
+      { text: '2,000,000 元', is_correct: false },
+      { text: '1,500,000 元', is_correct: false },
+      { text: '3,500,000 元', is_correct: false }
+    ],
+    explain: '资本溢价 = 实际投入 2,000,000 − 约定份额 1,500,000 = 500,000 元。'
+  },
+  {
+    practice_id: 10185, source_lesson_id: 19,
+    type: 'calc', level: 'advanced', hot: ['equity-paid-in'],
+    interaction_type: 'single',
+    prompt: '乙公司接受投资者投入设备一台，合同约定价值 750,000 元，在注册资本中的份额为 600,000 元。应确认的资本公积为（ ）。',
+    options: [
+      { text: '150,000 元', is_correct: true },
+      { text: '750,000 元', is_correct: false },
+      { text: '600,000 元', is_correct: false },
+      { text: '1,350,000 元', is_correct: false }
+    ],
+    explain: '设备按合同约定价值 750,000 入账；溢价 = 750,000 − 600,000 = 150,000 元。'
+  },
+  {
+    practice_id: 10186, source_lesson_id: 19,
+    type: 'journal', level: 'advanced', hot: ['equity-paid-in'],
+    interaction_type: 'single',
+    prompt: '企业将资本公积 300,000 元转增资本，正确的分录是（ ）。',
+    options: [
+      { text: '借：资本公积 300,000 / 贷：实收资本 300,000', is_correct: true },
+      { text: '借：实收资本 300,000 / 贷：资本公积 300,000', is_correct: false },
+      { text: '借：资本公积 300,000 / 贷：盈余公积 300,000', is_correct: false },
+      { text: '借：银行存款 300,000 / 贷：实收资本 300,000', is_correct: false }
+    ],
+    explain: '资本公积转增资本：减少资本公积（借方）、增加实收资本（贷方），不涉及货币资金。'
+  },
+  {
+    practice_id: 10187, source_lesson_id: 19,
+    type: 'journal', level: 'advanced', hot: ['equity-paid-in'],
+    interaction_type: 'multi',
+    prompt: '下列关于实收资本的说法中，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '投资者可以用货币资金出资', is_correct: true },
+      { label: 'B', text: '投资者可以用固定资产出资', is_correct: true },
+      { label: 'C', text: '投资者可以用知识产权出资', is_correct: true },
+      { label: 'D', text: '投资者可以用劳务出资', is_correct: false },
+      { label: 'E', text: '投资者以非货币出资应按约定价值入账', is_correct: true }
+    ],
+    explain: 'D 错误：有限责任公司和股份有限公司的股东不能以劳务出资（合伙企业可以）。'
+  },
+  {
+    practice_id: 10188, source_lesson_id: 19,
+    type: 'calc', level: 'exam', hot: ['equity-paid-in'],
+    interaction_type: 'single',
+    prompt: '【真题级】A 投资者以现金 600,000 元、B 投资者以设备 550,000 元（约定价值）分别投入丙公司，各占注册资本 500,000 元的份额。应确认资本公积合计为（ ）。',
+    options: [
+      { text: '150,000 元', is_correct: true },
+      { text: '100,000 元', is_correct: false },
+      { text: '50,000 元', is_correct: false },
+      { text: '1,150,000 元', is_correct: false }
+    ],
+    explain: 'A 溢价 = 600,000 − 500,000 = 100,000；B 溢价 = 550,000 − 500,000 = 50,000；合计 150,000 元。'
+  },
+  {
+    practice_id: 10189, source_lesson_id: 19,
+    type: 'concept', level: 'exam', hot: ['equity-paid-in'],
+    interaction_type: 'single',
+    prompt: '【真题级】下列各项中，会导致企业实收资本增加的是（ ）。',
+    options: [
+      { text: '资本公积转增资本', is_correct: true },
+      { text: '接受现金捐赠', is_correct: false },
+      { text: '盈余公积弥补亏损', is_correct: false },
+      { text: '宣告分配现金股利', is_correct: false }
+    ],
+    explain: '资本公积转增资本使实收资本增加；捐赠计入营业外收入；盈余公积弥补亏损不影响实收资本；分股利减少未分配利润。'
+  },
+  {
+    practice_id: 10191, source_lesson_id: 20,
+    type: 'concept', level: 'basic', hot: ['surplus-reserve'],
+    interaction_type: 'single',
+    prompt: '公司制企业法定盈余公积的计提比例是（ ）。',
+    options: [
+      { text: '净利润的 10%', is_correct: true },
+      { text: '净利润的 5%', is_correct: false },
+      { text: '营业利润的 10%', is_correct: false },
+      { text: '利润总额的 10%', is_correct: false }
+    ],
+    explain: '法定盈余公积按税后净利润（扣除弥补以前年度亏损后）的 10% 计提。'
+  },
+  {
+    practice_id: 10192, source_lesson_id: 20,
+    type: 'concept', level: 'basic', hot: ['surplus-reserve'],
+    interaction_type: 'single',
+    prompt: '法定盈余公积累计达到注册资本的（ ）以上时，可以不再计提。',
+    options: [
+      { text: '50%', is_correct: true },
+      { text: '25%', is_correct: false },
+      { text: '30%', is_correct: false },
+      { text: '100%', is_correct: false }
+    ],
+    explain: '公司法规定：法定盈余公积累计额达到注册资本的 50% 时可不再计提。'
+  },
+  {
+    practice_id: 10193, source_lesson_id: 20,
+    type: 'concept', level: 'basic', hot: ['surplus-reserve'],
+    interaction_type: 'single',
+    prompt: '下列各项中，不属于盈余公积用途的是（ ）。',
+    options: [
+      { text: '对外投资', is_correct: true },
+      { text: '弥补亏损', is_correct: false },
+      { text: '转增资本', is_correct: false },
+      { text: '分配股利', is_correct: false }
+    ],
+    explain: '盈余公积三大用途：弥补亏损、转增资本、分配现金股利或利润。对外投资不属于盈余公积的用途。'
+  },
+  {
+    practice_id: 10194, source_lesson_id: 20,
+    type: 'calc', level: 'advanced', hot: ['surplus-reserve'],
+    interaction_type: 'single',
+    prompt: '某企业本年净利润 1,200,000 元，按 10% 计提法定盈余公积。应计提金额为（ ）。',
+    options: [
+      { text: '120,000 元', is_correct: true },
+      { text: '60,000 元', is_correct: false },
+      { text: '240,000 元', is_correct: false },
+      { text: '100,000 元', is_correct: false }
+    ],
+    explain: '法定盈余公积 = 1,200,000 × 10% = 120,000 元。'
+  },
+  {
+    practice_id: 10195, source_lesson_id: 20,
+    type: 'calc', level: 'advanced', hot: ['surplus-reserve'],
+    interaction_type: 'single',
+    prompt: '某企业本年净利润 500,000 元，按 10% 计提法定盈余公积、5% 计提任意盈余公积。盈余公积计提合计为（ ）。',
+    options: [
+      { text: '75,000 元', is_correct: true },
+      { text: '50,000 元', is_correct: false },
+      { text: '25,000 元', is_correct: false },
+      { text: '100,000 元', is_correct: false }
+    ],
+    explain: '法定 = 500,000 × 10% = 50,000；任意 = 500,000 × 5% = 25,000；合计 75,000 元。'
+  },
+  {
+    practice_id: 10196, source_lesson_id: 20,
+    type: 'journal', level: 'advanced', hot: ['surplus-reserve'],
+    interaction_type: 'single',
+    prompt: '企业用盈余公积 300,000 元弥补亏损，正确的分录是（ ）。',
+    options: [
+      { text: '借：盈余公积 300,000 / 贷：利润分配——盈余公积补亏 300,000', is_correct: true },
+      { text: '借：利润分配 300,000 / 贷：盈余公积 300,000', is_correct: false },
+      { text: '借：盈余公积 300,000 / 贷：营业外收入 300,000', is_correct: false },
+      { text: '借：盈余公积 300,000 / 贷：本年利润 300,000', is_correct: false }
+    ],
+    explain: '盈余公积弥补亏损：减少盈余公积（借方），增加利润分配——盈余公积补亏（贷方），最终冲减未分配利润的借方余额。'
+  },
+  {
+    practice_id: 10197, source_lesson_id: 20,
+    type: 'journal', level: 'advanced', hot: ['surplus-reserve'],
+    interaction_type: 'single',
+    prompt: '企业将盈余公积 200,000 元转增资本，正确的分录是（ ）。',
+    options: [
+      { text: '借：盈余公积 200,000 / 贷：实收资本 200,000', is_correct: true },
+      { text: '借：实收资本 200,000 / 贷：盈余公积 200,000', is_correct: false },
+      { text: '借：盈余公积 200,000 / 贷：资本公积 200,000', is_correct: false },
+      { text: '借：盈余公积 200,000 / 贷：银行存款 200,000', is_correct: false }
+    ],
+    explain: '盈余公积转增资本：减少盈余公积（借方）、增加实收资本（贷方），不涉及银行存款。'
+  },
+  {
+    practice_id: 10198, source_lesson_id: 20,
+    type: 'calc', level: 'exam', hot: ['surplus-reserve'],
+    interaction_type: 'single',
+    prompt: '【真题级】某公司注册资本 5,000,000 元，法定盈余公积已累计计提 2,400,000 元。本年净利润 600,000 元。本年应计提法定盈余公积（ ）。',
+    options: [
+      { text: '60,000 元', is_correct: true },
+      { text: '100,000 元', is_correct: false },
+      { text: '0 元', is_correct: false },
+      { text: '50,000 元', is_correct: false }
+    ],
+    explain: '上限 = 5,000,000 × 50% = 2,500,000；已提 2,400,000，差 100,000。本年应提 = 600,000 × 10% = 60,000 元；提后累计 2,460,000 < 2,500,000，未达上限，按 60,000 全额计提。'
+  },
+  {
+    practice_id: 10199, source_lesson_id: 20,
+    type: 'concept', level: 'exam', hot: ['surplus-reserve'],
+    interaction_type: 'multi',
+    prompt: '【真题级】下列关于利润分配顺序的说法中，正确的有（ ）。',
+    options: [
+      { label: 'A', text: '弥补以前年度亏损应在计提盈余公积之前', is_correct: true },
+      { label: 'B', text: '提取法定盈余公积应在提取任意盈余公积之前', is_correct: true },
+      { label: 'C', text: '可以先分配股利再计提盈余公积', is_correct: false },
+      { label: 'D', text: '任意盈余公积由企业自主决定是否计提', is_correct: true }
+    ],
+    explain: 'C 错误：利润分配顺序为弥补亏损→提法定盈余公积→提任意盈余公积→分配股利，不能跳过盈余公积先分股利。'
+  }
 );
